@@ -168,7 +168,7 @@
 	force = 15
 	throwforce = 10
 	var/burst_time = 30
-	var/fieldlimit = 4
+	var/fieldlimit = 5
 	var/list/fields = list()
 	var/quick_burst_mod = 0.8
 	origin_tech = "magnets=3;engineering=3"
@@ -179,7 +179,7 @@
 	icon_state = "resonator_u"
 	item_state = "resonator_u"
 	origin_tech = "materials=4;powerstorage=3;engineering=3;magnets=3"
-	fieldlimit = 6
+	fieldlimit = 10
 	quick_burst_mod = 1
 
 /obj/item/weapon/resonator/proc/CreateResonance(target, creator)
@@ -495,7 +495,7 @@
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
 	sharpness = IS_SHARP
 	var/charged = 1
-	var/charge_time = 16
+	var/charge_time = 12
 	var/atom/mark = null
 	var/marked_image = null
 
