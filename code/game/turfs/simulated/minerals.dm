@@ -131,9 +131,9 @@
 
 /turf/closed/mineral/random
 	var/mineralSpawnChanceList = list(
-		/turf/closed/mineral/uranium = 5, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 10,
-		/turf/closed/mineral/silver = 12, /turf/closed/mineral/plasma = 20, /turf/closed/mineral/iron = 40, /turf/closed/mineral/titanium = 11,
-		/turf/closed/mineral/gibtonite = 4, /turf/open/floor/plating/asteroid/airless/cave = 2, /turf/closed/mineral/bscrystal = 1)
+		/turf/closed/mineral/uranium = 15, /turf/closed/mineral/diamond = 10, /turf/closed/mineral/gold = 25,
+		/turf/closed/mineral/silver = 25, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 50, /turf/closed/mineral/titanium = 20,
+		/turf/closed/mineral/gibtonite = 5, /turf/open/floor/plating/asteroid/airless/cave = 1, /turf/closed/mineral/bscrystal = 5)
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 13
 
@@ -181,9 +181,9 @@
 	icon_state = "rock_lowchance"
 	mineralChance = 6
 	mineralSpawnChanceList = list(
-		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
-		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40,
-		/turf/closed/mineral/gibtonite = 2, /turf/closed/mineral/bscrystal = 1)
+		/turf/closed/mineral/uranium = 15, /turf/closed/mineral/diamond = 10, /turf/closed/mineral/gold = 25, /turf/closed/mineral/titanium = 20,
+		/turf/closed/mineral/silver = 25, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 50,
+		/turf/closed/mineral/gibtonite = 5, /turf/closed/mineral/bscrystal = 5)
 
 /turf/closed/mineral/random/low_chance/New()
 	icon_state = "rock"
@@ -199,9 +199,9 @@
 
 	mineralChance = 10
 	mineralSpawnChanceList = list(
-		/turf/closed/mineral/uranium/volcanic = 5, /turf/closed/mineral/diamond/volcanic = 1, /turf/closed/mineral/gold/volcanic = 10, /turf/closed/mineral/titanium/volcanic = 11,
-		/turf/closed/mineral/silver/volcanic = 12, /turf/closed/mineral/plasma/volcanic = 20, /turf/closed/mineral/iron/volcanic = 40,
-		/turf/closed/mineral/gibtonite/volcanic = 4, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic = 1)
+		/turf/closed/mineral/uranium/volcanic = 15, /turf/closed/mineral/diamond/volcanic = 10, /turf/closed/mineral/gold/volcanic = 25, /turf/closed/mineral/titanium/volcanic = 20,
+		/turf/closed/mineral/silver/volcanic = 25, /turf/closed/mineral/plasma/volcanic = 30, /turf/closed/mineral/iron/volcanic = 50,
+		/turf/closed/mineral/gibtonite/volcanic = 5, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic =5)
 
 /turf/closed/mineral/random/labormineral
 	mineralSpawnChanceList = list(

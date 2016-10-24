@@ -168,7 +168,7 @@
 	flag = "bomb"
 	range = 3
 	var/pressure_decrease = 0.25
-	var/turf_aoe = FALSE
+	var/turf_aoe = 1
 	var/mob_aoe = 0
 	var/list/hit_overlays = list()
 
@@ -191,11 +191,10 @@
 	K.color = color
 	for(var/type in hit_overlays)
 		PoolOrNew(type, target_turf)
-	if(turf_aoe)
-		for(var/T in RANGE_TURFS(1, target_turf) - target_turf)
-			if(ismineralturf(T))
-				var/turf/closed/mineral/M = T
-				M.gets_drilled(firer)
+	for(var/T in RANGE_TURFS(turf_aoe, target_turf) - target_turf)
+		if(ismineralturf(T))
+			var/turf/closed/mineral/M = T
+			M.gets_drilled(firer)
 	if(mob_aoe)
 		for(var/mob/living/L in range(1, target_turf) - firer - target)
 			var/armor = L.run_armor_check(def_zone, flag, "", "", armour_penetration)
@@ -315,12 +314,12 @@
 
 /obj/item/borg/upgrade/modkit/aoe/turfs
 	name = "mining explosion"
-	desc = "Causes the kinetic accelerator to destroy rock in an AoE."
+	desc = "Causes the kinetic accelerator to destroy more rock in an AoE."
 	denied_type = /obj/item/borg/upgrade/modkit/aoe/turfs
 
 /obj/item/borg/upgrade/modkit/aoe/turfs/modify_projectile(obj/item/projectile/kinetic/K)
 	..()
-	K.turf_aoe = TRUE
+	K.turf_aoe++
 
 /obj/item/borg/upgrade/modkit/aoe/turfs/andmobs
 	name = "offensive mining explosion"
