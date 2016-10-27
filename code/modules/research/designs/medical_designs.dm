@@ -38,7 +38,7 @@
 	name = "Positronic Brain"
 	desc = "The latest in Artificial Intelligences."
 	id = "mmi_posi"
-	req_tech = list("programming" = 5, "biotech" = 4, "plasmatech" = 3)
+	req_tech = list("programming" = 5, "biotech" = 4, "materials" = 6, "bluespace" = 3)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MAT_METAL = 1700, MAT_GLASS = 1350, MAT_GOLD = 500) //Gold, because SWAG.
 	construction_time = 75
@@ -49,7 +49,7 @@
 	name = "Bluespace Beaker"
 	desc = "A bluespace beaker, powered by experimental bluespace technology and Element Cuban combined with the Compound Pete. Can hold up to 300 units."
 	id = "bluespacebeaker"
-	req_tech = list("bluespace" = 6, "materials" = 5, "plasmatech" = 4)
+	req_tech = list("bluespace" = 2, "materials" = 6)
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 3000, MAT_PLASMA = 3000, MAT_DIAMOND = 500)
 	build_path = /obj/item/weapon/reagent_containers/glass/beaker/bluespace
@@ -59,7 +59,7 @@
 	name = "Cryostasis Beaker"
 	desc = "A cryostasis beaker that allows for chemical storage without reactions. Can hold up to 50 units."
 	id = "splitbeaker"
-	req_tech = list("materials" = 3, "engineering" = 3, "plasmatech" = 3)
+	req_tech = list("materials" = 3, "engineering" = 3, "biotech" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000)
 	build_path = /obj/item/weapon/reagent_containers/glass/beaker/noreact
@@ -79,7 +79,7 @@
 	name = "Cryo Syringe"
 	desc = "An advanced syringe that stops reagents inside from reacting. It can hold up to 20 units."
 	id = "noreactsyringe"
-	req_tech = list("materials" = 3, "engineering" = 3)
+	req_tech = list("materials" = 3, "engineering" = 3, "biotech" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 4000, MAT_GOLD = 1000)
 	build_path = /obj/item/weapon/reagent_containers/syringe/noreact
@@ -89,7 +89,7 @@
 	name = "Piercing Syringe"
 	desc = "A diamond-tipped syringe that pierces armor when launched at high velocity. It can hold up to 10 units."
 	id = "piercesyringe"
-	req_tech = list("materials" = 5, "combat" = 3, "engineering" = 7)
+	req_tech = list("materials" = 5, "combat" = 3, "engineering" = 6)
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 4000, MAT_DIAMOND = 1500)
 	build_path = /obj/item/weapon/reagent_containers/syringe/piercing
@@ -99,7 +99,7 @@
 	name = "Bluespace body bag"
 	desc = "A bluespace body bag, powered by experimental bluespace technology. It can hold loads of bodies and the largest of creatures."
 	id = "bluespacebodybag"
-	req_tech = list("bluespace" = 5, "materials" = 4, "plasmatech" = 4)
+	req_tech = list("bluespace" = 5, "materials" = 4, "biotech" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000, MAT_PLASMA = 2000, MAT_DIAMOND = 500)
 	build_path = /obj/item/bodybag/bluespace
@@ -123,7 +123,7 @@
 	name = "Welding Shield implant"
 	desc = "These reactive micro-shields will protect you from welders and flashes without obscuring your vision."
 	id = "ci-welding"
-	req_tech = list("materials" = 4, "biotech" = 4, "engineering" = 5, "plasmatech" = 4)
+	req_tech = list("materials" = 4, "biotech" = 4, "engineering" = 5, "plasmatech" = 3)
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
 	materials = list(MAT_METAL = 600, MAT_GLASS = 400)
@@ -178,7 +178,7 @@
 	name = "X-Ray implant"
 	desc = "These cybernetic eyes will give you X-ray vision. Blinking is futile."
 	id = "ci-xray"
-	req_tech = list("materials" = 7, "programming" = 5, "biotech" = 7, "magnets" = 5,"plasmatech" = 6)
+	req_tech = list("materials" = 7, "programming" = 5, "biotech" = 5, "magnets" = 6, "plasmatech" = 4)
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASMA = 1000, MAT_URANIUM = 1000, MAT_DIAMOND = 2000)
@@ -189,7 +189,7 @@
 	name = "Thermals implant"
 	desc = "These cybernetic eyes will give you Thermal vision. Vertical slit pupil included."
 	id = "ci-thermals"
-	req_tech = list("materials" = 6, "programming" = 4, "biotech" = 7, "magnets" = 5,"plasmatech" = 4)
+	req_tech = list("materials" = 7, "programming" = 4, "biotech" = 5, "magnets" = 6, "plasmatech" = 4)
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASMA = 1000, MAT_DIAMOND = 2000)
@@ -255,7 +255,7 @@
 	name = "Thrusters set implant"
 	desc = "This implant will allow you to use gas from environment or your internals for propulsion in zero-gravity areas."
 	id = "ci-thrusters"
-	req_tech = list("materials" = 5, "biotech" = 5, "magnets" = 4, "engineering" = 7)
+	req_tech = list("materials" = 5, "biotech" = 5, "magnets" = 4, "engineering" = 5)
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 80
 	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
@@ -301,7 +301,7 @@
 	name = "Freedom Implant Case"
 	desc = "A glass case containing an implant."
 	id = "implant_freedom"
-	req_tech = list("combat" = 6, "biotech" = 5, "magnets" = 3, "syndicate" = 3)
+	req_tech = list("combat" = 6, "biotech" = 5, "magnets" = 3, "syndicate" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 800, MAT_GLASS = 500, MAT_GOLD = 500)
 	build_path = /obj/item/weapon/implantcase/freedom
@@ -311,7 +311,7 @@
 	name = "Adrenalin Implant Case"
 	desc = "A glass case containing an implant."
 	id = "implant_adrenalin"
-	req_tech = list("biotech" = 6, "combat" = 6, "syndicate" = 6)
+	req_tech = list("biotech" = 5, "combat" = 6, "syndicate" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 1000, MAT_GLASS = 500, MAT_GOLD = 500, MAT_URANIUM = 600, MAT_DIAMOND = 600)
 	build_path = /obj/item/weapon/implantcase/adrenaline

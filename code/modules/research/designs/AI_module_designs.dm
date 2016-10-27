@@ -15,7 +15,7 @@
 	name = "Module Design (Safeguard)"
 	desc = "Allows for the construction of a Safeguard AI Module."
 	id = "safeguard_module"
-	req_tech = list("programming" = 3, "materials" = 3)
+	req_tech = list("programming" = 3, "materials" = 4)
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/aiModule/supplied/safeguard
 	category = list("AI Modules")
@@ -24,7 +24,7 @@
 	name = "Module Design (OneHuman)"
 	desc = "Allows for the construction of a OneHuman AI Module."
 	id = "onehuman_module"
-	req_tech = list("programming" = 6, "materials" = 4)
+	req_tech = list("programming" = 4, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/zeroth/oneHuman
 	category = list("AI Modules")
@@ -33,7 +33,7 @@
 	name = "Module Design (ProtectStation)"
 	desc = "Allows for the construction of a ProtectStation AI Module."
 	id = "protectstation_module"
-	req_tech = list("programming" = 5, "materials" = 4)
+	req_tech = list("programming" = 3, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/aiModule/supplied/protectStation
 	category = list("AI Modules")
@@ -52,7 +52,7 @@
 	name = "Module Design (OxygenIsToxicToHumans)"
 	desc = "Allows for the construction of a Safeguard AI Module."
 	id = "oxygen_module"
-	req_tech = list("programming" = 4, "biotech" = 2, "materials" = 4)
+	req_tech = list("programming" = 3, "biotech" = 2, "materials" = 4)
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/aiModule/supplied/oxygen
 	category = list("AI Modules")
@@ -61,7 +61,7 @@
 	name = "Module Design (Freeform)"
 	desc = "Allows for the construction of a Freeform AI Module."
 	id = "freeform_module"
-	req_tech = list("programming" = 5, "materials" = 4)
+	req_tech = list("programming" = 4, "materials" = 4)
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/aiModule/supplied/freeform
 	category = list("AI Modules")
@@ -70,7 +70,7 @@
 	name = "Module Design (Reset)"
 	desc = "Allows for the construction of a Reset AI Module."
 	id = "reset_module"
-	req_tech = list("programming" = 4, "materials" = 6)
+	req_tech = list("programming" = 3, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/aiModule/reset
 	category = list("AI Modules")
@@ -79,7 +79,7 @@
 	name = "Module Design (Purge)"
 	desc = "Allows for the construction of a Purge AI Module."
 	id = "purge_module"
-	req_tech = list("programming" = 5, "materials" = 6)
+	req_tech = list("programming" = 4, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/reset/purge
 	category = list("AI Modules")
@@ -88,7 +88,7 @@
 	name = "AI Core Module (Freeform)"
 	desc = "Allows for the construction of a Freeform AI Core Module."
 	id = "freeformcore_module"
-	req_tech = list("programming" = 6, "materials" = 6)
+	req_tech = list("programming" = 4, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/core/freeformcore
 	category = list("AI Modules")
@@ -106,7 +106,7 @@
 	name = "Core Module Design (P.A.L.A.D.I.N.)"
 	desc = "Allows for the construction of a P.A.L.A.D.I.N. AI Core Module."
 	id = "paladin_module"
-	req_tech = list("programming" = 5, "materials" = 5)
+	req_tech = list("programming" = 5, "materials" = 6)
 	build_type = IMPRINTER
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/core/full/paladin
@@ -116,7 +116,7 @@
 	name = "Core Module Design (T.Y.R.A.N.T.)"
 	desc = "Allows for the construction of a T.Y.R.A.N.T. AI Module."
 	id = "tyrant_module"
-	req_tech = list("programming" = 5, "syndicate" = 2, "materials" = 5)
+	req_tech = list("programming" = 4, "syndicate" = 2, "materials" = 5)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/core/full/tyrant
 	category = list("AI Modules")
@@ -125,7 +125,7 @@
 	name = "Core Module Design (Corporate)"
 	desc = "Allows for the construction of a Corporate AI Core Module."
 	id = "corporate_module"
-	req_tech = list("programming" = 5, "materials" = 5)
+	req_tech = list("programming" = 4, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/core/full/corp
 	category = list("AI Modules")
@@ -134,7 +134,7 @@
 	name = "Core Module Design (Custom)"
 	desc = "Allows for the construction of a Custom AI Core Module."
 	id = "custom_module"
-	req_tech = list("programming" = 5, "materials" = 5)
+	req_tech = list("programming" = 4, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/core/full/custom
 	category = list("AI Modules")

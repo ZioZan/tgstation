@@ -115,7 +115,7 @@
 	name = "\"Phazon\" Central Control module"
 	desc = "Allows for the construction of a \"Phazon\" Central Control module."
 	id = "phazon_main"
-	req_tech = list("programming" = 6, "materials" = 6, "plasmatech" = 5)
+	req_tech = list("programming" = 5, "materials" = 7, "powerstorage" = 6)
 	build_path = /obj/item/weapon/circuitboard/mecha/phazon/main
 	category = list("Exosuit Modules")
 
@@ -123,7 +123,7 @@
 	name = "\"Phazon\" Peripherals Control module"
 	desc = "Allows for the construction of a \"Phazon\" Peripheral Control module."
 	id = "phazon_peri"
-	req_tech = list("programming" = 6, "bluespace" = 5, "plasmatech" = 5)
+	req_tech = list("programming" = 5, "bluespace" = 5, "plasmatech" = 4)
 	build_path = /obj/item/weapon/circuitboard/mecha/phazon/peripherals
 	category = list("Exosuit Modules")
 
@@ -131,7 +131,7 @@
 	name = "\"Phazon\" Weapons & Targeting Control module"
 	desc = "Allows for the construction of a \"Phazon\" Weapons & Targeting Control module."
 	id = "phazon_targ"
-	req_tech = list("programming" = 6, "magnets" = 5, "plasmatech" = 5)
+	req_tech = list("programming" = 5, "magnets" = 6, "plasmatech" = 4)
 	build_path = /obj/item/weapon/circuitboard/mecha/phazon/targeting
 	category = list("Exosuit Modules")
 
@@ -232,7 +232,7 @@
 	desc = "An exosuit module that allows generating of small quasi-stable wormholes."
 	id = "mech_wormhole_gen"
 	build_type = MECHFAB
-	req_tech = list("bluespace" = 4, "magnets" = 4, "plasmatech" = 3)
+	req_tech = list("bluespace" = 3, "magnets" = 2, "plasmatech" = 3)
 	build_path = /obj/item/mecha_parts/mecha_equipment/wormhole_generator
 	materials = list(MAT_METAL=10000)
 	construction_time = 100
@@ -254,7 +254,7 @@
 	desc = "An exosuit-mounted Rapid Construction Device."
 	id = "mech_rcd"
 	build_type = MECHFAB
-	req_tech = list("materials" = 5, "bluespace" = 3, "magnets" = 4, "powerstorage"=4, "engineering" = 5)
+	req_tech = list("materials" = 4, "bluespace" = 3, "magnets" = 4, "powerstorage"=4, "engineering" = 5)
 	build_path = /obj/item/mecha_parts/mecha_equipment/rcd
 	materials = list(MAT_METAL=30000,MAT_GOLD=20000,MAT_PLASMA=25000,MAT_SILVER=20000)
 	construction_time = 1200
@@ -342,7 +342,7 @@
 	desc = "A device that shoots resonant plasma bursts at extreme velocity. The blasts are capable of crushing rock and demolishing solid obstacles."
 	id = "mech_plasma_cutter"
 	build_type = MECHFAB
-	req_tech = list("engineering" = 3, "materials" = 3, "plasmatech" = 4)
+	req_tech = list("engineering" = 3, "materials" = 3, "plasmatech" = 3)
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 1000, MAT_PLASMA = 2000)
 	construction_time = 100
@@ -386,7 +386,7 @@
 	desc = "Equipment for medical exosuits. A chem synthesizer with syringe gun. Reagents inside are held in stasis, so no reactions will occur."
 	id = "mech_syringe_gun"
 	build_type = MECHFAB
-	req_tech = list("magnets" = 4,"biotech" = 4, "combat" = 3, "materials" = 4)
+	req_tech = list("magnets" = 3,"biotech" = 3, "combat" = 3, "materials" = 4)
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
 	materials = list(MAT_METAL=3000,MAT_GLASS=2000)
 	construction_time = 200

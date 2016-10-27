@@ -56,7 +56,7 @@
 	name = "Computer Design (Operating Computer)"
 	desc = "Allows for the construction of circuit boards used to build an operating computer console."
 	id = "operating"
-	req_tech = list("programming" = 2, "biotech" = 3)
+	req_tech = list("programming" = 2, "biotech" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/operating
 	category = list("Computer Boards")
 

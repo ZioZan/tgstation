@@ -6,10 +6,50 @@
 	name = "test-range firing pin"
 	desc = "This safety firing pin allows firearms to be operated within proximity to a firing range."
 	id = "pin_testing"
-	req_tech = list("combat" = 2, "materials" = 2)
+	req_tech = list("combat" = 1, "materials" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 500, MAT_GLASS = 300)
 	build_path = /obj/item/device/firing_pin/test_range
+	category = list("Firing Pins")
+
+/datum/design/pin_standard
+	name = "electronic firing pin"
+	desc = "A small authentication device, to be inserted into a firearm reciever to allow operation. NT safety regulations require all new designs to incorporate one."
+	id = "pin_standard"
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 6, "illegal" = 2, "magnets" = 5, "engineering" = 5, "programming" = 5, "plasma" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL= 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000, MAT_URANIUM = 500, MAT_PLASMA = 500)
+	build_path = /obj/item/device/firing_pin
+	category = list("Firing Pins")
+
+/datum/design/pin_dna
+	name = "dna-keyed firing pin"
+	desc = "This is a DNA-locked firing pin which only authorizes one user. Attempt to fire once to DNA-link."
+	id = "pin_dna"
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 7, "illegal" = 4, "magnets" = 5, "engineering" = 6, "programming" = 5, "plasma" = 4)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL= 2000, MAT_SILVER = 1000, MAT_DIAMOND = 2000, MAT_URANIUM = 1000, MAT_GOLD = 500, MAT_PLASMA = 500)
+	build_path = /obj/item/device/firing_pin/dna
+	category = list("Firing Pins")
+
+/datum/design/pin_dredd
+	name = "dna-keyed dr3-dd firing pin"
+	desc = "This is a DNA-locked firing pin which only authorizes one user. Attempt to fire once to DNA-link. It has a small explosive charge on it."
+	id = "pin_dredd"
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 8, "illegal" = 4, "magnets" = 6, "engineering" = 6, "programming" = 6, "plasma" = 4)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL= 2000, MAT_SILVER = 2000, MAT_DIAMOND = 2000, MAT_URANIUM = 2000, MAT_GOLD = 500, MAT_PLASMA = 500)
+	build_path = /obj/item/device/firing_pin/dna/dredd
+	category = list("Firing Pins")
+
+/datum/design/pin_honk
+	name = "hilarious firing pin"
+	desc = "Advanced clowntech that can convert any firearm into a far more useful object."
+	id = "pin_honking"
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 7, "magnets" = 6, "engineering" = 6, "programming" = 5, "plasma" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL= 2000, MAT_SILVER = 1000, MAT_BANANIUM = 2000, MAT_URANIUM = 1000, MAT_GOLD = 500, MAT_PLASMA = 500)
+	build_path = /obj/item/device/firing_pin/clown/ultra
 	category = list("Firing Pins")
 
 /datum/design/pin_mindshield
@@ -38,7 +78,7 @@
 	id = "nuclear_gun"
 	req_tech = list("combat" = 5, "magnets" = 5, "powerstorage" = 5)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000, MAT_URANIUM = 3000, MAT_TITANIUM = 1000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000, MAT_URANIUM = 2000, MAT_TITANIUM = 1000)
 	build_path = /obj/item/weapon/gun/energy/gun/nuclear
 	category = list("Weapons")
 
@@ -66,7 +106,7 @@
 	name = "Decloner"
 	desc = "Your opponent will bubble into a messy pile of goop."
 	id = "decloner"
-	req_tech = list("combat" = 5, "materials" = 5, "biotech" = 6, "plasmatech" = 7)
+	req_tech = list("combat" = 5, "materials" = 5, "biotech" = 5, "plasmatech" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 5000,MAT_URANIUM = 10000)
 	reagents_list = list("mutagen" = 40)
@@ -161,9 +201,9 @@
 	name = "Xray Laser Gun"
 	desc = "Not quite as menacing as it sounds"
 	id = "xray"
-	req_tech = list("combat" = 7, "magnets" = 5, "biotech" = 5, "powerstorage" = 4)
+	req_tech = list("combat" = 6, "magnets" = 5, "biotech" = 5, "powerstorage" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 5000,MAT_URANIUM = 8000, MAT_METAL = 5000, MAT_TITANIUM = 2000)
+	materials = list(MAT_GOLD = 3000,MAT_URANIUM = 8000, MAT_METAL = 5000, MAT_TITANIUM = 2000)
 	build_path = /obj/item/weapon/gun/energy/xray
 	category = list("Weapons")
 
@@ -181,7 +221,7 @@
 	name = "Bluespace Wormhole Projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams."
 	id = "wormholeprojector"
-	req_tech = list("combat" = 5, "engineering" = 5, "bluespace" = 7, "plasmatech" = 6)
+	req_tech = list("combat" = 5, "engineering" = 5, "bluespace" = 6, "plasmatech" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 2000, MAT_METAL = 5000, MAT_DIAMOND = 3000)
 	build_path = /obj/item/weapon/gun/energy/wormhole_projector

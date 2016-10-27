@@ -50,7 +50,7 @@
 	name = "Bluespace Power Cell"
 	desc = "A power cell that holds 40000 units of energy."
 	id = "bluespace_cell"
-	req_tech = list("powerstorage" = 6, "materials" = 5, "engineering" = 5, "bluespace" = 5)
+	req_tech = list("powerstorage" = 6, "materials" = 5, "engineering" = 5, "bluespace" = 4)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MAT_METAL = 800, MAT_GOLD = 120, MAT_SILVER = 150, MAT_GLASS = 160, MAT_DIAMOND = 160, MAT_TITANIUM = 300)
 	construction_time=100
@@ -62,7 +62,7 @@
 	name = "Light Replacer"
 	desc = "A device to automatically replace lights. Refill with working lightbulbs."
 	id = "light_replacer"
-	req_tech = list("magnets" = 3, "engineering" = 4)
+	req_tech = list("magnets" = 3, "engineering" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 1500, MAT_SILVER = 150, MAT_GLASS = 3000)
 	build_path = /obj/item/device/lightreplacer
