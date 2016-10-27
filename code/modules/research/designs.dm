@@ -74,7 +74,7 @@ other types of metals and chemistry for reagents).
 	name = "Intellicard AI Transportation System"
 	desc = "Allows for the construction of an intellicard."
 	id = "intellicard"
-	req_tech = list("programming" = 3, "materials" = 3)
+	req_tech = list("programming" = 4, "materials" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 200)
 	build_path = /obj/item/device/aicard
@@ -152,7 +152,7 @@ other types of metals and chemistry for reagents).
 	name = "Mining Drill"
 	desc = "Yours is the drill that will pierce through the rock walls."
 	id = "drill"
-	req_tech = list("materials" = 2, "powerstorage" = 2, "engineering" = 3)
+	req_tech = list("materials" = 2, "powerstorage" = 3, "engineering" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 6000, MAT_GLASS = 1000) //expensive, but no need for miners.
 	build_path = /obj/item/weapon/pickaxe/drill
@@ -162,7 +162,7 @@ other types of metals and chemistry for reagents).
 	name = "Diamond-Tipped Mining Drill"
 	desc = "Yours is the drill that will pierce the heavens!"
 	id = "drill_diamond"
-	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5)
+	req_tech = list("materials" = 5, "powerstorage" = 5, "engineering" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 6000, MAT_GLASS = 1000, MAT_DIAMOND = 2000) //Yes, a whole diamond is needed.
 	build_path = /obj/item/weapon/pickaxe/drill/diamonddrill
@@ -172,7 +172,7 @@ other types of metals and chemistry for reagents).
 	name = "Plasma Cutter"
 	desc = "You could use it to cut limbs off of xenos! Or, you know, mine stuff."
 	id = "plasmacutter"
-	req_tech = list("materials" = 3, "plasmatech" = 3, "magnets" = 2)
+	req_tech = list("materials" = 2, "plasmatech" = 2, "engineering" = 2, "combat" = 1, "magnets" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 1500, MAT_GLASS = 500, MAT_PLASMA = 400)
 	build_path = /obj/item/weapon/gun/energy/plasmacutter
@@ -182,7 +182,7 @@ other types of metals and chemistry for reagents).
 	name = "Advanced Plasma Cutter"
 	desc = "It's an advanced plasma cutter, oh my god."
 	id = "plasmacutter_adv"
-	req_tech = list("materials" = 4, "plasmatech" = 4, "engineering" = 2, "combat" = 3, "magnets" = 3)
+	req_tech = list("materials" = 4, "plasmatech" = 3, "engineering" = 3, "combat" = 3, "magnets" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000, MAT_PLASMA = 2000, MAT_GOLD = 500)
 	build_path = /obj/item/weapon/gun/energy/plasmacutter/adv
@@ -192,7 +192,7 @@ other types of metals and chemistry for reagents).
 	name = "Sonic Jackhammer"
 	desc = "Essentially a handheld planet-cracker. Can drill through walls with ease as well."
 	id = "jackhammer"
-	req_tech = list("materials" = 7, "powerstorage" = 5, "engineering" = 6, "magnets" = 5)
+	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 6000, MAT_GLASS = 2000, MAT_SILVER = 2000, MAT_DIAMOND = 6000)
 	build_path = /obj/item/weapon/pickaxe/drill/jackhammer
@@ -262,7 +262,7 @@ other types of metals and chemistry for reagents).
 	name = "Kinetic Accelerator Mining AoE Mod"
 	desc = "A modification kit for Kinetic Accelerators which causes it to fire AoE blasts that destroy rock."
 	id = "hypermod"
-	req_tech = list("materials" = 7, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "combat" = 4)
+	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "combat" = 3)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
@@ -287,7 +287,7 @@ other types of metals and chemistry for reagents).
 	name = "Bag of Holding"
 	desc = "A backpack that opens into a localized pocket of bluespace."
 	id = "bag_holding"
-	req_tech = list("bluespace" = 7, "materials" = 5, "engineering" = 5, "plasmatech" = 6)
+	req_tech = list("bluespace" = 4, "materials" = 5, "engineering" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 3000, MAT_DIAMOND = 1500, MAT_URANIUM = 250)
 	build_path = /obj/item/weapon/storage/backpack/holding
@@ -297,7 +297,7 @@ other types of metals and chemistry for reagents).
 	name = "Artificial Bluespace Crystal"
 	desc = "A small blue crystal with mystical properties."
 	id = "bluespace_crystal"
-	req_tech = list("bluespace" = 3, "materials" = 6, "plasmatech" = 4)
+	req_tech = list("bluespace" = 4, "materials" = 6)
 	build_type = PROTOLATHE
 	materials = list(MAT_DIAMOND = 1500, MAT_PLASMA = 1500)
 	build_path = /obj/item/weapon/ore/bluespace_crystal/artificial
@@ -317,7 +317,7 @@ other types of metals and chemistry for reagents).
 	name = "Mining Satchel of Holding"
 	desc = "A mining satchel that can hold an infinite amount of ores."
 	id = "minerbag_holding"
-	req_tech = list("bluespace" = 4, "materials" = 3, "engineering" = 4)
+	req_tech = list("bluespace" = 4, "materials" = 3, "engineering" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 250, MAT_URANIUM = 500) //quite cheap, for more convenience
 	build_path = /obj/item/weapon/storage/bag/ore/holding
@@ -342,7 +342,7 @@ other types of metals and chemistry for reagents).
 	name = "Night Vision Health Scanner HUD"
 	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
 	id = "health_hud_night"
-	req_tech = list("biotech" = 4, "magnets" = 5, "plasmatech" = 4, "engineering" = 6)
+	req_tech = list("biotech" = 4, "magnets" = 5, "engineering" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_URANIUM = 1000, MAT_SILVER = 350)
 	build_path = /obj/item/clothing/glasses/hud/health/night
@@ -362,7 +362,7 @@ other types of metals and chemistry for reagents).
 	name = "Night Vision Security HUD"
 	desc = "A heads-up display which provides id data and vision in complete darkness."
 	id = "security_hud_night"
-	req_tech = list("combat" = 4, "magnets" = 5, "plasmatech" = 4, "engineering" = 6)
+	req_tech = list("combat" = 4, "magnets" = 5, "engineering" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_URANIUM = 1000, MAT_GOLD = 350)
 	build_path = /obj/item/clothing/glasses/hud/security/night
@@ -382,7 +382,7 @@ datum/design/diagnostic_hud_night
 	name = "Night Vision Diagnostic HUD"
 	desc = "Upgraded version of the diagnostic HUD designed to function during a power failure."
 	id = "dianostic_hud_night"
-	req_tech = list("magnets" = 5, "plasmatech" = 4, "engineering" = 6, "powerstorage" = 4)
+	req_tech = list("magnets" = 5, "engineering" = 5, "powerstorage" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_URANIUM = 1000, MAT_PLASMA = 300)
 	build_path = /obj/item/clothing/glasses/hud/diagnostic/night
@@ -410,7 +410,7 @@ datum/design/diagnostic_hud_night
 	name = "Welding Gas Mask"
 	desc = "A gas mask with built in welding goggles and face shield. Looks like a skull, clearly designed by a nerd."
 	id = "weldingmask"
-	req_tech = list("materials" = 2, "engineering" = 3)
+	req_tech = list("materials" = 2, "engineering" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/clothing/mask/gas/welding
@@ -429,7 +429,7 @@ datum/design/diagnostic_hud_night
 	name = "Air Horn"
 	desc = "Damn son, where'd you find this?"
 	id = "air_horn"
-	req_tech = list("materials" = 4, "engineering" = 4)
+	req_tech = list("materials" = 2, "engineering" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 4000, MAT_BANANIUM = 1000)
 	build_path = /obj/item/weapon/bikehorn/airhorn
@@ -469,7 +469,7 @@ datum/design/diagnostic_hud_night
 	name = "Night Vision Optical Meson Scanners"
 	desc = "Prototype meson scanners fitted with an extra sensor which amplifies the visible light spectrum and overlays it to the UHD display."
 	id = "nvgmesons"
-	req_tech = list("magnets" = 5, "plasmatech" = 5, "engineering" = 6)
+	req_tech = list("materials" = 4, "magnets" = 5, "plasmatech" = 4, "engineering" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_PLASMA = 350, MAT_URANIUM = 1000)
 	build_path = /obj/item/clothing/glasses/meson/night
@@ -479,7 +479,7 @@ datum/design/diagnostic_hud_night
 	name = "Night Vision Goggles"
 	desc = "Goggles that let you see through darkness unhindered."
 	id = "night_visision_goggles"
-	req_tech = list("materials" = 4, "magnets" = 5, "plasmatech" = 5, "engineering" = 5)
+	req_tech = list("materials" = 4, "magnets" = 5, "engineering" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_PLASMA = 350, MAT_URANIUM = 1000)
 	build_path = /obj/item/clothing/glasses/night
@@ -509,7 +509,7 @@ datum/design/diagnostic_hud_night
 	name = "Hand Drill"
 	desc = "A small electric hand drill with an interchangable screwdriver and bolt bit"
 	id = "handdrill"
-	req_tech = list("materials" = 4, "engineering" = 6)
+	req_tech = list("materials" = 4, "engineering" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3500, MAT_SILVER = 1500, MAT_TITANIUM = 2500)
 	build_path = /obj/item/weapon/screwdriver/power
@@ -542,7 +542,7 @@ datum/design/diagnostic_hud_night
 	name = "Advanced Mop"
 	desc = "An upgraded mop with a large internal capacity for holding water or other cleaning chemicals."
 	id = "advmop"
-	req_tech = list("materials" = 4, "engineering" = 3)
+	req_tech = list("materials" = 3, "engineering" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 2500, MAT_GLASS = 200)
 	build_path = /obj/item/weapon/mop/advanced
@@ -586,7 +586,7 @@ datum/design/diagnostic_hud_night
 	name = "Experimental Welding Tool"
 	desc = "An experimental welder capable of self-fuel generation."
 	id = "exwelder"
-	req_tech = list("materials" = 4, "engineering" = 5, "bluespace" = 3, "plasmatech" = 4)
+	req_tech = list("materials" = 5, "engineering" = 5, "bluespace" = 3, " " = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 1000, MAT_GLASS = 500, MAT_PLASMA = 1500, MAT_URANIUM = 200)
 	build_path = /obj/item/weapon/weldingtool/experimental
