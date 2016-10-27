@@ -253,7 +253,7 @@
 /obj/item/weapon/circuitboard/machine/chem_dispenser
 	name = "circuit board (Portable Chem Dispenser)"
 	build_path = /obj/machinery/chem_dispenser/constructable
-	origin_tech = "materials=4;programming=4;plasmatech=4;biotech=3"
+	origin_tech = "materials=4;programming=3;plasmatech=3;biotech=3;engineering=4"
 	req_components = list(
 							/obj/item/weapon/stock_parts/matter_bin = 2,
 							/obj/item/weapon/stock_parts/capacitor = 1,

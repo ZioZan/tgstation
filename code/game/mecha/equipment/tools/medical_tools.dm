@@ -259,7 +259,7 @@
 	var/mode = 0 //0 - fire syringe, 1 - analyze reagents.
 	range = MELEE|RANGED
 	equip_cooldown = 10
-	origin_tech = "materials=3;biotech=4;magnets=4"
+	origin_tech = "materials=3;biotech=4;magnets=4;programming=3"
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/New()
 	..()
