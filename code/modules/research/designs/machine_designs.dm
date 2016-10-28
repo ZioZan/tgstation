@@ -118,7 +118,7 @@
 	name = "Machine Design (Cryotube Board)"
 	desc = "The circuit board for a cryotube."
 	id = "cryotube"
-	req_tech = list("programming" = 5, "biotech" = 3, "engineering" = 4, "plasmatech" = 3)
+	req_tech = list("programming" = 4, "biotech" = 3, "engineering" = 4, "plasmatech" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/cryo_tube
 	category = list ("Medical Machinery")
 
@@ -126,7 +126,7 @@
 	name = "Machine Design (Portable Chem Dispenser Board)"
 	desc = "The circuit board for a portable chem dispenser."
 	id = "chem_dispenser"
-	req_tech = list("programming" = 5, "biotech" = 3, "materials" = 4, "plasmatech" = 3)
+	req_tech = list("programming" = 4, "biotech" = 3, "materials" = 4, "plasmatech" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/chem_dispenser
 	category = list ("Medical Machinery")
 
