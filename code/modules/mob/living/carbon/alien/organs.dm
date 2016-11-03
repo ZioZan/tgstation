@@ -30,7 +30,7 @@
 /obj/item/organ/alien/plasmavessel
 	name = "plasma vessel"
 	icon_state = "plasma"
-	origin_tech = "biotech=5;plasmatech=4"
+	origin_tech = "biotech=5;plasmatech=3"
 	w_class = 3
 	zone = "chest"
 	slot = "plasmavessel"
@@ -183,5 +183,5 @@
 	zone = "groin"
 	slot = "eggsac"
 	w_class = 4
-	origin_tech = "biotech=6"
+	origin_tech = "biotech=8"
 	alien_powers = list(/obj/effect/proc_holder/alien/lay_egg)

@@ -104,7 +104,7 @@
 	icon_state = "heart-on"
 	zone = "chest"
 	slot = "heart"
-	origin_tech = "biotech=5"
+	origin_tech = "biotech=3"
 	var/beating = 1
 	var/icon_base = "heart"
 	attack_verb = list("beat", "thumped")

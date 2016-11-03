@@ -24,7 +24,7 @@
 	name = "Computer Design (Security)"
 	desc = "Allows for the construction of circuit boards used to build security camera computers."
 	id = "seccamera"
-	req_tech = list("programming" = 2, "combat" = 2)
+	req_tech = list("programming" = 2, "combat" = 1)
 	build_path = /obj/item/weapon/circuitboard/computer/security
 	category = list("Computer Boards")
 
@@ -32,7 +32,7 @@
 	name = "Computer Design (AI Upload)"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
 	id = "aiupload"
-	req_tech = list("programming" = 5, "engineering" = 4)
+	req_tech = list("programming" = 4)
 	build_path = /obj/item/weapon/circuitboard/computer/aiupload
 	category = list("Computer Boards")
 
@@ -48,7 +48,7 @@
 	name = "Computer Design (Medical Records)"
 	desc = "Allows for the construction of circuit boards used to build a medical records console."
 	id = "med_data"
-	req_tech = list("programming" = 2, "biotech" = 2)
+	req_tech = list("programming" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/med_data
 	category = list("Computer Boards")
 
@@ -64,7 +64,7 @@
 	name = "Computer Design (PanD.E.M.I.C. 2200)"
 	desc = "Allows for the construction of circuit boards used to build a PanD.E.M.I.C. 2200 console."
 	id = "pandemic"
-	req_tech = list("programming" = 3, "biotech" = 3)
+	req_tech = list("programming" = 2, "biotech" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/pandemic
 	category = list("Computer Boards")
 
@@ -72,7 +72,7 @@
 	name = "Computer Design (DNA Machine)"
 	desc = "Allows for the construction of circuit boards used to build a new DNA scanning console."
 	id = "scan_console"
-	req_tech = list("programming" = 2, "biotech" = 2)
+	req_tech = list("programming" = 2, "biotech" = 3)
 	build_path = /obj/item/weapon/circuitboard/computer/scan_consolenew
 	category = list("Computer Boards")
 
@@ -88,7 +88,7 @@
 	name = "Computer Design (ID Console)"
 	desc = "Allows for the construction of circuit boards used to build an ID computer."
 	id = "idcardconsole"
-	req_tech = list("programming" = 3)
+	req_tech = list("programming" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/card
 	category = list("Computer Boards")
 
@@ -136,7 +136,7 @@
 	name = "Computer Design (Slot Machine)"
 	desc = "Allows for the construction of circuit boards used to build a new slot machine."
 	id = "slotmachine"
-	req_tech = list("programming" = 1)
+	req_tech = list("programming" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/slot_machine
 	category = list("Computer Boards")
 
@@ -176,7 +176,7 @@
 	name = "Computer Design (Mech Bay Power Control Console)"
 	desc = "Allows for the construction of circuit boards used to build a mech bay power control console."
 	id = "mechapower"
-	req_tech = list("programming" = 3, "powerstorage" = 3)
+	req_tech = list("programming" = 2, "powerstorage" = 3)
 	build_path = /obj/item/weapon/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")
 
@@ -216,7 +216,7 @@
 	name = "Computer Design (Telecommunications Monitoring Console)"
 	desc = "Allows for the construction of circuit boards used to build a telecommunications monitor."
 	id = "comm_monitor"
-	req_tech = list("programming" = 3, "magnets" = 3, "bluespace" = 2)
+	req_tech = list("programming" = 3, "bluespace" = 1)
 	build_path = /obj/item/weapon/circuitboard/computer/comm_monitor
 	category = list("Computer Boards")
 
@@ -240,7 +240,7 @@
 	name = "Computer Design (AI Integrity Restorer)"
 	desc = "Allows for the construction of circuit boards used to build an AI Integrity Restorer."
 	id = "aifixer"
-	req_tech = list("programming" = 4, "magnets" = 3)
+	req_tech = list("programming" = 3, "magnets" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/aifixer
 	category = list("Computer Boards")
 

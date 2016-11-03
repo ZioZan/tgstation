@@ -3,7 +3,7 @@
 	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
 	icon_state = "pistol"
 	w_class = 2
-	origin_tech = "combat=3;materials=2;syndicate=4"
+	origin_tech = "combat=2;materials=2;syndicate=2"
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = 1
 	burst_size = 1
@@ -50,7 +50,7 @@
 	desc = "The original russian version of a widely used Syndicate sidearm. Uses 9mm ammo."
 	icon_state = "aps"
 	w_class = 3
-	origin_tech = "combat=3;materials=2;syndicate=3"
+	origin_tech = "combat=2;materials=2;syndicate=2"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = 0
 	burst_size = 3

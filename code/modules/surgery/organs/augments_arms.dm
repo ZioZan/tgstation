@@ -155,7 +155,7 @@
 	name = "arm-mounted laser implant"
 	desc = "A variant of the arm cannon implant that fires lethal laser beams. The cannon emerges from the subject's arm and remains inside when not in use."
 	icon_state = "arm_laser"
-	origin_tech = "materials=4;combat=4;biotech=4;powerstorage=4;syndicate=3"
+	origin_tech = "materials=5;combat=5;biotech=5;powerstorage=4;syndicate=3"
 	holder = /obj/item/weapon/gun/energy/laser/mounted
 
 /obj/item/organ/cyberimp/arm/gun/laser/l
@@ -166,7 +166,7 @@
 	name = "arm-mounted taser implant"
 	desc = "A variant of the arm cannon implant that fires electrodes and disabler shots. The cannon emerges from the subject's arm and remains inside when not in use."
 	icon_state = "arm_taser"
-	origin_tech = "materials=5;combat=5;biotech=4;powerstorage=4"
+	origin_tech = "materials=5;combat=5;biotech=5;powerstorage=4"
 	holder = /obj/item/weapon/gun/energy/gun/advtaser/mounted
 
 /obj/item/organ/cyberimp/arm/gun/taser/l
@@ -176,7 +176,7 @@
 /obj/item/organ/cyberimp/arm/toolset
 	name = "integrated toolset implant"
 	desc = "A stripped-down version of engineering cyborg toolset, designed to be installed on subject's arm. Contains all neccessary tools."
-	origin_tech = "materials=3;engineering=4;biotech=3;powerstorage=4"
+	origin_tech = "materials=3;engineering=4;biotech=5;powerstorage=4"
 	contents = newlist(/obj/item/weapon/screwdriver/cyborg, /obj/item/weapon/wrench/cyborg, /obj/item/weapon/weldingtool/largetank/cyborg,
 		/obj/item/weapon/crowbar/cyborg, /obj/item/weapon/wirecutters/cyborg, /obj/item/device/multitool/cyborg)
 
@@ -194,7 +194,7 @@
 	name = "arm-mounted energy blade"
 	desc = "An illegal, and highly dangerous cybernetic implant that can project a deadly blade of concentrated enregy."
 	contents = newlist(/obj/item/weapon/melee/energy/blade/hardlight)
-	origin_tech = "materials=4;combat=5;biotech=3;powerstorage=2;syndicate=5"
+	origin_tech = "materials=4;combat=5;biotech=5;powerstorage=2;syndicate=5"
 
 /obj/item/organ/cyberimp/arm/medibeam
 	name = "integrated medical beamgun"

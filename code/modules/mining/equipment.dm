@@ -171,14 +171,14 @@
 	var/fieldlimit = 5
 	var/list/fields = list()
 	var/quick_burst_mod = 0.8
-	origin_tech = "magnets=3;engineering=3"
+	origin_tech = "magnets=2;combat=2"
 
 /obj/item/weapon/resonator/upgraded
 	name = "upgraded resonator"
 	desc = "An upgraded version of the resonator that can produce more fields at once."
 	icon_state = "resonator_u"
 	item_state = "resonator_u"
-	origin_tech = "materials=4;powerstorage=3;engineering=3;magnets=3"
+	origin_tech = "magnets=3;combat=3"
 	fieldlimit = 10
 	quick_burst_mod = 1
 
@@ -459,7 +459,7 @@
 	icon_state = "bottle19"
 	desc = "Inject certain types of monster organs with this stabilizer to preserve their healing powers indefinitely."
 	w_class = 1
-	origin_tech = "biotech=3"
+	origin_tech = "biotech=1"
 
 /obj/item/weapon/hivelordstabilizer/afterattack(obj/item/organ/M, mob/user)
 	var/obj/item/organ/hivelord_core/C = M

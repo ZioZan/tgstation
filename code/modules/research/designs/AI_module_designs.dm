@@ -6,7 +6,7 @@
 	name = "AI Design (AI Core)"
 	desc = "Allows for the construction of circuit boards used to build new AI cores."
 	id = "aicore"
-	req_tech = list("programming" = 3)
+	req_tech = list("programming" = 4, "biotech" = 3)
 	build_path = /obj/item/weapon/circuitboard/aicore
 	category = list("AI Modules")
 
@@ -98,7 +98,7 @@
 	desc = "Allows for the construction of a Asimov AI Core Module."
 	id = "asimov_module"
 	req_tech = list("programming" = 3, "materials" = 5)
-	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
+	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/aiModule/core/full/asimov
 	category = list("AI Modules")
 
@@ -116,7 +116,7 @@
 	name = "Core Module Design (T.Y.R.A.N.T.)"
 	desc = "Allows for the construction of a T.Y.R.A.N.T. AI Module."
 	id = "tyrant_module"
-	req_tech = list("programming" = 4, "syndicate" = 2, "materials" = 5)
+	req_tech = list("programming" = 4, "syndicate" = 2, "materials" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
 	build_path = /obj/item/weapon/aiModule/core/full/tyrant
 	category = list("AI Modules")

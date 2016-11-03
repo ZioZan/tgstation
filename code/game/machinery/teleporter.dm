@@ -261,7 +261,7 @@
 /obj/item/weapon/circuitboard/machine/teleporter_hub
 	name = "circuit board (Teleporter Hub)"
 	build_path = /obj/machinery/teleport/hub
-	origin_tech = "programming=3;engineering=4;bluespace=4;materials=4"
+	origin_tech = "programming=3;engineering=5;bluespace=5;materials=4"
 	req_components = list(
 							/obj/item/weapon/ore/bluespace_crystal = 3,
 							/obj/item/weapon/stock_parts/matter_bin = 1)
@@ -374,7 +374,7 @@
 /obj/item/weapon/circuitboard/machine/teleporter_station
 	name = "circuit board (Teleporter Station)"
 	build_path = /obj/machinery/teleport/station
-	origin_tech = "programming=4;engineering=4;bluespace=4;plasmatech=3"
+	origin_tech = "programming=4;engineering=4;bluespace=4"
 	req_components = list(
 							/obj/item/weapon/ore/bluespace_crystal = 2,
 							/obj/item/weapon/stock_parts/capacitor = 2,

@@ -140,7 +140,7 @@
 	force = 8
 	throwforce = 12//fuck git
 	materials = list()
-	origin_tech = "biotech=3;combat=2"
+	origin_tech = null
 	attack_verb = list("shanked", "shivved")
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 

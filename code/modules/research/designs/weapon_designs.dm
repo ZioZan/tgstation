@@ -16,9 +16,9 @@
 	name = "electronic firing pin"
 	desc = "A small authentication device, to be inserted into a firearm reciever to allow operation. NT safety regulations require all new designs to incorporate one."
 	id = "pin_standard"
-	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 6, "illegal" = 2, "magnets" = 5, "engineering" = 5, "programming" = 5, "plasma" = 3)
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 6, "magnets" = 5, "engineering" = 5, "programming" = 5, "plasma" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL= 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000, MAT_URANIUM = 500, MAT_PLASMA = 500)
+	materials = list(MAT_METAL = 2000, MAT_SILVER = 500, MAT_DIAMOND = 500, MAT_URANIUM = 500, MAT_PLASMA = 500)
 	build_path = /obj/item/device/firing_pin
 	category = list("Firing Pins")
 
@@ -36,7 +36,7 @@
 	name = "dna-keyed dr3-dd firing pin"
 	desc = "This is a DNA-locked firing pin which only authorizes one user. Attempt to fire once to DNA-link. It has a small explosive charge on it."
 	id = "pin_dredd"
-	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 8, "illegal" = 4, "magnets" = 6, "engineering" = 6, "programming" = 6, "plasma" = 4)
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 7, "illegal" = 4, "magnets" = 6, "engineering" = 6, "programming" = 6, "plasma" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL= 2000, MAT_SILVER = 2000, MAT_DIAMOND = 2000, MAT_URANIUM = 2000, MAT_GOLD = 500, MAT_PLASMA = 500)
 	build_path = /obj/item/device/firing_pin/dna/dredd
@@ -56,7 +56,7 @@
 	name = "mindshield firing pin"
 	desc = "This is a security firing pin which only authorizes users who are mindshield-implanted."
 	id = "pin_loyalty"
-	req_tech = list("combat" = 5, "materials" = 6)
+	req_tech = list("combat" = 5, "materials" = 6, "powerstorage" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 600, MAT_DIAMOND = 600, MAT_URANIUM = 200)
 	build_path = /obj/item/device/firing_pin/implant/mindshield
@@ -66,9 +66,9 @@
 	name = "Tesla Revolver"
 	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
 	id = "stunrevolver"
-	req_tech = list("combat" = 4, "materials" = 4, "powerstorage" = 5)
+	req_tech = list("combat" = 3, "materials" = 3, "powerstorage" = 5)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_SILVER = 10000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 4000, MAT_SILVER = 4000)
 	build_path = /obj/item/weapon/gun/energy/tesla_revolver
 	category = list("Weapons")
 
@@ -76,9 +76,9 @@
 	name = "Advanced Energy Gun"
 	desc = "An energy gun with an experimental miniaturized reactor."
 	id = "nuclear_gun"
-	req_tech = list("combat" = 5, "magnets" = 5, "powerstorage" = 5)
+	req_tech = list("combat" = 4, "materials" = 5, "powerstorage" = 3)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000, MAT_URANIUM = 2000, MAT_TITANIUM = 1000)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_URANIUM = 2000)
 	build_path = /obj/item/weapon/gun/energy/gun/nuclear
 	category = list("Weapons")
 
@@ -86,7 +86,7 @@
 	name = "Telescopic Riot Shield"
 	desc = "An advanced riot shield made of lightweight materials that collapses for easy storage."
 	id = "tele_shield"
-	req_tech = list("combat" = 4, "materials" = 3, "engineering" = 4)
+	req_tech = list("combat" = 4, "materials" = 3, "engineering" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 4000, MAT_GLASS = 4000, MAT_SILVER = 300, MAT_TITANIUM = 200)
 	build_path = /obj/item/weapon/shield/riot/tele
@@ -96,9 +96,9 @@
 	name = "Accelerator Laser Cannon"
 	desc = "A heavy duty laser cannon. It does more damage the farther away the target is."
 	id = "lasercannon"
-	req_tech = list("combat" = 5, "magnets" = 5, "powerstorage" = 3)
+	req_tech = list("combat" = 5, "magnets" = 3, "powerstorage" = 3)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 3000, MAT_DIAMOND = 3000)
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 2000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/weapon/gun/energy/lasercannon
 	category = list("Weapons")
 
@@ -106,9 +106,9 @@
 	name = "Decloner"
 	desc = "Your opponent will bubble into a messy pile of goop."
 	id = "decloner"
-	req_tech = list("combat" = 5, "materials" = 5, "biotech" = 5, "plasmatech" = 4)
+	req_tech = list("combat" = 6, "materials" = 7, "biotech" = 6, "powerstorage" = 6)
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 5000,MAT_URANIUM = 10000)
+	materials = list(MAT_GOLD = 5000,MAT_URANIUM = 6000)
 	reagents_list = list("mutagen" = 40)
 	build_path = /obj/item/weapon/gun/energy/decloner
 	category = list("Weapons")
@@ -117,7 +117,7 @@
 	name = "Rapid Syringe Gun"
 	desc = "A gun that fires many syringes."
 	id = "rapidsyringe"
-	req_tech = list("combat" = 2, "biotech" = 3)
+	req_tech = list("combat" = 3, "materials" = 3, "engineering" = 3, "biotech" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000)
 	build_path = /obj/item/weapon/gun/syringe/rapidsyringe
@@ -129,7 +129,7 @@
 	id = "temp_gun"
 	req_tech = list("combat" = 4, "materials" = 4, "powerstorage" = 3, "magnets" = 2)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 500, MAT_SILVER = 3000)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 500, MAT_SILVER = 1000)
 	build_path = /obj/item/weapon/gun/energy/temperature
 	category = list("Weapons")
 
@@ -137,7 +137,7 @@
 	name = "Floral Somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells. Harmless to other organic life."
 	id = "flora_gun"
-	req_tech = list("materials" = 2, "biotech" = 4)
+	req_tech = list("materials" = 2, "biotech" = 3, "powerstorage" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 2000, MAT_GLASS = 500)
 	reagents_list = list("radium" = 20)
@@ -148,7 +148,7 @@
 	name = "Large Grenade"
 	desc = "A grenade that affects a larger area and use larger containers."
 	id = "large_Grenade"
-	req_tech = list("combat" = 3, "engineering" = 3)
+	req_tech = list("combat" = 3, "materials" = 2)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000)
 	build_path = /obj/item/weapon/grenade/chem_grenade/large
@@ -158,7 +158,7 @@
 	name = "Pyro Grenade"
 	desc = "An advanced grenade that is able to self ignite its mixture."
 	id = "pyro_Grenade"
-	req_tech = list("combat" = 4, "engineering" = 4)
+	req_tech = list("combat" = 3, "materials" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 2000, MAT_PLASMA = 500)
 	build_path = /obj/item/weapon/grenade/chem_grenade/pyro
@@ -181,7 +181,7 @@
 	name = "Advanced Release Grenade"
 	desc = "An advanced grenade that can be detonated several times, best used with a repeating igniter."
 	id = "adv_Grenade"
-	req_tech = list("combat" = 3, "engineering" = 4)
+	req_tech = list("combat" = 3, "materials" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000, MAT_GLASS = 500)
 	build_path = /obj/item/weapon/grenade/chem_grenade/adv_release
@@ -191,9 +191,9 @@
 	name = "Xray Laser Gun"
 	desc = "Not quite as menacing as it sounds"
 	id = "xray"
-	req_tech = list("combat" = 6, "magnets" = 5, "biotech" = 5, "powerstorage" = 4)
+	req_tech = list("combat" = 6, "materials" = 5, "biotech" = 5, "powerstorage" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 3000,MAT_URANIUM = 8000, MAT_METAL = 5000, MAT_TITANIUM = 2000)
+	materials = list(MAT_GOLD = 3000,MAT_URANIUM = 4000, MAT_METAL = 5000)
 	build_path = /obj/item/weapon/gun/energy/xray
 	category = list("Weapons")
 
@@ -201,9 +201,9 @@
 	name = "Ion Carbine"
 	desc = "How to dismantle a cyborg : The gun."
 	id = "ioncarbine"
-	req_tech = list("combat" = 5, "magnets" = 4)
+	req_tech = list("combat" = 5, "materials" = 4, "magnets" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 6000, MAT_METAL = 8000, MAT_URANIUM = 2000)
+	materials = list(MAT_SILVER = 4000, MAT_METAL = 4000, MAT_URANIUM = 1000)
 	build_path = /obj/item/weapon/gun/energy/ionrifle/carbine
 	category = list("Weapons")
 
@@ -211,9 +211,9 @@
 	name = "Bluespace Wormhole Projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams."
 	id = "wormholeprojector"
-	req_tech = list("combat" = 5, "engineering" = 5, "bluespace" = 6, "plasmatech" = 4)
+	req_tech = list("combat" = 6, "materials" = 6, "bluespace" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 2000, MAT_METAL = 5000, MAT_DIAMOND = 3000)
+	materials = list(MAT_SILVER = 1000, MAT_METAL = 5000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/weapon/gun/energy/wormhole_projector
 	category = list("Weapons")
 
@@ -221,7 +221,7 @@
 	name = "Modular Receiver"
 	desc = "A prototype modular receiver and trigger assembly for a variety of firearms."
 	id = "reciever"
-	req_tech = list("combat" = 4, "materials" = 4)
+	req_tech = list("combat" = 5, "materials" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 6500, MAT_SILVER = 500)
 	build_path = /obj/item/weaponcrafting/reciever
@@ -304,7 +304,7 @@
 	name = "Energy Crossbow"
 	desc = "A reverse-engineered energy crossbow favored by syndicate infiltration teams and carp hunters."
 	id = "largecrossbow"
-	req_tech = list("combat" = 5, "engineering" = 3, "magnets" = 5, "syndicate" = 3)
+	req_tech = list("combat" = 5, "materials" = 5, "engineering" = 3, "biotech" = 4, "syndicate" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 5000, MAT_GLASS = 1500, MAT_URANIUM = 1500, MAT_SILVER = 1500)
 	build_path = /obj/item/weapon/gun/energy/kinetic_accelerator/crossbow/large

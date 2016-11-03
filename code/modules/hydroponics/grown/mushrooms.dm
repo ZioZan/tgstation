@@ -79,7 +79,6 @@
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.1, "nutriment" = 0, "amanitin" = 0.2)
 	rarity = 30
-	origin_tech = "biotech=5"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/angel
 	seed = /obj/item/seeds/angel
@@ -165,7 +164,6 @@
 	desc = "<I>Plumus Locomotus</I>: The beginning of the great walk."
 	icon_state = "walkingmushroom"
 	filling_color = "#9370DB"
-	origin_tech = "biotech=4;programming=5"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/walkingmushroom/attack_self(mob/user)
 	if(isspaceturf(user.loc))

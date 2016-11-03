@@ -54,6 +54,6 @@
 	name = "Machine Design (Subspace Broadcaster)"
 	desc = "Allows for the construction of Subspace Broadcasting equipment."
 	id = "s-broadcaster"
-	req_tech = list("programming" = 2, "engineering" = 2)
+	req_tech = list("programming" = 2, "engineering" = 2, "bluespace" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/telecomms/broadcaster
 	category = list("Subspace Telecomms")

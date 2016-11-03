@@ -255,7 +255,7 @@
 	icon_state = "bombcore"
 	item_state = "eshield0"
 	w_class = 3
-	origin_tech = "syndicate=5;combat=6"
+	origin_tech = "syndicate=6;combat=5"
 	resistance_flags = FLAMMABLE //Burnable (but the casing isn't)
 	var/adminlog = null
 
@@ -504,7 +504,7 @@
 	icon_state = "bigred"
 	item_state = "electronic"
 	w_class = 1
-	origin_tech = "syndicate=3"
+	origin_tech = "syndicate=2"
 	var/timer = 0
 	var/detonated =	0
 	var/existant =	0

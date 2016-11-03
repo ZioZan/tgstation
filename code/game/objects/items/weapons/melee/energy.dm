@@ -156,6 +156,7 @@
 	icon_state = "esaw_0"
 	icon_state_on = "esaw_1"
 	hitcost = 75 //Costs more than a standard cyborg esword
+	origin_tech = "materials=3;biotech=3;syndicate=3"
 	item_color = null
 	w_class = 3
 	sharpness = IS_SHARP

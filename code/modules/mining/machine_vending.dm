@@ -73,7 +73,7 @@
 /obj/item/weapon/circuitboard/machine/mining_equipment_vendor
 	name = "circuit board (Mining Equipment Vendor)"
 	build_path = /obj/machinery/mineral/equipment_vendor
-	origin_tech = "programming=1;engineering=3"
+	origin_tech = "programming=1;engineering=2"
 	req_components = list(
 							/obj/item/weapon/stock_parts/console_screen = 1,
 							/obj/item/weapon/stock_parts/matter_bin = 3)

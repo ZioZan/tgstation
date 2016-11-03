@@ -51,7 +51,7 @@
 	name = "cryptographic sequencer"
 	icon_state = "emag"
 	item_state = "card-id"
-	origin_tech = "magnets=2;syndicate=2"
+	origin_tech = "magnets=2;syndicate=4"
 	flags = NOBLUDGEON
 	var/prox_check = TRUE //If the emag requires you to be in range
 
@@ -59,7 +59,7 @@
 	name = "bluespace cryptographic sequencer"
 	desc = "It's a blue card with a magnetic strip attached to some circuitry. It appears to have some sort of transmitter attached to it."
 	color = rgb(40, 130, 255)
-	origin_tech = "bluespace=4;magnets=4;syndicate=5"
+	origin_tech = "bluespace=4;magnets=4;syndicate=6"
 	prox_check = FALSE
 
 /obj/item/weapon/card/emag/attack()
@@ -132,7 +132,7 @@ update_label("John Doe", "Clowny")
 /obj/item/weapon/card/id/syndicate
 	name = "agent card"
 	access = list(access_maint_tunnels, access_syndicate)
-	origin_tech = "syndicate=1"
+	origin_tech = "syndicate=3"
 
 /obj/item/weapon/card/id/syndicate/New()
 	..()

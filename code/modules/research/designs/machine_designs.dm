@@ -14,7 +14,7 @@
 	name = "Machine Design (Automated Announcement System Board)"
 	desc = "The circuit board for an automated announcement system."
 	id = "automated_announcement"
-	req_tech = list("programming" = 3, "bluespace" = 3, "magnets" = 2)
+	req_tech = list("programming" = 3, "bluespace" = 2)
 	build_path = /obj/item/weapon/circuitboard/machine/announcement_system
 	category = list("Subspace Telecomms")
 
@@ -30,7 +30,7 @@
 	name = "Machine Design (Emitter Board)"
 	desc = "The circuit board for an emitter."
 	id = "emitter"
-	req_tech = list("programming" = 3, "powerstorage" = 5, "engineering" = 4)
+	req_tech = list("programming" = 4, "powerstorage" = 5, "engineering" = 5)
 	build_path = /obj/item/weapon/circuitboard/machine/emitter
 	category = list ("Engineering Machinery")
 
@@ -62,7 +62,7 @@
 	name = "Machine Design (Space Heater Board)"
 	desc = "The circuit board for a space heater."
 	id = "space_heater"
-	req_tech = list("programming" = 2, "engineering" = 2, "plasmatech" = 2)
+	req_tech = list("programming" = 2, "engineering" = 2)
 	build_path = /obj/item/weapon/circuitboard/machine/space_heater
 	category = list ("Engineering Machinery")
 
@@ -86,7 +86,7 @@
 	name = "Machine Design (Telepad Board)"
 	desc = "The circuit board for a telescience telepad."
 	id = "telepad"
-	req_tech = list("programming" = 4, "bluespace" = 5, "materials" = 3, "engineering" = 4)
+	req_tech = list("programming" = 4, "bluespace" = 4, "materials" = 3, "engineering" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/telesci_pad
 	category = list ("Teleportation Machinery")
 
@@ -94,7 +94,7 @@
 	name = "Computer Design (Teleporter Console)"
 	desc = "Allows for the construction of circuit boards used to build a teleporter control console."
 	id = "teleconsole"
-	req_tech = list("programming" = 3, "bluespace" = 3, "materials" = 4)
+	req_tech = list("programming" = 3, "bluespace" = 2)
 	build_path = /obj/item/weapon/circuitboard/computer/teleporter
 	category = list("Teleportation Machinery")
 
@@ -110,7 +110,7 @@
 	name = "Machine Design (Sleeper Board)"
 	desc = "The circuit board for a sleeper."
 	id = "sleeper"
-	req_tech = list("programming" = 3, "biotech" = 2, "engineering" = 3, "materials" = 3)
+	req_tech = list("programming" = 3, "biotech" = 2, "materials" = 3, "engineering" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/sleeper
 	category = list ("Medical Machinery")
 
@@ -118,7 +118,7 @@
 	name = "Machine Design (Cryotube Board)"
 	desc = "The circuit board for a cryotube."
 	id = "cryotube"
-	req_tech = list("programming" = 4, "biotech" = 3, "engineering" = 4, "plasmatech" = 3)
+	req_tech = list("programming" = 4, "biotech" = 3, "engineering" = 4)
 	build_path = /obj/item/weapon/circuitboard/machine/cryo_tube
 	category = list ("Medical Machinery")
 
@@ -126,7 +126,7 @@
 	name = "Machine Design (Portable Chem Dispenser Board)"
 	desc = "The circuit board for a portable chem dispenser."
 	id = "chem_dispenser"
-	req_tech = list("programming" = 4, "biotech" = 3, "materials" = 4, "plasmatech" = 3)
+	req_tech = list("programming" = 4, "biotech" = 3, "engineering" = 4, "materials" = 4, "plasmatech" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/chem_dispenser
 	category = list ("Medical Machinery")
 
@@ -134,7 +134,7 @@
 	name = "Machine Design (Chem Master Board)"
 	desc = "The circuit board for a Chem Master 3000."
 	id = "chem_master"
-	req_tech = list("biotech" = 3, "materials" = 3, "programming" = 2)
+	req_tech = list("biotech" = 1, "materials" = 2, "programming" = 2)
 	build_path = /obj/item/weapon/circuitboard/machine/chem_master
 	category = list ("Medical Machinery")
 
@@ -142,7 +142,7 @@
 	name = "Machine Design (Chemical Heater Board)"
 	desc = "The circuit board for a chemical heater."
 	id = "chem_heater"
-	req_tech = list("engineering" = 2, "biotech" = 2, "programming" = 2)
+	req_tech = list("engineering" = 2, "materials" = 2)
 	build_path = /obj/item/weapon/circuitboard/machine/chem_heater
 	category = list ("Medical Machinery")
 
@@ -150,7 +150,7 @@
 	name = "Computer Design (Cloning Machine Console)"
 	desc = "Allows for the construction of circuit boards used to build a new Cloning Machine console."
 	id = "clonecontrol"
-	req_tech = list("programming" = 4, "biotech" = 3)
+	req_tech = list("programming" = 3, "biotech" = 3)
 	build_path = /obj/item/weapon/circuitboard/computer/cloning
 	category = list("Medical Machinery")
 
@@ -158,7 +158,7 @@
 	name = "Machine Design (Clone Pod)"
 	desc = "Allows for the construction of circuit boards used to build a Cloning Pod."
 	id = "clonepod"
-	req_tech = list("programming" = 4, "biotech" = 3)
+	req_tech = list("programming" = 3, "biotech" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/clonepod
 	category = list("Medical Machinery")
 
@@ -166,7 +166,7 @@
 	name = "Machine Design (Cloning Scanner)"
 	desc = "Allows for the construction of circuit boards used to build a Cloning Scanner."
 	id = "clonescanner"
-	req_tech = list("programming" = 4, "biotech" = 3)
+	req_tech = list("programming" = 3, "biotech" = 3)
 	build_path = /obj/item/weapon/circuitboard/machine/clonescanner
 	category = list("Medical Machinery")
 
@@ -182,7 +182,7 @@
 	name = "Machine Design (Hydroponics Tray Board)"
 	desc = "The circuit board for a hydroponics tray."
 	id = "hydro_tray"
-	req_tech = list("biotech" = 2)
+	req_tech = list("programming" = 1, "biotech" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/hydroponics
 	category = list ("Hydroponics Machinery")
 
@@ -254,7 +254,7 @@
 	name = "Machine Design (Mechbay Recharger Board)"
 	desc = "The circuit board for a Mechbay Recharger."
 	id = "mech_recharger"
-	req_tech = list("programming" = 3, "powerstorage" = 4, "engineering" = 3)
+	req_tech = list("programming" = 3, "powerstorage" = 4, "engineering" = 4)
 	build_path = /obj/item/weapon/circuitboard/machine/mech_recharger
 	category = list("Research Machinery")
 
@@ -262,7 +262,7 @@
 	name = "Machine Design (Microwave Board)"
 	desc = "The circuit board for a microwave."
 	id = "microwave"
-	req_tech = list("programming" = 2, "magnets" = 2)
+	req_tech = list("programming" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/microwave
 	category = list ("Misc. Machinery")
 
@@ -270,7 +270,7 @@
 	name = "Machine Design (Gibber Board)"
 	desc = "The circuit board for a gibber."
 	id = "gibber"
-	req_tech = list("programming" = 2, "engineering" = 2)
+	req_tech = list("programming" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/gibber
 	category = list ("Misc. Machinery")
 
@@ -310,7 +310,7 @@
 	name = "Machine Design (Recycler Board)"
 	desc = "The circuit board for a recycler."
 	id = "recycler"
-	req_tech = list("programming" = 2, "engineering" = 2)
+	req_tech = list("programming" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/recycler
 	category = list ("Misc. Machinery")
 
@@ -334,7 +334,7 @@
 	name = "Machine Design (Weapon Recharger Board)"
 	desc = "The circuit board for a Weapon Recharger."
 	id = "recharger"
-	req_tech = list("powerstorage" = 4, "engineering" = 3, "materials" = 4)
+	req_tech = list("powerstorage" = 3, "engineering" = 3, "materials" = 4)
 	materials = list(MAT_GLASS = 1000, MAT_GOLD = 100)
 	build_path = /obj/item/weapon/circuitboard/machine/recharger
 	category = list("Misc. Machinery")
@@ -351,7 +351,7 @@
 	name = "Machine Design (Ore Redemption Board)"
 	desc = "The circuit board for an Ore Redemption machine."
 	id = "ore_redemption"
-	req_tech = list("programming" = 2, "engineering" = 2, "plasmatech" = 3)
+	req_tech = list("programming" = 1, "engineering" = 2)
 	build_path = /obj/item/weapon/circuitboard/machine/ore_redemption
 	category = list ("Misc. Machinery")
 
@@ -367,7 +367,7 @@
 	name = "Machine Design (Tesla Coil Board)"
 	desc = "The circuit board for a tesla coil."
 	id = "tesla_coil"
-	req_tech = list("programming" = 3, "powerstorage" = 3, "magnets" = 3)
+	req_tech = list("programming" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/tesla_coil
 	category = list ("Misc. Machinery")
 
@@ -375,7 +375,7 @@
 	name = "Machine Design (Grounding Rod Board)"
 	desc = "The circuit board for a grounding rod."
 	id = "grounding_rod"
-	req_tech = list("programming" = 3, "powerstorage" = 3, "magnets" = 3, "plasmatech" = 2)
+	req_tech = list("programming" = 1)
 	build_path = /obj/item/weapon/circuitboard/machine/grounding_rod
 	category = list ("Misc. Machinery")
 

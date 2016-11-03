@@ -34,7 +34,7 @@
 	desc = "Equipment for medical exosuits. A mounted sleeper that stabilizes patients and can inject reagents in the exosuit's reserves."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper"
-	origin_tech = "engineering=3;biotech=3;plasmatech=2"
+	origin_tech = "programming=2;biotech=3"
 	energy_drain = 20
 	range = MELEE
 	equip_cooldown = 20

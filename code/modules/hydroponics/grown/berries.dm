@@ -86,7 +86,6 @@
 	desc = "Nutritious!"
 	icon_state = "glowberrypile"
 	filling_color = "#7CFC00"
-	origin_tech = "plasmatech=6"
 
 // Cherries
 /obj/item/seeds/cherry

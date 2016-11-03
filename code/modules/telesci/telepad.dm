@@ -18,7 +18,7 @@
 /obj/item/weapon/circuitboard/machine/telesci_pad
 	name = "circuit board (Telepad)"
 	build_path = /obj/machinery/telepad
-	origin_tech = "programming=4;engineering=3;plasmatech=4;bluespace=4"
+	origin_tech = "programming=4;engineering=3;materials=3;bluespace=4"
 	req_components = list(
 							/obj/item/weapon/ore/bluespace_crystal = 2,
 							/obj/item/weapon/stock_parts/capacitor = 1,

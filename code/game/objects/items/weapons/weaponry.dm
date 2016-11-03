@@ -309,7 +309,7 @@ var/highlander_claymores = 0
 	throw_speed = 3
 	throw_range = 6
 	materials = list(MAT_METAL=12000)
-	origin_tech = "engineering=3;combat=2"
+	origin_tech = "materials=1;combat=1"
 	hitsound = 'sound/weapons/Genhit.ogg'
 	attack_verb = list("stubbed", "poked")
 	resistance_flags = FIRE_PROOF
@@ -460,7 +460,7 @@ var/highlander_claymores = 0
 	name = "liz o' nine tails"
 	desc = "A whip fashioned from the severed tails of lizards."
 	icon_state = "tailwhip"
-	origin_tech = "engineering=3;combat=3;biotech=3"
+	origin_tech = "combat=1;biotech=1"
 	needs_permit = 0
 
 /obj/item/weapon/melee/skateboard
