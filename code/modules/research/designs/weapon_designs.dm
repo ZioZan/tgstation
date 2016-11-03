@@ -78,8 +78,8 @@
 	id = "nuclear_gun"
 	req_tech = list("combat" = 4, "materials" = 5, "powerstorage" = 3)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_URANIUM = 2000)
-	build_path = /obj/item/weapon/gun/energy/gun/nuclear
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000, MAT_URANIUM = 200)
+	build_path = /obj/item/weapon/gun/energy/e_gun/nuclear
 	category = list("Weapons")
 
 /datum/design/tele_shield

@@ -91,7 +91,7 @@
 	name = "gatfruit"
 	desc = "It smells like burning."
 	icon_state = "gatfruit"
-	trash = /obj/item/weapon/gun/projectile/revolver
+	trash = /obj/item/weapon/gun/ballistic/revolver
 	bitesize_mod = 2
 
 //Cherry Bombs
