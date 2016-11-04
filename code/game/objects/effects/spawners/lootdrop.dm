@@ -24,7 +24,7 @@
 
 	loot = list(
 				/obj/item/weapon/gun/ballistic/automatic/pistol = 8,
-				/obj/item/weapon/gun/ballistic/shotgun/automatic/combat = 5,
+				/obj/item/weapon/gun/ballistic/shotgun/automatic/combat = 100,
 				/obj/item/weapon/gun/ballistic/revolver/mateba,
 				/obj/item/weapon/gun/ballistic/automatic/pistol/deagle
 				)

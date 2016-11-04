@@ -262,6 +262,39 @@
 	build_path = /obj/item/organ/cyberimp/chest/thrusters
 	category = list("Misc", "Medical Designs")
 
+/datum/design/cyberimp_surgery
+	name = "surgical toolset implant"
+	desc = "A set of surgical tools hidden behind a concealed panel on the user's arm"
+	id = "ci-thrusters"
+	req_tech = list("materials" = 6, "biotech" = 5, "magnets" = 6, "engineering" = 6)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 80
+	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	build_path = /obj/item/organ/cyberimp/arm/surgery
+	category = list("Misc", "Medical Designs")
+
+/datum/design/cyberimp_combat
+	name = "combat cybernetics implant"
+	desc = "A powerful cybernetic implant that contains combat modules built into the user's arm."
+	id = "ci-combat"
+	req_tech = list("materials" = 7, "biotech" = 6, "magnets" = 7, "engineering" = 6, "combat" = 6, "powerstorage" = 8, "bluespace" = 6, "programming"=6, "syndicate" = 6)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 120
+	materials = list(MAT_METAL = 6000, MAT_GLASS = 4000, MAT_SILVER = 4000, MAT_GOLD = 4000, MAT_URANIUM = 4000, MAT_DIAMOND = 4000, MAT_TITANIUM = 4000)
+	build_path = /obj/item/organ/cyberimp/arm/combat
+	category = list("Misc", "Medical Designs")
+
+/datum/design/autoimplanter
+	name = "Autoimplanter"
+	desc = "A device that automatically injects a cyber-implant into the user without the hassle of extensive surgery."
+	id = "autoimplanter"
+	req_tech = list("materials" = 7, "biotech" = 6, "magnets" = 7, "engineering" = 6, "combat" = 6, "powerstorage" = 8, "bluespace" = 6, "programming"=6, "syndicate" = 4)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 100
+	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_URANIUM = 2000, MAT_DIAMOND = 2000, MAT_TITANIUM = 2000)
+	build_path = /obj/item/device/autoimplanter
+	category = list("Misc", "Medical Designs")
+
 
 /////////////////////////////////////////
 ////////////Regular Implants/////////////
@@ -295,6 +328,16 @@
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 500, MAT_BANANIUM = 500)
 	build_path = /obj/item/weapon/implantcase/sad_trombone
+	category = list("Medical Designs")
+
+/datum/design/implant_mindshield
+	name = "Mindshield Implant Case"
+	desc = "Protects against brainwashing."
+	id = "implant_mindshield"
+	req_tech = list("materials" = 4, "biotech" = 4, "programming" = 4)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 800, MAT_GLASS = 500)
+	build_path = /obj/item/weapon/implant/mindshield
 	category = list("Medical Designs")
 
 /datum/design/implant_freedom
