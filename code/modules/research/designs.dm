@@ -293,16 +293,6 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/weapon/storage/backpack/holding
 	category = list("Bluespace Designs")
 
-/datum/design/belt_holding
-	name = "Belt of Holding"
-	desc = "A belt that opens into a localized pocket of bluespace. Now with safety mesures."
-	id = "belt_of_holding"
-	req_tech = list("bluespace" = 4, "materials" = 5, "engineering" = 5)
-	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 2000, MAT_DIAMOND = 1000, MAT_URANIUM = 200)
-	build_path = /obj/item/weapon/storage/belt/bluespace
-	category = list("Bluespace Designs")
-
 /datum/design/bluespace_crystal
 	name = "Artificial Bluespace Crystal"
 	desc = "A small blue crystal with mystical properties."

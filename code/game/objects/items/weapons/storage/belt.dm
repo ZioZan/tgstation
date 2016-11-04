@@ -484,20 +484,3 @@
 	..()
 	new /obj/item/weapon/melee/sabre(src)
 	update_icon()
-
-
-/obj/item/weapon/storage/belt/bluespace
-	name = "Belt of Holding"
-	desc = "A belt that opens into a localized pocket of Blue Space."
-	icon_state = "belt_of_holding"
-	item_state = "belt_of_holding"
-	origin_tech = "bluespace=4"
-	materials = list(MAT_GOLD=500)
-	w_class = 4
-	max_w_class = 4
-	max_combined_w_class = 56
-	storage_slots = 14
-	cant_hold = list(
-		/obj/item/weapon/storage/belt/bluespace,
-		/obj/item/weapon/storage/backpack/holding
-		)
