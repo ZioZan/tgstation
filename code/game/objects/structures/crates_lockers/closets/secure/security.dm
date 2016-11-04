@@ -23,12 +23,14 @@
 	new /obj/item/weapon/storage/box/silver_ids(src)
 	new /obj/item/device/radio/headset/heads/captain/alt(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
-	new /obj/item/clothing/glasses/sunglasses/gar/supergar(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/clothing/gloves/color/captain(src)
 	new /obj/item/weapon/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/weapon/storage/belt/sabre(src)
 	new /obj/item/weapon/gun/energy/e_gun(src)
 	new /obj/item/weapon/door_remote/captain(src)
+	new /obj/item/weapon/storage/belt/utility/full(src)
 
 /obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
@@ -52,6 +54,7 @@
 	new /obj/item/weapon/gun/energy/e_gun(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/weapon/door_remote/civillian(src)
+	new /obj/item/weapon/storage/belt/utility/full(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
