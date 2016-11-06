@@ -303,14 +303,24 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/weapon/storage/belt/bluespace
 	category = list("Bluespace Designs")
 
-/datum/design/bluespace_crystal
-	name = "Artificial Bluespace Crystal"
-	desc = "A small blue crystal with mystical properties."
-	id = "bluespace_crystal"
+/datum/design/art_bluespace_crystal
+	name = "Artificial bluespace Crystal"
+	desc = "A small blue crystal with mystical properties. Has small impurities."
+	id = "art_bluespace_crystal"
 	req_tech = list("bluespace" = 4, "materials" = 6)
 	build_type = PROTOLATHE
 	materials = list(MAT_DIAMOND = 1500, MAT_PLASMA = 1500)
 	build_path = /obj/item/weapon/ore/bluespace_crystal/artificial
+	category = list("Bluespace Designs")
+
+/datum/design/bluespace_crystal
+	name = "Bluespace Crystal"
+	desc = "A small blue crystal with mystical properties."
+	id = "bluespace_crystal"
+	req_tech = list("bluespace" = 6, "materials" = 7, "engineering" = 6, "magnets" = 7, "powerstorage" = 7)
+	build_type = PROTOLATHE
+	materials = list(MAT_GOLD = 4000,MAT_DIAMOND = 4000, MAT_PLASMA = 4000, MAT_URANIUM = 4000)
+	build_path = /obj/item/weapon/ore/bluespace_crystal
 	category = list("Bluespace Designs")
 
 /datum/design/telesci_gps
