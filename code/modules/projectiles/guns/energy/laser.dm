@@ -65,12 +65,26 @@
 	pin = /obj/item/device/firing_pin/implant/mindshield
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/disabler, /obj/item/ammo_casing/energy/electrode)
 
-///Laser Cannon
+///Laser Cannons
 
 /obj/item/weapon/gun/energy/lasercannon
-	name = "accelerator laser cannon"
-	desc = "An advanced laser cannon that does more damage the farther away the target is."
+	name = "Laser cannon"
+	desc = "With the L.A.S.E.R. cannon, the lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
 	icon_state = "lasercannon"
+	item_state = "laser"
+	w_class = 4
+	force = 10
+	flags =  CONDUCT
+	slot_flags = SLOT_BACK
+	origin_tech = "combat=4;materials=3;powerstorage=3"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/heavy)
+	pin = null
+	ammo_x_offset = 3
+
+/obj/item/weapon/gun/energy/accellasercannon
+	name = "Accelerated laser cannon"
+	desc = "An accelerated laser cannon that does more damage the farther away the target is."
+	icon_state = "accellasercannon"
 	item_state = "laser"
 	w_class = 4
 	force = 10

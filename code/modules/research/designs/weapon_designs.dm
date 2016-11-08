@@ -63,9 +63,19 @@
 	category = list("Firing Pins")
 
 /datum/design/stunrevolver
-	name = "Tesla Revolver"
+	name = "Stun revolver"
 	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
 	id = "stunrevolver"
+	req_tech = list("combat" = 3, "materials" = 3, "powerstorage" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 8000)
+	build_path = /obj/item/weapon/gun/energy/stunrevolver
+	category = list("Weapons")
+
+/datum/design/teslarevolver
+	name = "Tesla Revolver"
+	desc = "An experimental gun based on an experimental engine, it's about as likely to kill it's operator as it is the target."
+	id = "teslarevolver"
 	req_tech = list("combat" = 3, "materials" = 3, "powerstorage" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 10000, MAT_GLASS = 4000, MAT_SILVER = 4000)
@@ -93,13 +103,23 @@
 	category = list("Weapons")
 
 /datum/design/lasercannon
-	name = "Accelerator Laser Cannon"
-	desc = "A heavy duty laser cannon. It does more damage the farther away the target is."
+	name = "Laser Cannon"
+	desc = "With the L.A.S.E.R. cannon, the lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
 	id = "lasercannon"
 	req_tech = list("combat" = 5, "magnets" = 3, "powerstorage" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 2000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/weapon/gun/energy/lasercannon
+	category = list("Weapons")
+
+/datum/design/accellasercannon
+	name = "Accelerator Laser Cannon"
+	desc = "A heavy duty laser cannon. It does more damage the farther away the target is."
+	id = "accellasercannon"
+	req_tech = list("combat" = 5, "magnets" = 3, "powerstorage" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 2000, MAT_DIAMOND = 2000)
+	build_path = /obj/item/weapon/gun/energy/accellasercannon
 	category = list("Weapons")
 
 /datum/design/decloner
