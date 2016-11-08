@@ -268,6 +268,25 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 
+/datum/design/lazarusinjector
+	name = "Lazarus injector"
+	desc = "An injector with a cocktail of nanomachines and chemicals, this device can seemingly raise animals from the dead."
+	id = "lazarusinjector"
+	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "biotech" = 4)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 2000)
+	build_path = /obj/item/weapon/lazarus_injector
+	category = list("Mining Designs")
+
+/datum/design/jetpack_upgrade
+	name = "Jetpack upgrade"
+	desc = "Upgrades hardsuits with jetpack"
+	id = "jetpack_upgrade"
+	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "engineering" = 5)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_URANIUM = 2000)
+	build_path = /obj/item/weapon/tank/jetpack/suit
+	category = list("Mining Designs")
 
 /////////////////////////////////////////
 //////////////Blue Space/////////////////
