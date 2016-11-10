@@ -12,7 +12,7 @@
 	can_flashlight = 1
 	flight_x_offset = 15
 	flight_y_offset = 9
-	var/overheat_time = 12
+	var/overheat_time = 16
 	var/holds_charge = FALSE
 	var/unique_frequency = FALSE // modified by KA modkits
 	var/overheat = FALSE
@@ -272,7 +272,7 @@
 	name = "range increase"
 	desc = "Increases the range of a kinetic accelerator when installed."
 	modifier = 1
-	cost = 24 //so you can fit four plus a tracer cosmetic
+	cost = 19 //so you can fit five plus a tracer cosmetic
 
 /obj/item/borg/upgrade/modkit/range/modify_projectile(obj/item/projectile/kinetic/K)
 	K.range += modifier
@@ -292,7 +292,8 @@
 /obj/item/borg/upgrade/modkit/cooldown
 	name = "cooldown decrease"
 	desc = "Decreases the cooldown of a kinetic accelerator."
-	modifier = 2.5
+	cost = 19 //so you can fit five plus a tracer cosmetic
+	modifier = 3
 
 /obj/item/borg/upgrade/modkit/cooldown/install(obj/item/weapon/gun/energy/kinetic_accelerator/KA, mob/user)
 	if(..())

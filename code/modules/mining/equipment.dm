@@ -495,7 +495,7 @@
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
 	sharpness = IS_SHARP
 	var/charged = 1
-	var/charge_time = 12
+	var/charge_time = 10
 	var/atom/mark = null
 	var/marked_image = null
 
@@ -505,7 +505,7 @@
 	damage = 0 //We're just here to mark people. This is still a melee weapon.
 	damage_type = BRUTE
 	flag = "bomb"
-	range = 6
+	range = 7
 	var/obj/item/weapon/twohanded/required/mining_hammer/hammer_synced =  null
 
 /obj/item/projectile/destabilizer/on_hit(atom/target, blocked = 0)

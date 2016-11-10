@@ -118,6 +118,8 @@
 	name = "diamond-tipped pickaxe"
 	icon_state = "dpickaxe"
 	item_state = "dpickaxe"
+	force = 15
+	throwforce = 10
 	digspeed = 14
 	origin_tech = "materials=4;engineering=3"
 	desc = "A pickaxe with a diamond pick head. Extremely robust at cracking rock walls and digging up dirt."
@@ -128,6 +130,8 @@
 	icon_state = "handdrill"
 	item_state = "jackhammer"
 	slot_flags = SLOT_BELT
+	force = 15
+	throwforce = 10
 	digspeed = 25 //available from roundstart, faster than a pickaxe.
 	digsound = list('sound/weapons/drill.ogg')
 	hitsound = 'sound/weapons/drill.ogg'
@@ -142,6 +146,8 @@
 /obj/item/weapon/pickaxe/drill/diamonddrill
 	name = "diamond-tipped mining drill"
 	icon_state = "diamonddrill"
+	force = 20
+	throwforce = 5
 	digspeed = 7
 	origin_tech = "materials=6;powerstorage=4;engineering=5"
 	desc = "Yours is the drill that will pierce the heavens!"
@@ -155,6 +161,8 @@
 	name = "sonic jackhammer"
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
+	force = 25
+	throwforce = 5
 	digspeed = 5 //the epitome of powertools. extremely fast mining, laughs at puny walls
 	origin_tech = "materials=6;powerstorage=3;engineering=3"
 	digsound = list('sound/weapons/sonic_jackhammer.ogg')

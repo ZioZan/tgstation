@@ -259,13 +259,23 @@ other types of metals and chemistry for reagents).
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 
 /datum/design/hyperaccelerator
-	name = "Kinetic Accelerator Mining AoE Mod"
+	name = "Kinetic Accelerator Mining AoE Rock Blast Mod"
 	desc = "A modification kit for Kinetic Accelerators which causes it to fire AoE blasts that destroy rock."
 	id = "hypermod"
-	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "combat" = 3)
+	req_tech = list("materials" = 7, "powerstorage" = 8, "engineering" = 6, "magnets" = 7, "combat" = 6, "plasmatech" = 5)
+	build_type = PROTOLATHE | MECHFAB
+	materials = list(MAT_METAL = 16000, MAT_GLASS = 4000, MAT_SILVER = 8000, MAT_GOLD = 8000, MAT_URANIUM = 8000, MAT_DIAMOND = 8000)
+	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
+	category = list("Mining Designs", "Cyborg Upgrade Modules")
+
+/datum/design/acceleratoraoedamage
+	name = "Kinetic Accelerator Mining AoE Damage Mod"
+	desc = "A modification kit for Kinetic Accelerators which causes the kinetic accelerator to damage mobs in an AoE."
+	id = "aoedamagemod"
+	req_tech = list("materials" = 5, "powerstorage" = 4, "engineering" = 4, "magnets" = 4, "combat" = 3)
 	build_type = PROTOLATHE | MECHFAB
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_DIAMOND = 2000)
-	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
+	build_path = /obj/item/borg/upgrade/modkit/aoe/mobs
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 
 /datum/design/lazarusinjector
