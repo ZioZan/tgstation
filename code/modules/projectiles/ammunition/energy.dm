@@ -98,6 +98,17 @@
 	projectile_type = /obj/item/projectile/energy/floramut
 	select_name = "mutation"
 
+/obj/item/ammo_casing/energy/advflora
+	fire_sound = 'sound/effects/stealthoff.ogg'
+
+/obj/item/ammo_casing/energy/advflora/potency
+	projectile_type = /obj/item/projectile/energy/advflorapot
+	select_name = "potency"
+
+/obj/item/ammo_casing/energy/advflora/mutsp
+	projectile_type = /obj/item/projectile/energy/advfloramut
+	select_name = "advanced mutation"
+
 /obj/item/ammo_casing/energy/temp
 	projectile_type = /obj/item/projectile/temp
 	select_name = "freeze"

@@ -111,6 +111,17 @@
 			adjust_yield(1 * rating)
 		else if(prob(1/(yield * yield) * 100))//This formula gives you diminishing returns based on yield. 100% with 1 yield, decreasing to 25%, 11%, 6, 4, 2...
 			adjust_yield(1 * rating)
+
+	else if(istype(Proj, /obj/item/projectile/energy/advflorapot))
+		var/rating = 1
+		if(istype(loc, /obj/machinery/hydroponics))
+			var/obj/machinery/hydroponics/H = loc
+			rating = H.rating
+
+		if(potency == 0)//Oh god don't divide by zero you'll doom us all.
+			adjust_potency(20 * rating)
+		else if(prob(2/(potency * potency / 100) * 100))//This formula gives you diminishing returns based on yield. About 100% with 15 potency, decreasing to 50%, 25%, 11, 6, 2...
+			adjust_potency(20 * rating)
 	else
 		return ..()
 

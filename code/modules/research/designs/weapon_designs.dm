@@ -22,36 +22,6 @@
 	build_path = /obj/item/device/firing_pin
 	category = list("Firing Pins")
 
-/datum/design/pin_dna
-	name = "dna-keyed firing pin"
-	desc = "This is a DNA-locked firing pin which only authorizes one user. Attempt to fire once to DNA-link."
-	id = "pin_dna"
-	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 7, "illegal" = 4, "magnets" = 5, "engineering" = 6, "programming" = 5, "plasma" = 4)
-	build_type = PROTOLATHE
-	materials = list(MAT_METAL= 2000, MAT_SILVER = 1000, MAT_DIAMOND = 2000, MAT_URANIUM = 1000, MAT_GOLD = 500, MAT_PLASMA = 500)
-	build_path = /obj/item/device/firing_pin/dna
-	category = list("Firing Pins")
-
-/datum/design/pin_dredd
-	name = "dna-keyed dr3-dd firing pin"
-	desc = "This is a DNA-locked firing pin which only authorizes one user. Attempt to fire once to DNA-link. It has a small explosive charge on it."
-	id = "pin_dredd"
-	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 7, "illegal" = 4, "magnets" = 6, "engineering" = 6, "programming" = 6, "plasma" = 4)
-	build_type = PROTOLATHE
-	materials = list(MAT_METAL= 2000, MAT_SILVER = 2000, MAT_DIAMOND = 2000, MAT_URANIUM = 2000, MAT_GOLD = 500, MAT_PLASMA = 500)
-	build_path = /obj/item/device/firing_pin/dna/dredd
-	category = list("Firing Pins")
-
-/datum/design/pin_honk
-	name = "hilarious firing pin"
-	desc = "Advanced clowntech that can convert any firearm into a far more useful object."
-	id = "pin_honking"
-	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 7, "magnets" = 6, "engineering" = 6, "programming" = 5, "plasma" = 3)
-	build_type = PROTOLATHE
-	materials = list(MAT_METAL= 2000, MAT_SILVER = 1000, MAT_BANANIUM = 2000, MAT_URANIUM = 1000, MAT_GOLD = 500, MAT_PLASMA = 500)
-	build_path = /obj/item/device/firing_pin/clown/ultra
-	category = list("Firing Pins")
-
 /datum/design/pin_mindshield
 	name = "mindshield firing pin"
 	desc = "This is a security firing pin which only authorizes users who are mindshield-implanted."
@@ -162,6 +132,17 @@
 	materials = list(MAT_METAL = 2000, MAT_GLASS = 500)
 	reagents_list = list("radium" = 20)
 	build_path = /obj/item/weapon/gun/energy/floragun
+	category = list("Weapons")
+
+/datum/design/advflora_gun
+	name = "Advanced Floral Somatoray"
+	desc = "An improved version of floral somatoray, gives stronger mutations."
+	id = "adv_flora_gun"
+	req_tech = list("combat" = 6, "materials" = 7, "biotech" = 6, "powerstorage" = 8)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 4000, MAT_GOLD = 4000, MAT_URANIUM = 4000, MAT_DIAMOND = 2000)
+	reagents_list = list("radium" = 20)
+	build_path = /obj/item/weapon/gun/energy/advfloragun
 	category = list("Weapons")
 
 /datum/design/large_grenade

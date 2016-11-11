@@ -54,6 +54,17 @@
 	ammo_x_offset = 1
 	selfcharge = 1
 
+/obj/item/weapon/gun/energy/advfloragun
+	name = "Advanced floral somatoray"
+	desc = "An improved version of floral somatoray, gives stronger mutations."
+	icon_state = "advflora"
+	item_state = "gun"
+	ammo_type = list(/obj/item/ammo_casing/energy/advflora/potency, /obj/item/ammo_casing/energy/advflora/mutsp)
+	origin_tech = "materials=6;biotech=4;powerstorage=4"
+	modifystate = 1
+	ammo_x_offset = 1
+	selfcharge = 1
+
 /obj/item/weapon/gun/energy/meteorgun
 	name = "meteor gun"
 	desc = "For the love of god, make sure you're aiming this the right way!"

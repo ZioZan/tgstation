@@ -109,7 +109,9 @@
 		return ..()
 	if(istype(Proj ,/obj/item/projectile/energy/floramut))
 		mutate()
-	else if(istype(Proj ,/obj/item/projectile/energy/florayield))
+	else if(istype(Proj ,/obj/item/projectile/energy/advfloramut))
+		mutatespecie()
+	else if(istype(Proj ,/obj/item/projectile/energy/florayield) || istype(Proj ,/obj/item/projectile/energy/advflorapot))
 		return myseed.bullet_act(Proj)
 	else
 		return ..()

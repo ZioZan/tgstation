@@ -104,6 +104,7 @@
 			C.updateappearance()
 			C.domutcheck()
 
+
 /obj/item/projectile/energy/florayield
 	name = "beta somatoray"
 	icon_state = "energy2"
@@ -111,6 +112,34 @@
 	damage_type = TOX
 	nodamage = 1
 	flag = "energy"
+
+/obj/item/projectile/energy/advfloramut
+	name = "omega somatoray"
+	icon_state = "energy"
+	damage = 0
+	damage_type = TOX
+	nodamage = 1
+	flag = "energy"
+
+/obj/item/projectile/energy/advfloramut/on_hit(atom/target, blocked = 0)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		if(C.dna.species.id == "pod")
+			C.randmuti()
+			C.randmut()
+			C.updateappearance()
+			C.domutcheck()
+
+
+/obj/item/projectile/energy/advflorapot
+	name = "gamma somatoray"
+	icon_state = "energy2"
+	damage = 0
+	damage_type = TOX
+	nodamage = 1
+	flag = "energy"
+
 
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
