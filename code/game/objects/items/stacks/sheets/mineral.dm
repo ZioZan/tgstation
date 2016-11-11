@@ -102,6 +102,9 @@ var/global/list/datum/stack_recipe/diamond_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+/obj/item/stack/sheet/mineral/diamond/fifty
+	amount = 50
+
 /*
  * Uranium
  */
@@ -126,6 +129,8 @@ var/global/list/datum/stack_recipe/uranium_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+/obj/item/stack/sheet/mineral/uranium/fifty
+	amount = 50
 /*
  * Plasma
  */
@@ -164,6 +169,9 @@ var/global/list/datum/stack_recipe/plasma_recipes = list ( \
 	atmos_spawn_air("plasma=[amount*10];TEMP=1000")
 	qdel(src)
 
+/obj/item/stack/sheet/mineral/plasma/fifty
+	amount = 50
+
 /*
  * Gold
  */
@@ -192,6 +200,9 @@ var/global/list/datum/stack_recipe/gold_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+/obj/item/stack/sheet/mineral/gold/fifty
+	amount = 50
+
 /*
  * Silver
  */
@@ -219,6 +230,10 @@ var/global/list/datum/stack_recipe/silver_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+
+/obj/item/stack/sheet/mineral/silver/fifty
+	amount = 50
+
 /*
  * Clown
  */
@@ -240,6 +255,9 @@ var/global/list/datum/stack_recipe/clown_recipes = list ( \
 	pixel_x = rand(0,4)-4
 	pixel_y = rand(0,4)-4
 	..()
+
+/obj/item/stack/sheet/mineral/bananium/fifty
+	amount = 50
 
 /*
  * Titanium
@@ -267,6 +285,8 @@ var/global/list/datum/stack_recipe/titanium_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+/obj/item/stack/sheet/mineral/titanium/fifty
+	amount = 50
 
 /*
  * Plastitanium
@@ -294,6 +314,8 @@ var/global/list/datum/stack_recipe/plastitanium_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+/obj/item/stack/sheet/mineral/plastitanium/fifty
+	amount = 50
 
 /*
  * Snow
@@ -319,6 +341,9 @@ var/global/list/datum/stack_recipe/snow_recipes = list ( \
 	pixel_y = rand(0,4)-4
 	..()
 
+/obj/item/stack/sheet/mineral/snow/fifty
+	amount = 50
+
 /****************************** Others ****************************/
 
 /*
@@ -331,6 +356,9 @@ var/global/list/datum/stack_recipe/snow_recipes = list ( \
 	origin_tech = "materials=6"
 	materials = list(MAT_URANIUM=3000)
 
+/obj/item/stack/sheet/mineral/enruranium/fifty
+	amount = 50
+
 /*
  * Adamantine
  */
@@ -340,6 +368,8 @@ var/global/list/datum/stack_recipe/snow_recipes = list ( \
 	singular_name = "adamantine sheet"
 	origin_tech = "materials=4"
 
+/obj/item/stack/sheet/mineral/adamantine/fifty
+	amount = 50
 /*
  * Mythril
  */
@@ -348,6 +378,9 @@ var/global/list/datum/stack_recipe/snow_recipes = list ( \
 	icon_state = "sheet-mythril"
 	singular_name = "mythril sheet"
 	origin_tech = "materials=4"
+
+/obj/item/stack/sheet/mineral/mythril/fifty
+	amount = 50
 
 /*
  * Alien Alloy
@@ -359,6 +392,9 @@ var/global/list/datum/stack_recipe/snow_recipes = list ( \
 	singular_name = "alien alloy sheet"
 	origin_tech = "materials=6;abductor=1"
 	sheettype = "abductor"
+
+/obj/item/stack/sheet/mineral/abductor/fifty
+	amount = 50
 
 var/global/list/datum/stack_recipe/abductor_recipes = list ( \
 /*	new/datum/stack_recipe("alien chair", /obj/structure/chair, one_per_turf = 1, on_floor = 1), \ */
