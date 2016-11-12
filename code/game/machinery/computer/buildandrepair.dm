@@ -172,7 +172,10 @@
 	name = "circuit board (Security Cameras)"
 	build_path = /obj/machinery/computer/security
 	origin_tech = "programming=1;combat=1"
-
+/obj/item/weapon/circuitboard/advanced_security
+	name = "circuit board (Advanced security cameras)"
+	build_path = /obj/machinery/computer/camera_advanced
+	origin_tech = "programming=5;engineering=4"
 /obj/item/weapon/circuitboard/computer/aiupload
 	name = "circuit board (AI Upload)"
 	build_path = /obj/machinery/computer/upload/ai

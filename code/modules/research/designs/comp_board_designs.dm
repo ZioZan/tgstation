@@ -236,6 +236,15 @@
 	build_path = /obj/item/weapon/circuitboard/computer/message_monitor
 	category = list("Computer Boards")
 
+/datum/design/board/camera_advanced
+	name = "Computer Design (Advanced camera console)"
+	desc = "Used to access the various cameras on the station."
+	id = "camera_advanced"
+	req_tech = list("programming" = 6, "combat" = 6, "magnets" = 7, "engineering" = 6)
+	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
+	build_path = /obj/item/weapon/circuitboard/advanced_security
+	category = list("Computer Boards")
+
 /datum/design/board/aifixer
 	name = "Computer Design (AI Integrity Restorer)"
 	desc = "Allows for the construction of circuit boards used to build an AI Integrity Restorer."

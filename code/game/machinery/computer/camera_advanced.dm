@@ -1,5 +1,5 @@
 /obj/machinery/computer/camera_advanced
-	name = "advanced camera console"
+	name = "Advanced camera console"
 	desc = "Used to access the various cameras on the station."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
@@ -8,6 +8,7 @@
 	var/list/networks = list("SS13")
 	var/datum/action/innate/camera_off/off_action = new
 	var/datum/action/innate/camera_jump/jump_action = new
+	circuit = /obj/item/weapon/circuitboard/advanced_security
 
 /obj/machinery/computer/camera_advanced/proc/CreateEye()
 	eyeobj = new()
