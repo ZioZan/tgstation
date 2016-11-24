@@ -12,7 +12,7 @@
 	var/processing = 0
 	var/obj/screen/movable/action_button/button = null
 	var/button_icon = 'icons/mob/actions.dmi'
-	var/background_icon_state = "bg_default"
+	var/background_icon_state = ACTION_BUTTON_DEFAULT_BACKGROUND
 	var/buttontooltipstyle = ""
 
 	var/icon_icon = 'icons/mob/actions.dmi'
@@ -84,8 +84,13 @@
 	if(button)
 		button.name = name
 		button.desc = desc
-		button.icon = button_icon
-		button.icon_state = background_icon_state
+		if(owner && owner.hud_used && background_icon_state == ACTION_BUTTON_DEFAULT_BACKGROUND)
+			var/list/settings = owner.hud_used.get_action_buttons_icons()
+			button.icon = settings["bg_icon"]
+			button.icon_state = settings["bg_state"]
+		else
+			button.icon = button_icon
+			button.icon_state = background_icon_state
 
 		ApplyIcon(button)
 
@@ -128,7 +133,7 @@
 		return 0
 	if(target)
 		var/obj/item/I = target
-		I.ui_action_click(owner, src.type)
+		I.ui_action_click(owner, src)
 	return 1
 
 /datum/action/item_action/ApplyIcon(obj/screen/movable/action_button/current_button)
@@ -253,13 +258,10 @@
 	desc = "Allows you to communicate with other Servants."
 	button_icon_state = "hierophant_slab"
 
-/datum/action/item_action/clock/quickbind_one
+/datum/action/item_action/clock/quickbind
 	name = "Quickbind"
 	desc = "If you're seeing this, file a bug report."
-
-/datum/action/item_action/clock/quickbind_two
-	name = "Quickbind"
-	desc = "If you're seeing this, file a bug report."
+	var/scripture_index = 0 //the index of the scripture we're associated with
 
 /datum/action/item_action/toggle_helmet_flashlight
 	name = "Toggle Helmet Flashlight"
