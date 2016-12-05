@@ -5,7 +5,7 @@
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bodybag_folded"
 	var/unfoldedbag_path = /obj/structure/closet/body_bag
-	w_class = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/bodybag/attack_self(mob/user)
 	deploy_bodybag(user, user.loc)
@@ -40,5 +40,5 @@
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bluebodybag_folded"
 	unfoldedbag_path = /obj/structure/closet/body_bag/bluespace
-	w_class = 2
+	w_class = WEIGHT_CLASS_SMALL
 

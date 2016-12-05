@@ -129,7 +129,7 @@
 			if(prob(15))
 				H.rad_act(rand(30,80))
 				H.Weaken(5)
-				H.visible_message("<span class='warning'>[H] writhes in pain as \his vacuoles boil.</span>", "<span class='userdanger'>You writhe in pain as your vacuoles boil!</span>", "<span class='italics'>You hear the crunching of leaves.</span>")
+				H.visible_message("<span class='warning'>[H] writhes in pain as [H.p_their()] vacuoles boil.</span>", "<span class='userdanger'>You writhe in pain as your vacuoles boil!</span>", "<span class='italics'>You hear the crunching of leaves.</span>")
 				if(prob(80))
 					H.randmutb()
 				else
@@ -867,7 +867,7 @@
 
 /datum/species/golem/bluespace/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style = M.martial_art)
 	..()
-	if(world.time > last_teleport + teleport_cooldown && M != H &&  M.a_intent != "help")
+	if(world.time > last_teleport + teleport_cooldown && M != H &&  M.a_intent != INTENT_HELP)
 		reactive_teleport(H)
 
 /datum/species/golem/bluespace/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
@@ -908,7 +908,7 @@
 	var/mob/living/carbon/human/H = owner
 	H.visible_message("<span class='warning'>[H] starts vibrating!</span>", "<span class='danger'>You start charging your bluespace core...</span>")
 	playsound(get_turf(H), 'sound/weapons/flash.ogg', 25, 1)
-	addtimer(src, "teleport", 15)
+	addtimer(src, "teleport", 15, TIMER_NORMAL, H)
 
 /datum/action/innate/unstable_teleport/proc/teleport(mob/living/carbon/human/H)
 	H.visible_message("<span class='warning'>[H] disappears in a shower of sparks!</span>", "<span class='danger'>You teleport!</span>")
@@ -945,7 +945,7 @@
 
 /datum/species/golem/bananium/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style = M.martial_art)
 	..()
-	if(world.time > last_banana + banana_cooldown && M != H &&  M.a_intent != "help")
+	if(world.time > last_banana + banana_cooldown && M != H &&  M.a_intent != INTENT_HELP)
 		new/obj/item/weapon/grown/bananapeel/specialpeel(get_turf(H))
 		last_banana = world.time
 
@@ -1064,7 +1064,7 @@
 
 /datum/species/zombie/infectious/spec_life(mob/living/carbon/C)
 	. = ..()
-	C.a_intent = "harm" // THE SUFFERING MUST FLOW
+	C.a_intent = INTENT_HARM // THE SUFFERING MUST FLOW
 	if(C.InCritical())
 		C.death()
 		// Zombies only move around when not in crit, they instantly

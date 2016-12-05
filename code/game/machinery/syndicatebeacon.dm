@@ -99,8 +99,9 @@
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "beacon"
 	desc = "A label on it reads: <i>Warning: Activating this device will send a special beacon to your location</i>."
+
 	origin_tech = "bluespace=4;syndicate=7"
-	w_class = 2
+	w_class = WEIGHT_CLASS_SMALL
 	var/droptype = /obj/machinery/power/singularity_beacon/syndicate
 
 

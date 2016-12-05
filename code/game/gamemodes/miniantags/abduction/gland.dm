@@ -119,7 +119,7 @@
 
 /obj/item/organ/gland/ventcrawling/activate()
 	owner << "<span class='notice'>You feel very stretchy.</span>"
-	owner.ventcrawler = 2
+	owner.ventcrawler = VENTCRAWLER_ALWAYS
 	return
 
 

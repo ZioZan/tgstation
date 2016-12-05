@@ -5,7 +5,7 @@
 	icon_state = "firing_pin"
 	item_state = "pen"
 	flags = CONDUCT
-	w_class = 1
+	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("poked")
 	var/emagged = 0
 	var/fail_message = "<span class='warning'>INVALID USER.</span>"
