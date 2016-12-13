@@ -6,7 +6,7 @@
 	icon_state = "rock"
 	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
-	canSmoothWith = list (/turf/closed)
+	canSmoothWith
 	baseturf = /turf/open/floor/plating/asteroid/airless
 	initial_gas_mix = "TEMP=2.7"
 	opacity = 1
@@ -25,6 +25,8 @@
 	var/defer_change = 0
 
 /turf/closed/mineral/New()
+	if (!canSmoothWith)
+		canSmoothWith = list(/turf/closed)
 	pixel_y = -4
 	pixel_x = -4
 	icon = smooth_icon
@@ -133,16 +135,20 @@
 	T.ChangeTurf(type)
 
 /turf/closed/mineral/random
-	var/mineralSpawnChanceList = list(
-		/turf/closed/mineral/uranium = 15, /turf/closed/mineral/diamond = 10, /turf/closed/mineral/gold = 25,
-		/turf/closed/mineral/silver = 25, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 50, /turf/closed/mineral/titanium = 20,
-		/turf/closed/mineral/gibtonite = 5, /turf/open/floor/plating/asteroid/airless/cave = 1, /turf/closed/mineral/bscrystal = 5)
+	var/mineralSpawnChanceList
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 13
+	var/display_icon_state = "rock"
 
 /turf/closed/mineral/random/New()
+	if (!mineralSpawnChanceList)
+		mineralSpawnChanceList = list(
+			/turf/closed/mineral/uranium = 15, /turf/closed/mineral/diamond = 10, /turf/closed/mineral/gold = 10,
+			/turf/closed/mineral/silver = 25, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 50, /turf/closed/mineral/titanium = 20,
+			/turf/closed/mineral/gibtonite = 5, /turf/open/floor/plating/asteroid/airless/cave = 1, /turf/closed/mineral/bscrystal = 5)
+	if (display_icon_state)
+		icon_state = display_icon_state
 	..()
-
 	if (prob(mineralChance))
 		var/path = pickweight(mineralSpawnChanceList)
 		var/turf/T = ChangeTurf(path,FALSE,TRUE)
@@ -164,10 +170,6 @@
 		/turf/closed/mineral/uranium = 35, /turf/closed/mineral/diamond = 30, /turf/closed/mineral/gold = 45, /turf/closed/mineral/titanium = 45,
 		/turf/closed/mineral/silver = 50, /turf/closed/mineral/plasma = 50, /turf/closed/mineral/bscrystal = 20)
 
-/turf/closed/mineral/random/high_chance/New()
-	icon_state = "rock"
-	..()
-
 /turf/closed/mineral/random/high_chance/volcanic
 	environment_type = "basalt"
 	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
@@ -188,10 +190,6 @@
 		/turf/closed/mineral/silver = 25, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 50,
 		/turf/closed/mineral/gibtonite = 5, /turf/closed/mineral/bscrystal = 5)
 
-/turf/closed/mineral/random/low_chance/New()
-	icon_state = "rock"
-	..()
-
 
 /turf/closed/mineral/random/volcanic
 	environment_type = "basalt"
@@ -206,15 +204,13 @@
 		/turf/closed/mineral/silver/volcanic = 25, /turf/closed/mineral/plasma/volcanic = 30, /turf/closed/mineral/iron/volcanic = 50,
 		/turf/closed/mineral/gibtonite/volcanic = 5, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic =5)
 
+
 /turf/closed/mineral/random/labormineral
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/iron = 100, /turf/closed/mineral/uranium = 1, /turf/closed/mineral/diamond = 1,
 		/turf/closed/mineral/gold = 1, /turf/closed/mineral/silver = 1, /turf/closed/mineral/plasma = 1)
 	icon_state = "rock_labor"
 
-/turf/closed/mineral/random/labormineral/New()
-	icon_state = "rock"
-	..()
 
 /turf/closed/mineral/random/labormineral/volcanic
 	environment_type = "basalt"
