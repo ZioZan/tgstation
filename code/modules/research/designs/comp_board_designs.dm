@@ -28,6 +28,15 @@
 	build_path = /obj/item/weapon/circuitboard/computer/security
 	category = list("Computer Boards")
 
+/datum/design/camera_advanced
+	name = "Computer Design (Advanced security cameras)"
+	desc = "Allows for the construction of circuit boards used to build advanced security camera console."
+	id = "camera_advanced"
+	req_tech = list("programming" = 6, "engineering" = 6, "magnets" = 7)
+	materials = list(MAT_GLASS = 1000, "sacid" = 20, MAT_DIAMOND = 100)
+	build_path = /obj/item/weapon/circuitboard/computer/advanced_security
+	category = list("Computer Boards")	
+	
 /datum/design/board/aiupload
 	name = "Computer Design (AI Upload)"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
