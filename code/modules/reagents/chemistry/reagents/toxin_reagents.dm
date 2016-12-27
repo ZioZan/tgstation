@@ -51,6 +51,7 @@
 /datum/reagent/toxin/plasma
 	name = "Plasma"
 	id = "plasma"
+	can_synth = 0
 	description = "Plasma in its liquid form."
 	color = "#8228A0"
 	toxpwr = 3
@@ -84,6 +85,7 @@
 /datum/reagent/toxin/lexorin
 	name = "Lexorin"
 	id = "lexorin"
+	can_synth = 2
 	description = "A powerful poison used to stop respiration."
 	color = "#7DC3A0"
 	toxpwr = 0
@@ -125,6 +127,7 @@
 /datum/reagent/toxin/minttoxin
 	name = "Mint Toxin"
 	id = "minttoxin"
+	can_synth = 0
 	description = "Useful for dealing with undesirable customers."
 	color = "#CF3600" // rgb: 207, 54, 0
 	toxpwr = 0
@@ -144,6 +147,7 @@
 /datum/reagent/toxin/zombiepowder
 	name = "Zombie Powder"
 	id = "zombiepowder"
+	can_synth = 2
 	description = "A strong neurotoxin that puts the subject into a death-like state."
 	reagent_state = SOLID
 	color = "#669900" // rgb: 102, 153, 0
@@ -165,6 +169,7 @@
 /datum/reagent/toxin/mindbreaker
 	name = "Mindbreaker Toxin"
 	id = "mindbreaker"
+	can_synth = 2
 	description = "A powerful hallucinogen. Not a thing to be messed with."
 	color = "#B31008" // rgb: 139, 166, 233
 	toxpwr = 0
@@ -222,6 +227,7 @@
 /datum/reagent/toxin/spore
 	name = "Spore Toxin"
 	id = "spore"
+	can_synth = 2
 	description = "A natural toxin produced by blob spores that inhibits vision when ingested."
 	color = "#9ACD32"
 	toxpwr = 1
@@ -235,6 +241,7 @@
 /datum/reagent/toxin/spore_burning
 	name = "Burning Spore Toxin"
 	id = "spore_burning"
+	can_synth = 2
 	description = "A natural toxin produced by blob spores that induces combustion in its victim."
 	color = "#9ACD32"
 	toxpwr = 0.5
@@ -342,6 +349,7 @@
 	name = "Polonium"
 	id = "polonium"
 	description = "An extremely radioactive material in liquid form. Ingestion results in fatal irradiation."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#787878"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
@@ -354,6 +362,7 @@
 /datum/reagent/toxin/histamine
 	name = "Histamine"
 	id = "histamine"
+	can_synth = 2
 	description = "Histamine's effects become more dangerous depending on the dosage amount. They range from mildly annoying to incredibly lethal."
 	reagent_state = LIQUID
 	color = "#FA6464"
@@ -443,6 +452,7 @@
 	name = "Cyanide"
 	id = "cyanide"
 	description = "An infamous poison known for its use in assassination. Causes small amounts of toxin damage with a small chance of oxygen damage or a stun."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#00B4FF"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
@@ -502,6 +512,7 @@
 	name = "Initropidril"
 	id = "initropidril"
 	description = "A powerful poison with insidious effects. It can cause stuns, lethal breathing failure, and cardiac arrest."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#7F10C0"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -536,6 +547,7 @@
 	name = "Pancuronium"
 	id = "pancuronium"
 	description = "An undetectable toxin that swiftly incapacitates its victim. May also cause breathing failure."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#195096"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
@@ -569,6 +581,7 @@
 	name = "Sulfonal"
 	id = "sulfonal"
 	description = "A stealthy poison that deals minor toxin damage and eventually puts the target to sleep."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#7DC3A0"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
@@ -583,6 +596,7 @@
 	name = "Amanitin"
 	id = "amanitin"
 	description = "A very powerful delayed toxin. Upon full metabolization, a massive amount of toxin damage will be dealt depending on how long it has been in the victim's bloodstream."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#FFFFFF"
 	toxpwr = 0
@@ -599,6 +613,7 @@
 	name = "Lipolicide"
 	id = "lipolicide"
 	description = "A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. More deadly to those without nutriment in their body."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#F0FFF0"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -615,6 +630,7 @@
 	name = "Coniine"
 	id = "coniine"
 	description = "Coniine metabolizes extremely slowly, but deals high amounts of toxin damage and stops breathing."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#7DC3A0"
 	metabolization_rate = 0.06 * REAGENTS_METABOLISM
@@ -628,6 +644,7 @@
 	name = "Curare"
 	id = "curare"
 	description = "Causes slight toxin damage followed by chain-stunning and oxygen damage."
+	can_synth = 2
 	reagent_state = LIQUID
 	color = "#191919"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
@@ -643,6 +660,7 @@
 /datum/reagent/toxin/heparin //Based on a real-life anticoagulant. I'm not a doctor, so this won't be realistic.
 	name = "Heparin"
 	id = "heparin"
+	can_synth = 2
 	description = "A powerful anticoagulant. Victims will bleed uncontrollably and suffer scaling bruising."
 	reagent_state = LIQUID
 	color = "#C8C8C8" //RGB: 200, 200, 200
@@ -700,7 +718,7 @@
 	for(var/datum/reagent/medicine/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.id,remove_amt)
 	return ..()
-	
+
 //ACID
 
 

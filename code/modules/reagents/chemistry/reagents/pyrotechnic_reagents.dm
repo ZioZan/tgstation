@@ -26,6 +26,7 @@
 	id = "nitroglycerin"
 	description = "Nitroglycerin is a heavy, colorless, oily, explosive liquid obtained by nitrating glycerol."
 	color = "#808080" // rgb: 128, 128, 128
+	can_synth = 2
 
 /datum/reagent/stabilizing_agent
 	name = "Stabilizing Agent"
@@ -98,6 +99,7 @@
 	reagent_state = LIQUID
 	color = "#000000"
 	metabolization_rate = 0.05
+	can_synth = 2
 
 /datum/reagent/blackpowder/on_ex_act()
 	var/location = get_turf(holder.my_atom)

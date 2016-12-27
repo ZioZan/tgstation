@@ -154,6 +154,7 @@
 	overdose_threshold = 20
 	addiction_threshold = 10
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	can_synth = 2
 
 /datum/reagent/drug/methamphetamine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
@@ -230,6 +231,7 @@
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	addiction_threshold = 10
+	can_synth = 2
 
 
 /datum/reagent/drug/bath_salts/on_mob_life(mob/living/M)
