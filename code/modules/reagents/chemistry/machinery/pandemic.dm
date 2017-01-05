@@ -524,10 +524,16 @@
 	popup.open(1)
 	return
 
-
 /obj/machinery/computer/pandemic/attackby(var/obj/I as obj, var/mob/user as mob, params)
 	if(istype(I, /obj/item/weapon/reagent_containers/glass))
-		if(stat & (NOPOWER|BROKEN)) return
+		. = 1 //no afterattack
+		if(stat & (NOPOWER|BROKEN))
+			return
+		if(beaker)
+			user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
+			return
+		if(!user.drop_item())
+			return
 
 		for(var/datum/reagent/R in I.reagents.reagent_list)
 			if(R.id == "virusfood")

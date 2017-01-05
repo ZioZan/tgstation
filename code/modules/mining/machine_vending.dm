@@ -66,7 +66,7 @@
 	B.apply_default_parts(src)
 
 /obj/item/weapon/circuitboard/machine/mining_equipment_vendor
-	name = "circuit board (Mining Equipment Vendor)"
+	name = "Mining Equipment Vendor (Machine Board)"
 	build_path = /obj/machinery/mineral/equipment_vendor
 	origin_tech = "programming=1;engineering=2"
 	req_components = list(
@@ -220,7 +220,7 @@
 	B.apply_default_parts(src)
 
 /obj/item/weapon/circuitboard/machine/mining_equipment_vendor/golem
-	name = "circuit board (Golem Ship Equipment Vendor)"
+	name = "Golem Ship Equipment Vendor (Machine Board)"
 	build_path = /obj/machinery/mineral/equipment_vendor/golem
 
 
