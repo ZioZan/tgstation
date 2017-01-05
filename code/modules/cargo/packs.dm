@@ -799,6 +799,30 @@
 	crate_name = "virus crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	dangerous = TRUE
+	
+/datum/supply_pack/medical/chemistry_machines
+	name = "Chemistry machines"
+	cost = 9000
+	access = access_cmo
+	contains = list(/obj/item/weapon/stock_parts/console_screen,
+					/obj/item/weapon/stock_parts/console_screen,
+					/obj/item/weapon/stock_parts/console_screen,
+					/obj/item/weapon/reagent_containers/glass/beaker,
+					/obj/item/weapon/reagent_containers/glass/beaker,
+					/obj/item/weapon/stock_parts/manipulator/nano,
+					/obj/item/weapon/stock_parts/manipulator/nano,
+					/obj/item/weapon/stock_parts/matter_bin/adv,
+					/obj/item/weapon/stock_parts/matter_bin/adv,
+					/obj/item/weapon/stock_parts/capacitor/adv,
+					/obj/item/weapon/stock_parts/micro_laser/high,
+					/obj/item/weapon/stock_parts/cell/high,
+					/obj/item/weapon/circuitboard/machine/chem_dispenser,
+					/obj/item/weapon/circuitboard/machine/chem_heater,
+					/obj/item/weapon/circuitboard/machine/chem_master,
+					/obj/item/stack/cable_coil,
+					/obj/item/stack/sheet/metal/fifty)
+	crate_name = "chemistry machines crate"
+	crate_type = /obj/structure/closet/crate/secure
 
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
@@ -885,6 +909,35 @@
 					/obj/item/device/assembly/timer)
 	crate_name = "plasma assembly crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/science/research_and_development
+	name = "RnD machines"
+	cost = 7000
+	access = access_rd
+	contains = list(/obj/item/weapon/reagent_containers/glass/beaker/sulphuric,
+					/obj/item/weapon/reagent_containers/glass/beaker,
+					/obj/item/weapon/reagent_containers/glass/beaker,
+					/obj/item/weapon/reagent_containers/glass/beaker,
+					/obj/item/weapon/reagent_containers/glass/beaker,
+					/obj/item/weapon/stock_parts/manipulator,
+					/obj/item/weapon/stock_parts/manipulator,
+					/obj/item/weapon/stock_parts/manipulator,
+					/obj/item/weapon/stock_parts/manipulator,
+					/obj/item/weapon/stock_parts/matter_bin,
+					/obj/item/weapon/stock_parts/matter_bin,
+					/obj/item/weapon/stock_parts/matter_bin,
+					/obj/item/weapon/stock_parts/scanning_module,
+					/obj/item/weapon/stock_parts/micro_laser,
+					/obj/item/weapon/circuitboard/computer/rdconsole,
+					/obj/item/weapon/circuitboard/machine/destructive_analyzer,
+					/obj/item/weapon/circuitboard/machine/protolathe,
+					/obj/item/weapon/circuitboard/machine/circuit_imprinter,
+					/obj/item/stack/cable_coil,
+					/obj/item/stack/sheet/metal/fifty,
+					/obj/item/stack/sheet/metal/fifty,
+					/obj/item/stack/sheet/glass/fifty)
+	crate_name = "RnD machines crate"
+	crate_type = /obj/structure/closet/crate/secure
 
 /datum/supply_pack/science/shieldwalls
 	name = "Shield Generators"
