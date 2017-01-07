@@ -228,19 +228,19 @@
 /datum/chemical_reaction/virus_food_mutagen
 	name = "mutagenic agar"
 	id = "mutagenvirusfood"
-	results = list("mutagenvirusfood" = 1)
+	results = list("mutagenvirusfood" = 2)
 	required_reagents = list("mutagen" = 1, "virusfood" = 1)
 
 /datum/chemical_reaction/virus_food_synaptizine
 	name = "virus rations"
 	id = "synaptizinevirusfood"
-	results = list("synaptizinevirusfood" = 1)
+	results = list("synaptizinevirusfood" = 2)
 	required_reagents = list("synaptizine" = 1, "virusfood" = 1)
 
 /datum/chemical_reaction/virus_food_plasma
 	name = "virus plasma"
 	id = "plasmavirusfood"
-	results = list("plasmavirusfood" = 1)
+	results = list("plasmavirusfood" = 2)
 	required_reagents = list("plasma" = 1, "virusfood" = 1)
 
 /datum/chemical_reaction/virus_food_plasma_synaptizine
@@ -264,26 +264,26 @@
 /datum/chemical_reaction/virus_food_uranium
 	name = "Decaying uranium gel"
 	id = "uraniumvirusfood"
-	results = list("uraniumvirusfood" = 1)
+	results = list("uraniumvirusfood" = 2)
 	required_reagents = list("uranium" = 1, "virusfood" = 1)
 
 /datum/chemical_reaction/virus_food_uranium_plasma
 	name = "Unstable uranium gel"
 	id = "uraniumvirusfood_plasma"
-	results = list("uraniumplasmavirusfood_unstable" = 1)
-	required_reagents = list("uranium" = 5, "plasmavirusfood" = 1)
+	results = list("uraniumplasmavirusfood_unstable" = 2)
+	required_reagents = list("uranium" = 1, "plasmavirusfood" = 1)
 
 /datum/chemical_reaction/virus_food_uranium_plasma_gold
 	name = "Stable uranium gel"
 	id = "uraniumvirusfood_gold"
-	results = list("uraniumplasmavirusfood_stable" = 1)
-	required_reagents = list("uranium" = 10, "gold" = 10, "plasma" = 1)
+	results = list("uraniumplasmavirusfood_stable" = 3)
+	required_reagents = list("uranium" = 1, "gold" = 1, "plasma" = 1)
 
 /datum/chemical_reaction/virus_food_uranium_plasma_silver
 	name = "Stable uranium gel"
 	id = "uraniumvirusfood_silver"
-	results = list("uraniumplasmavirusfood_stable" = 1)
-	required_reagents = list("uranium" = 10, "silver" = 10, "plasma" = 1)
+	results = list("uraniumplasmavirusfood_stable" = 3)
+	required_reagents = list("uranium" = 1, "silver" = 1, "plasma" = 1)
 
 /datum/chemical_reaction/mix_virus
 	name = "Mix Virus"
