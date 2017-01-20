@@ -216,7 +216,7 @@
 	id = "gygax_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_torso
-	materials = list(MAT_METAL=20000,MAT_GLASS=10000,MAT_DIAMOND=2000)
+	materials = list(MAT_METAL=20000,MAT_GLASS=10000,MAT_GOLD=2000)
 	construction_time = 300
 	category = list("Gygax")
 
@@ -225,7 +225,7 @@
 	id = "gygax_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_head
-	materials = list(MAT_METAL=10000,MAT_GLASS=5000, MAT_DIAMOND=2000)
+	materials = list(MAT_METAL=10000,MAT_GLASS=5000, MAT_GOLD=2000)
 	construction_time = 200
 	category = list("Gygax")
 
@@ -234,7 +234,7 @@
 	id = "gygax_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_left_arm
-	materials = list(MAT_METAL=15000, MAT_DIAMOND=1000)
+	materials = list(MAT_METAL=15000, MAT_GOLD=1000)
 	construction_time = 200
 	category = list("Gygax")
 
@@ -243,7 +243,7 @@
 	id = "gygax_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_right_arm
-	materials = list(MAT_METAL=15000, MAT_DIAMOND=1000)
+	materials = list(MAT_METAL=15000, MAT_GOLD=1000)
 	construction_time = 200
 	category = list("Gygax")
 
@@ -252,7 +252,7 @@
 	id = "gygax_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_left_leg
-	materials = list(MAT_METAL=15000, MAT_DIAMOND=2000)
+	materials = list(MAT_METAL=15000, MAT_GOLD=2000)
 	construction_time = 200
 	category = list("Gygax")
 
@@ -261,7 +261,7 @@
 	id = "gygax_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_right_leg
-	materials = list(MAT_METAL=15000, MAT_DIAMOND=2000)
+	materials = list(MAT_METAL=15000, MAT_GOLD=2000)
 	construction_time = 200
 	category = list("Gygax")
 
@@ -270,7 +270,7 @@
 	id = "gygax_armor"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_armor
-	materials = list(MAT_METAL=15000,MAT_DIAMOND=10000,MAT_TITANIUM=10000)
+	materials = list(MAT_METAL=15000,MAT_GOLD=10000,MAT_TITANIUM=10000)
 	construction_time = 600
 	category = list("Gygax")
 
