@@ -803,7 +803,6 @@
 /datum/supply_pack/medical/chemistry_machines
 	name = "Chemistry machines"
 	cost = 9000
-	access = access_cmo
 	contains = list(/obj/item/weapon/stock_parts/console_screen,
 					/obj/item/weapon/stock_parts/console_screen,
 					/obj/item/weapon/stock_parts/console_screen,
@@ -822,7 +821,6 @@
 					/obj/item/stack/cable_coil,
 					/obj/item/stack/sheet/metal/fifty)
 	crate_name = "chemistry machines crate"
-	crate_type = /obj/structure/closet/crate/secure
 
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
@@ -913,7 +911,6 @@
 /datum/supply_pack/science/research_and_development
 	name = "RnD machines"
 	cost = 7000
-	access = access_rd
 	contains = list(/obj/item/weapon/reagent_containers/glass/beaker/sulphuric,
 					/obj/item/weapon/reagent_containers/glass/beaker,
 					/obj/item/weapon/reagent_containers/glass/beaker,
@@ -937,7 +934,6 @@
 					/obj/item/stack/sheet/metal/fifty,
 					/obj/item/stack/sheet/glass/fifty)
 	crate_name = "RnD machines crate"
-	crate_type = /obj/structure/closet/crate/secure
 
 /datum/supply_pack/science/shieldwalls
 	name = "Shield Generators"
