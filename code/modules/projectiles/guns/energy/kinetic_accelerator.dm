@@ -193,14 +193,15 @@
 	if(ismineralturf(target_turf))
 		var/turf/closed/mineral/M = target_turf
 		M.gets_drilled(firer)
-	var/obj/effect/overlay/temp/kinetic_blast/K = PoolOrNew(/obj/effect/overlay/temp/kinetic_blast, target_turf)
+	var/obj/effect/overlay/temp/kinetic_blast/K = new /obj/effect/overlay/temp/kinetic_blast(target_turf)
 	K.color = color
 	for(var/type in hit_overlays)
-		PoolOrNew(type, target_turf)
+		new type(target_turf)
 	for(var/T in RANGE_TURFS(turf_aoe, target_turf) - target_turf)
 		if(ismineralturf(T))
 			var/turf/closed/mineral/M = T
 			M.gets_drilled(firer)
+
 	if(mob_aoe)
 		for(var/mob/living/L in range(1, target_turf) - firer - target)
 			var/armor = L.run_armor_check(def_zone, flag, "", "", armour_penetration)

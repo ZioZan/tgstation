@@ -171,11 +171,15 @@
 /obj/item/weapon/circuitboard/computer/security
 	name = "Security Cameras (Computer Board)"
 	build_path = /obj/machinery/computer/security
-	origin_tech = "programming=1;combat=1"
+	origin_tech = "programming=2;combat=2"
 /obj/item/weapon/circuitboard/computer/advanced_security
 	name = "circuit board (Advanced security cameras)"
 	build_path = /obj/machinery/computer/camera_advanced
 	origin_tech = "programming=5;engineering=4"
+/obj/item/weapon/circuitboard/computer/xenobiology
+	name = "circuit board (Xenobiology Console)"
+	build_path = /obj/machinery/computer/camera_advanced/xenobio
+	origin_tech = "programming=3;bio=3"
 /obj/item/weapon/circuitboard/computer/aiupload
 	name = "AI Upload (Computer Board)"
 	build_path = /obj/machinery/computer/upload/ai
@@ -358,6 +362,10 @@
 /obj/item/weapon/circuitboard/computer/cargo/request
 	name = "Supply Request Console (Computer Board)"
 	build_path = /obj/machinery/computer/cargo/request
+/obj/item/weapon/circuitboard/computer/stockexchange
+	name = "circuit board (Stock Exchange Console)"
+	build_path = /obj/machinery/computer/stockexchange
+	origin_tech = "programming=3"
 
 /obj/item/weapon/circuitboard/computer/operating
 	name = "Operating Computer (Computer Board)"
