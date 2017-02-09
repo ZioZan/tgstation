@@ -8,6 +8,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	var/obj/item/organ/storedorgan
 	var/organ_type = /obj/item/organ/cyberimp
+	var/organ_type2 = /obj/item/organ/eyes/robotic
 	var/uses = INFINITE
 
 /obj/item/device/autoimplanter/New()
@@ -32,7 +33,7 @@
 		desc = "[initial(desc)] Looks like it's been used up."
 
 /obj/item/device/autoimplanter/attackby(obj/item/I, mob/user, params)
-	if(istype(I, organ_type))
+	if(istype(I, organ_type) || istype(I, organ_type2))
 		if(storedorgan)
 			user << "<span class='notice'>[src] already has an implant stored.</span>"
 			return
