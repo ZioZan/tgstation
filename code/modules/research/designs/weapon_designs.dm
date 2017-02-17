@@ -214,7 +214,7 @@
 	id = "wormholeprojector"
 	req_tech = list("combat" = 6, "materials" = 6, "bluespace" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 1000, MAT_METAL = 5000, MAT_DIAMOND = 2000)
+	materials = list(MAT_SILVER = 2000, MAT_METAL = 5000, MAT_DIAMOND = 2000, MAT_BLUESPACE = 2000)
 	build_path = /obj/item/weapon/gun/energy/wormhole_projector
 	category = list("Weapons")
 
@@ -292,12 +292,12 @@
 	category = list("Weapons")
 
 /datum/design/gravitygun
-	name = "one-point bluespace-gravitational manipulator"
+	name = "One-point Bluespace-gravitational Manipulator"
 	desc = "A multi-mode device that blasts one-point bluespace-gravitational bolts that locally distort gravity."
 	id = "gravitygun"
 	req_tech = list("combat" = 4, "materials" = 5, "bluespace" = 4, "powerstorage" = 4, "magnets" = 5)
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 8000, MAT_GOLD = 8000, MAT_URANIUM = 8000, MAT_GLASS = 12000, MAT_METAL = 12000, MAT_DIAMOND = 3000)
+	materials = list(MAT_SILVER = 8000, MAT_URANIUM = 8000, MAT_GLASS = 12000, MAT_METAL = 12000, MAT_DIAMOND = 3000, MAT_BLUESPACE = 2000)
 	build_path = /obj/item/weapon/gun/energy/gravity_gun
 	category = list("Weapons")
 

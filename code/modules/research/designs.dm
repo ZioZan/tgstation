@@ -319,7 +319,7 @@ other types of metals and chemistry for reagents).
 	id = "bag_holding"
 	req_tech = list("bluespace" = 4, "materials" = 5, "engineering" = 5)
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 3000, MAT_DIAMOND = 1500, MAT_URANIUM = 250)
+	materials = list(MAT_GOLD = 3000, MAT_DIAMOND = 1500, MAT_URANIUM = 1000, MAT_BLUESPACE = 1000)
 	build_path = /obj/item/weapon/storage/backpack/holding
 	category = list("Bluespace Designs")
 
@@ -327,9 +327,9 @@ other types of metals and chemistry for reagents).
 	name = "Belt of Holding"
 	desc = "A belt that opens into a localized pocket of bluespace. Now with safety mesures."
 	id = "belt_of_holding"
-	req_tech = list("bluespace" = 4, "materials" = 5, "engineering" = 5)
+	req_tech = list("bluespace" = 6, "materials" = 7, "engineering" = 6)
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 2000, MAT_DIAMOND = 1000, MAT_URANIUM = 200)
+	materials = list(MAT_GOLD = 2000, MAT_DIAMOND = 1000, MAT_URANIUM = 1000, MAT_BLUESPACE = 1000)
 	build_path = /obj/item/weapon/storage/belt/bluespace
 	category = list("Bluespace Designs")
 
@@ -347,9 +347,9 @@ other types of metals and chemistry for reagents).
 	name = "Bluespace Crystal"
 	desc = "A small blue crystal with mystical properties."
 	id = "bluespace_crystal"
-	req_tech = list("bluespace" = 6, "materials" = 7, "engineering" = 6, "magnets" = 7, "powerstorage" = 7)
+	req_tech = list("bluespace" = 6, "materials" = 7, "engineering" = 6, "magnets" = 6, "powerstorage" = 7)
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 4000,MAT_DIAMOND = 4000, MAT_PLASMA = 4000, MAT_URANIUM = 4000)
+	materials = list(MAT_GOLD = 4000,MAT_DIAMOND = 2000, MAT_PLASMA = 4000, MAT_URANIUM = 2000)
 	build_path = /obj/item/weapon/ore/bluespace_crystal
 	category = list("Bluespace Designs")
 

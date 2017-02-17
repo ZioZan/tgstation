@@ -51,7 +51,7 @@
 	id = "bluespacebeaker"
 	req_tech = list("bluespace" = 2, "materials" = 6)
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 3000, MAT_PLASMA = 3000, MAT_DIAMOND = 500)
+	materials = list(MAT_GLASS = 3000, MAT_PLASMA = 3000, MAT_DIAMOND = 250, MAT_BLUESPACE = 250)
 	build_path = /obj/item/weapon/reagent_containers/glass/beaker/bluespace
 	category = list("Medical Designs")
 
