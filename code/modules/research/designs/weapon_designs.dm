@@ -16,7 +16,7 @@
 	name = "electronic firing pin"
 	desc = "A small authentication device, to be inserted into a firearm reciever to allow operation. NT safety regulations require all new designs to incorporate one."
 	id = "pin_standard"
-	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 6, "magnets" = 5, "engineering" = 5, "programming" = 5, "plasma" = 4)
+	req_tech = list("combat" = 6, "materials" = 7, "powerstorage" = 6, "magnets" = 6, "engineering" = 6, "programming" = 6, "syndicate" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 2000, MAT_SILVER = 500, MAT_DIAMOND = 500, MAT_URANIUM = 500, MAT_PLASMA = 500)
 	build_path = /obj/item/device/firing_pin
@@ -92,6 +92,16 @@
 	build_path = /obj/item/weapon/gun/energy/accellasercannon
 	category = list("Weapons")
 
+/datum/design/wt550
+	name = "NanoTrasen WT-550 Auto Rifle"
+	desc = "Old WT-550 auto rifle, used to deal with enemies protected from energy weapons."
+	id = "wt550"
+	req_tech = list("combat" = 4, "materials" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_GOLD = 1000, MAT_URANIUM = 1000)
+	build_path = /obj/item/weapon/gun/ballistic/automatic/wt550
+	category = list("Weapons")
+
 /datum/design/decloner
 	name = "Decloner"
 	desc = "Your opponent will bubble into a messy pile of goop."
@@ -138,7 +148,7 @@
 	name = "Advanced Floral Somatoray"
 	desc = "An improved version of floral somatoray, gives stronger mutations."
 	id = "adv_flora_gun"
-	req_tech = list("combat" = 6, "materials" = 7, "biotech" = 6, "powerstorage" = 8)
+	req_tech = list("combat" = 6, "materials" = 7, "biotech" = 6, "powerstorage" = 7)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 4000, MAT_GOLD = 4000, MAT_URANIUM = 4000, MAT_DIAMOND = 2000)
 	reagents_list = list("radium" = 20)
