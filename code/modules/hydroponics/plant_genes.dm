@@ -226,10 +226,10 @@
 /datum/plant_gene/trait/cell_charge
 	// Cell recharging trait. Charges all mob's power cells to (potency*rate)% mark when eaten.
 	// Generates sparks on squash.
-	// Small (potency*rate*5) chance to shock squish or slip target for (potency*rate*5) damage.
+	// Has a (potency*rate) chance to shock squish or slip target for (potency*rate*5) damage.
 	// Multiplies max charge by (rate*1000) when used in potato power cells.
 	name = "Electrical Activity"
-	rate = 0.2
+	rate = 1
 	origin_tech = list("powerstorage" = 3)
 
 /datum/plant_gene/trait/cell_charge/on_slip(obj/item/weapon/reagent_containers/food/snacks/grown/G, mob/living/carbon/C)
@@ -377,7 +377,7 @@
 	if(isliving(target) && G.reagents && G.reagents.total_volume)
 		var/mob/living/L = target
 		if(L.reagents && L.can_inject(null, 0))
-			var/injecting_amount = max(1, G.seed.potency*0.2) // Minimum of 1, max of 20
+			var/injecting_amount = max(1, G.seed.potency*0.5) // Minimum of 1, max of 50
 			var/fraction = min(injecting_amount/G.reagents.total_volume, 1)
 			G.reagents.reaction(L, INJECT, fraction)
 			G.reagents.trans_to(L, injecting_amount)
@@ -389,7 +389,7 @@
 /datum/plant_gene/trait/smoke/on_squash(obj/item/weapon/reagent_containers/food/snacks/grown/G, atom/target)
 	var/datum/effect_system/smoke_spread/chem/S = new
 	var/splat_location = get_turf(target)
-	var/smoke_amount = round(sqrt(G.seed.potency * 0.1), 1)
+	var/smoke_amount = round(sqrt(G.seed.potency * 0.2), 1)
 	S.attach(splat_location)
 	S.set_up(G.reagents, smoke_amount, splat_location, 0)
 	S.start()
