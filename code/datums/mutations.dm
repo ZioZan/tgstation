@@ -283,6 +283,7 @@
 	if(..())
 		return
 	owner.resize = 0.8
+	owner.ventcrawler = 1
 	owner.update_transform()
 	owner.pass_flags |= PASSTABLE
 	owner.visible_message("<span class='danger'>[owner] suddenly shrinks!</span>", "<span class='notice'>Everything around you seems to grow..</span>")
@@ -292,6 +293,7 @@
 		return
 	owner.resize = 1.25
 	owner.update_transform()
+	owner.ventcrawler = 0
 	owner.pass_flags &= ~PASSTABLE
 	owner.visible_message("<span class='danger'>[owner] suddenly grows!</span>", "<span class='notice'>Everything around you seems to shrink..</span>")
 
