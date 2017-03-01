@@ -195,6 +195,7 @@
 	for(var/mob/living/carbon/human/H in oview(3,owner)) //Blood decals for simple animals would be neat. aka Carp with blood on it.
 		H.add_mob_blood(owner)
 
+
 /obj/item/organ/heart/gland/bodysnatch
 	origin_tech = "materials=6;biotech=6;abductor=3"
 	cooldown_low = 600
@@ -209,7 +210,8 @@
 		var/obj/structure/spider/cocoon/abductor/C = new (get_turf(owner))
 		C.Copy(owner)
 		C.Start()
-	owner.gib()
+	owner.adjustBruteLoss(40)
+	owner.add_splatter_floor()
 
 /obj/structure/spider/cocoon/abductor
 	name = "slimy cocoon"
@@ -224,16 +226,6 @@
 	var/mob/living/carbon/human/interactive/greytide/clone = new(src)
 	clone.hardset_dna(H.dna.uni_identity,H.dna.struc_enzymes,H.real_name, H.dna.blood_type, H.dna.species.type, H.dna.features)
 
-	//There's no define for this / get all items ?
-	var/list/slots = list(slot_back,slot_w_uniform,slot_wear_suit,\
-	slot_wear_mask,slot_head,slot_shoes,slot_gloves,slot_ears,\
-	slot_glasses,slot_belt,slot_s_store,slot_l_store,slot_r_store,slot_wear_id)
-
-	for(var/slot in slots)
-		var/obj/item/I = H.get_item_by_slot(slot)
-		if(I)
-			clone.equip_to_slot_if_possible(I,slot)
-
 /obj/structure/spider/cocoon/abductor/proc/Start()
 	hatch_time = world.time + 600
 	START_PROCESSING(SSobj, src)
@@ -245,6 +237,7 @@
 			src.visible_message("<span class='warning'>[src] hatches!</span>")
 			M.loc = src.loc
 		qdel(src)
+
 
 /obj/item/organ/heart/gland/plasma
 	cooldown_low = 1200

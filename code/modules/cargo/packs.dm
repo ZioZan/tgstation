@@ -329,7 +329,7 @@
 
 /datum/supply_pack/security/armory/combatknives
 	name = "Combat Knives Crate"
-	cost = 3000
+	cost = 1000
 	contains = list(/obj/item/weapon/kitchen/knife/combat,
 					/obj/item/weapon/kitchen/knife/combat,
 					/obj/item/weapon/kitchen/knife/combat)
@@ -337,7 +337,7 @@
 
 /datum/supply_pack/security/armory/laserarmor
 	name = "Reflector Vest Crate"
-	cost = 2000
+	cost = 4000
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
@@ -345,7 +345,7 @@
 
 /datum/supply_pack/security/armory/ballistic
 	name = "Combat Shotguns Crate"
-	cost = 4000
+	cost = 5000
 	contains = list(/obj/item/weapon/gun/ballistic/shotgun/automatic/combat,
 					/obj/item/weapon/gun/ballistic/shotgun/automatic/combat,
 					/obj/item/weapon/gun/ballistic/shotgun/automatic/combat,
@@ -438,7 +438,7 @@
 
 /datum/supply_pack/security/securityclothes
 	name = "Security Clothing Crate"
-	cost = 3000
+	cost = 1000
 	contains = list(/obj/item/clothing/under/rank/security/navyblue,
 					/obj/item/clothing/under/rank/security/navyblue,
 					/obj/item/clothing/suit/security/officer,
@@ -458,6 +458,8 @@
 	cost = 6000 //justice comes at a price. An expensive, noisy price.
 	contraband = TRUE
 	contains = list(/obj/item/clothing/head/helmet/justice,
+					/obj/item/clothing/head/helmet/justice,
+					/obj/item/clothing/mask/gas/sechailer,
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
 
@@ -521,15 +523,19 @@
 	cost = 2000	//Made of pure-grade bullshittinium
 	contains = list(/obj/item/clothing/gloves/color/yellow,
 					/obj/item/clothing/gloves/color/yellow,
+					/obj/item/clothing/gloves/color/yellow,
 					/obj/item/clothing/gloves/color/yellow)
 	crate_name = "insulated gloves crate"
 
 /datum/supply_pack/engineering/power
 	name = "Powercell Crate"
-	cost = 1000
-	contains = list(/obj/item/weapon/stock_parts/cell/high,
-					/obj/item/weapon/stock_parts/cell/high,
-					/obj/item/weapon/stock_parts/cell/high)
+	cost = 1500
+	contains = list(/obj/item/weapon/stock_parts/cell/super,
+					/obj/item/weapon/stock_parts/cell/super,
+					/obj/item/weapon/stock_parts/cell/super,
+					/obj/item/weapon/stock_parts/cell/super,
+					/obj/item/weapon/stock_parts/cell/super,
+					/obj/item/weapon/stock_parts/cell/super)
 	crate_name = "electrical maintenance crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
