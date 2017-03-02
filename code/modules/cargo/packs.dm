@@ -203,8 +203,12 @@
 	name = "Security Supplies Crate"
 	cost = 1000
 	contains = list(/obj/item/weapon/storage/box/flashbangs,
+					/obj/item/weapon/storage/box/flashbangs,
+					/obj/item/weapon/storage/box/teargas,
 					/obj/item/weapon/storage/box/teargas,
 					/obj/item/weapon/storage/box/flashes,
+					/obj/item/weapon/storage/box/flashes,
+					/obj/item/weapon/storage/box/handcuffs)
 					/obj/item/weapon/storage/box/handcuffs)
 	crate_name = "security supply crate"
 
@@ -358,6 +362,7 @@
 	name = "Energy Guns Crate"
 	cost = 2500
 	contains = list(/obj/item/weapon/gun/energy/e_gun,
+					/obj/item/weapon/gun/energy/e_gun,
 					/obj/item/weapon/gun/energy/e_gun)
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
