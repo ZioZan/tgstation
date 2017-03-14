@@ -530,7 +530,7 @@
 		if(stat & (NOPOWER|BROKEN))
 			return
 		if(beaker)
-			user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
+			to_chat(user, "<span class='warning'>A beaker is already loaded into the machine!</span>")
 			return
 		if(!user.drop_item())
 			return
@@ -611,11 +611,10 @@
 		if(src.beaker)
 			user << "A beaker is already loaded into the machine."
 			return
-		src.beaker =  I
-		user.drop_item()
-		I.loc = src
-		user << "You add the beaker to the machine!"
-		src.updateUsrDialog()
+		beaker =  I
+		beaker.loc = src
+		to_chat(user, "<span class='notice'>You add the beaker to the machine.</span>")
+		updateUsrDialog()
 		icon_state = "mixer1"
 
 	else if(istype(I, /obj/item/weapon/screwdriver))

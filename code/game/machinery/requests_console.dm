@@ -56,7 +56,6 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	var/priority = -1 ; //Priority of the message being sent
 	var/obj/item/device/radio/Radio
 	var/emergency //If an emergency has been called by this device. Acts as both a cooldown and lets the responder know where it the emergency was triggered from
-	luminosity = 0
 	obj_integrity = 300
 	max_integrity = 300
 	armor = list(melee = 70, bullet = 30, laser = 30, energy = 30, bomb = 0, bio = 0, rad = 0, fire = 90, acid = 90)
@@ -67,9 +66,9 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 
 /obj/machinery/requests_console/update_icon()
 	if(stat & NOPOWER)
-		SetLuminosity(0)
+		set_light(0)
 	else
-		SetLuminosity(2)
+		set_light(1.4,0.7,"#34D352")//green light
 	if(open)
 		if(!hackState)
 			icon_state="req_comp_open"
@@ -192,6 +191,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 					if (Console.department == department)
 						Console.newmessagepriority = 0
 						Console.update_icon()
+
 				newmessagepriority = 0
 				update_icon()
 				var/messageComposite = ""
@@ -482,10 +482,10 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/attackby(obj/item/weapon/O, mob/user, params)
 	if(istype(O, /obj/item/weapon/crowbar))
 		if(open)
-			user << "<span class='notice'>You close the maintenance panel.</span>"
+			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
 			open = 0
 		else
-			user << "<span class='notice'>You open the maintenance panel.</span>"
+			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
 			open = 1
 		update_icon()
 		return
@@ -493,12 +493,12 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 		if(open)
 			hackState = !hackState
 			if(hackState)
-				user << "<span class='notice'>You modify the wiring.</span>"
+				to_chat(user, "<span class='notice'>You modify the wiring.</span>")
 			else
-				user << "<span class='notice'>You reset the wiring.</span>"
+				to_chat(user, "<span class='notice'>You reset the wiring.</span>")
 			update_icon()
 		else
-			user << "<span class='warning'>You must open the maintenance panel first!</span>"
+			to_chat(user, "<span class='warning'>You must open the maintenance panel first!</span>")
 		return
 
 	var/obj/item/weapon/card/id/ID = O.GetID()
@@ -511,7 +511,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 				announceAuth = 1
 			else
 				announceAuth = 0
-				user << "<span class='warning'>You are not authorized to send announcements!</span>"
+				to_chat(user, "<span class='warning'>You are not authorized to send announcements!</span>")
 			updateUsrDialog()
 		return
 	if (istype(O, /obj/item/weapon/stamp))
