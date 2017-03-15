@@ -208,7 +208,7 @@
 					/obj/item/weapon/storage/box/teargas,
 					/obj/item/weapon/storage/box/flashes,
 					/obj/item/weapon/storage/box/flashes,
-					/obj/item/weapon/storage/box/handcuffs)
+					/obj/item/weapon/storage/box/handcuffs,
 					/obj/item/weapon/storage/box/handcuffs)
 	crate_name = "security supply crate"
 
@@ -813,7 +813,7 @@
 	crate_name = "virus crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	dangerous = TRUE
-	
+
 /datum/supply_pack/medical/chemistry_machines
 	name = "Chemistry machines"
 	cost = 9000
