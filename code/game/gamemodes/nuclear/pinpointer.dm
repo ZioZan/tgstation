@@ -171,3 +171,109 @@
 	desc = "An integrated tracking device, jury-rigged to search for living Syndicate operatives."
 	mode = TRACK_OPERATIVES
 	flags = NODROP
+
+/obj/item/weapon/pdapinpointer
+	name = "pda pinpointer"
+	desc = "A pinpointer that has been illegally modified to track the PDA of a crewmember for malicious reasons."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "pinoff"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_state = "electronic"
+	throw_speed = 3
+	throw_range = 7
+	materials = list(MAT_METAL = 500, MAT_GLASS = 250)
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	var/active = FALSE
+	var/used = 0
+	var/obj/target = null
+
+/obj/item/weapon/pdapinpointer/New()
+	..()
+	pinpointer_list += src
+
+/obj/item/weapon/pdapinpointer/Destroy()
+	STOP_PROCESSING(SSfastprocess, src)
+	return ..()
+
+/obj/item/weapon/pdapinpointer/attack_self(mob/living/user)
+	active = !active
+	user.visible_message("<span class='notice'>[user] [active ? "" : "de"]activates their pinpointer.</span>", "<span class='notice'>You [active ? "" : "de"]activate your pinpointer.</span>")
+	playsound(user, 'sound/items/Screwdriver2.ogg', 50, 1)
+	icon_state = "pin[active ? "onnull" : "off"]"
+	if(active)
+		START_PROCESSING(SSfastprocess, src)
+	else
+		STOP_PROCESSING(SSfastprocess, src)
+
+/obj/item/weapon/pdapinpointer/proc/point_to_target(atom/target) //If we found what we're looking for, show the distance and direction
+	if(!active)
+		return
+	if(!target)
+		return
+	var/turf/here = get_turf(src)
+	var/turf/there = get_turf(target)
+	if(here.z != there.z)
+		icon_state = "pinonnull"
+		return
+	if(here == there)
+		icon_state = "pinondirect"
+	else
+		setDir(get_dir(here, there))
+		switch(get_dist(here, there))
+			if(1 to 8)
+				icon_state = "pinonclose"
+			if(9 to 16)
+				icon_state = "pinonmedium"
+			if(16 to INFINITY)
+				icon_state = "pinonfar"
+		
+/obj/item/weapon/pdapinpointer/process()
+	if(!active)
+		STOP_PROCESSING(SSfastprocess, src)
+		return
+	point_to_target(target)
+
+/obj/item/weapon/pdapinpointer/verb/select_pda()
+	set category = "Object"
+	set name = "Select pinpointer target"
+	set src in view(1)
+	if(used)
+		if(isliving(loc))
+			var/mob/living/L = loc
+			L << "<span class='notice'>Target has already been set!</span>"
+		return
+
+	var/list/M = list()
+	M["Cancel"] = "Cancel"
+	var/length = 1
+	for (var/obj/item/device/pda/P in world)
+		if(P.name != "\improper PDA")
+			M[text("([length]) [P.name]")] = P
+			length++
+
+	var/t = input("Select pinpointer target. WARNING: Can only set once.") as null|anything in M
+	if(t == "Cancel")
+		return
+	target = M[t]
+	if(!target)
+		if(isliving(loc))
+			var/mob/living/L = loc
+			L << "<span class='notice'>Failed to locate [target]!</span>"
+		return
+	active = 1
+	point_to_target(target)
+	if(isliving(loc))
+		var/mob/living/L = loc
+		L << "<span class='notice'>You set the pinpointer to locate [target].</span>"
+	used = 1
+
+
+/obj/item/weapon/pdapinpointer/examine(mob/user)
+	..()
+	if (target)
+		if(isliving(loc))
+			var/mob/living/L = loc
+			L << "<span class='notice'>Tracking [target].</span>"
+

@@ -1086,6 +1086,12 @@ var/list/uplink_items = list() // Global list so we only initialize this once.
 	item = /obj/item/device/jammer
 	cost = 10
 
+/datum/uplink_item/device_tools/pdapinpointer
+	name = "PDA pinpointer"
+	item = /obj/item/weapon/pdapinpointer
+	desc = "PDA pinpointer - a hacked pinpointer which will track your PDA of your target."
+	cost = 4
+
 // Implants
 /datum/uplink_item/implants
 	category = "Implants"
