@@ -40,6 +40,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	max_combined_w_class = 800
 	works_from_distance = 1
 	pshoom_or_beepboopblorpzingshadashwoosh = 'sound/items/PSHOOM.ogg'
+	alt_sound = 'sound/items/PSHOOM_2.ogg'
 
 /obj/item/weapon/storage/part_replacer/bluespace/content_can_dump(atom/dest_object, mob/user)
 	if(Adjacent(user))
@@ -53,288 +54,16 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	return 0
 
 /obj/item/weapon/storage/part_replacer/proc/play_rped_sound()
-	playsound(src, pshoom_or_beepboopblorpzingshadashwoosh, 40, 1)
-//Plays the sound for RPED exhanging or installing parts.
+	//Plays the sound for RPED exhanging or installing parts.
+	if(alt_sound && prob(1))
+		playsound(src, alt_sound, 40, 1)
+	else
+		playsound(src, pshoom_or_beepboopblorpzingshadashwoosh, 40, 1)
 
 //Sorts stock parts inside an RPED by their rating.
 //Only use /obj/item/weapon/stock_parts/ with this sort proc!
 /proc/cmp_rped_sort(obj/item/weapon/stock_parts/A, obj/item/weapon/stock_parts/B)
 	return B.rating - A.rating
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv1full
-	name = "bluespace rapid part exchange device (debug level 1)"
-	desc = "Special mechanical module made to store, sort, and apply standard machine parts. It is used for debug and holds 65 lvl 1 parts."
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv1full/New()
-	..()
-	new /obj/item/weapon/stock_parts/console_screen(src)
-	new /obj/item/weapon/stock_parts/console_screen(src)
-	new /obj/item/weapon/stock_parts/console_screen(src)
-	new /obj/item/weapon/stock_parts/console_screen(src)
-	new /obj/item/weapon/stock_parts/console_screen(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/capacitor(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/scanning_module(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/manipulator(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/micro_laser(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/matter_bin(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-	new /obj/item/weapon/stock_parts/cell(src)
-
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv2full
-	name = "bluespace rapid part exchange device (debug level 2)"
-	desc = "Special mechanical module made to store, sort, and apply standard machine parts. It is used for debug and holds 60 lvl 2 parts."
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv2full/New()
-	..()
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/capacitor/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/scanning_module/adv(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/manipulator/nano(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/micro_laser/high(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/matter_bin/adv(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-	new /obj/item/weapon/stock_parts/cell/high(src)
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv3full
-	name = "bluespace rapid part exchange device (debug level 3)"
-	desc = "Special mechanical module made to store, sort, and apply standard machine parts. It is used for debug and holds 60 lvl 3 parts."
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv3full/New()
-	..()
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/capacitor/super(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/phasic(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/manipulator/pico(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/ultra(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/matter_bin/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-	new /obj/item/weapon/stock_parts/cell/super(src)
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv4full
-	name = "bluespace rapid part exchange device (debug level 4)"
-	desc = "Special mechanical module made to store, sort, and apply standard machine parts. It is used for debug and holds 60 lvl 4 parts."
-
-/obj/item/weapon/storage/part_replacer/bluespace/debuglv4full/New()
-	..()
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/capacitor/quadratic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/scanning_module/triphasic(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/manipulator/femto(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/micro_laser/quadultra(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/matter_bin/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-	new /obj/item/weapon/stock_parts/cell/bluespace(src)
-
 
 /obj/item/weapon/stock_parts
 	name = "stock part"
@@ -440,7 +169,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "super capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "super_capacitor"
-	origin_tech = "powerstorage=5;engineering=4"
+	origin_tech = "powerstorage=4;engineering=4"
 	rating = 3
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
@@ -448,7 +177,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "phasic scanning module"
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "super_scan_module"
-	origin_tech = "magnets=5"
+	origin_tech = "magnets=4;engineering=4"
 	rating = 3
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
@@ -456,7 +185,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "pico-manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "pico_mani"
-	origin_tech = "materials=5;programming=2"
+	origin_tech = "materials=4;programming=4;engineering=4"
 	rating = 3
 	materials = list(MAT_METAL=30)
 
@@ -464,7 +193,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "ultra-high-power micro-laser"
 	icon_state = "ultra_high_micro_laser"
 	desc = "A tiny laser used in certain devices."
-	origin_tech = "magnets=5"
+	origin_tech = "magnets=4;engineering=4"
 	rating = 3
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
@@ -472,7 +201,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "super matter bin"
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "super_matter_bin"
-	origin_tech = "materials=5"
+	origin_tech = "materials=4;engineering=4"
 	rating = 3
 	materials = list(MAT_METAL=80)
 
@@ -482,7 +211,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "quadratic capacitor"
 	desc = "An capacity capacitor used in the construction of a variety of devices."
 	icon_state = "quadratic_capacitor"
-	origin_tech = "powerstorage=6;materials=5"
+	origin_tech = "powerstorage=5;materials=4;engineering=4"
 	rating = 4
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
@@ -490,7 +219,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "triphasic scanning module"
 	desc = "A compact, ultra resolution triphasic scanning module used in the construction of certain devices."
 	icon_state = "triphasic_scan_module"
-	origin_tech = "magnets=6"
+	origin_tech = "magnets=5;materials=4;engineering=4"
 	rating = 4
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
@@ -498,7 +227,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "femto-manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "femto_mani"
-	origin_tech = "materials=6;programming=3"
+	origin_tech = "materials=6;programming=4;engineering=4"
 	rating = 4
 	materials = list(MAT_METAL=30)
 
@@ -506,7 +235,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "quad-ultra micro-laser"
 	icon_state = "quadultra_micro_laser"
 	desc = "A tiny laser used in certain devices."
-	origin_tech = "magnets=6"
+	origin_tech = "magnets=5;materials=4;engineering=4"
 	rating = 4
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
@@ -514,7 +243,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "bluespace matter bin"
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "bluespace_matter_bin"
-	origin_tech = "materials=6"
+	origin_tech = "materials=6;programming=4;engineering=4"
 	rating = 4
 	materials = list(MAT_METAL=80)
 
@@ -524,42 +253,42 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "subspace ansible"
 	icon_state = "subspace_ansible"
 	desc = "A compact module capable of sensing extradimensional activity."
-	origin_tech = "programming=2;magnets=3;materials=2;bluespace=1"
+	origin_tech = "programming=2;magnets=2;materials=2;bluespace=1"
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 
 /obj/item/weapon/stock_parts/subspace/filter
 	name = "hyperwave filter"
 	icon_state = "hyperwave_filter"
 	desc = "A tiny device capable of filtering and converting super-intense radiowaves."
-	origin_tech = "programming=2;magnets=1"
+	origin_tech = "programming=2;magnets=2"
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 
 /obj/item/weapon/stock_parts/subspace/amplifier
 	name = "subspace amplifier"
 	icon_state = "subspace_amplifier"
 	desc = "A compact micro-machine capable of amplifying weak subspace transmissions."
-	origin_tech = "programming=2;magnets=2;materials=2;bluespace=1"
+	origin_tech = "programming=2;magnets=2;materials=2;bluespace=2"
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 
 /obj/item/weapon/stock_parts/subspace/treatment
 	name = "subspace treatment disk"
 	icon_state = "treatment_disk"
 	desc = "A compact micro-machine capable of stretching out hyper-compressed radio waves."
-	origin_tech = "programming=2;magnets=1;materials=3;bluespace=1"
+	origin_tech = "programming=2;magnets=2;materials=2;bluespace=2"
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 
 /obj/item/weapon/stock_parts/subspace/analyzer
 	name = "subspace wavelength analyzer"
 	icon_state = "wavelength_analyzer"
 	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
-	origin_tech = "programming=2;magnets=2;materials=2;bluespace=1"
+	origin_tech = "programming=2;magnets=2;materials=2;bluespace=2"
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 
 /obj/item/weapon/stock_parts/subspace/crystal
 	name = "ansible crystal"
 	icon_state = "ansible_crystal"
 	desc = "A crystal made from pure glass used to transmit laser databursts to subspace."
-	origin_tech = "magnets=2;materials=2;bluespace=1"
+	origin_tech = "magnets=2;materials=2;bluespace=2;plasmatech=2"
 	materials = list(MAT_GLASS=50)
 
 /obj/item/weapon/stock_parts/subspace/transmitter
@@ -574,4 +303,4 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon = 'icons/obj/stock_parts.dmi'
 	icon_state = "capacitor"
 	desc = "A debug item for research."
-	origin_tech = "materials=9;programming=9;magnets=9;powerstorage=9;bluespace=11;combat=9;biotech=9;syndicate=9;engineering=9;plasmatech=9;abductor=9"
+	origin_tech = "materials=8;programming=8;magnets=8;powerstorage=8;bluespace=8;combat=8;biotech=8;syndicate=8;engineering=8;plasmatech=8;abductor=8"
