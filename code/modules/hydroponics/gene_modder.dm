@@ -46,7 +46,6 @@
 			rating += 5 // Having original alien board is +25%
 	max_extract_pot = initial(max_extract_pot) + rating*5
 
-
 /obj/machinery/plantgenes/update_icon()
 	..()
 	cut_overlays()
@@ -132,7 +131,7 @@
 				dat += "<span class='highlight'>[target.get_name()]</span> gene from \the <span class='highlight'>[seed]</span>?<br>"
 				dat += "<span class='bad'>The sample will be destroyed in process!</span>"
 				if(istype(target, /datum/plant_gene/core/potency))
- 					var/datum/plant_gene/core/gene = target
+					var/datum/plant_gene/core/gene = target
 					if(gene.value > max_extract_pot)
 						dat += "<br><br>This device's extraction capabilities are currently limited to [max_extract_pot] potency. "
 						dat += "Target gene will be degraded to [max_extract_pot] potency on extraction."
@@ -291,7 +290,7 @@
 					if(disk && !disk.read_only)
 						disk.gene = G
 						if(istype(G, /datum/plant_gene/core/potency))
- 							var/datum/plant_gene/core/gene = G
+							var/datum/plant_gene/core/gene = G
 							gene.value = min(gene.value, max_extract_pot)
 						disk.update_name()
 						qdel(seed)
@@ -310,7 +309,6 @@
 						if(istype(disk.gene, /datum/plant_gene/reagent))
 							seed.reagents_from_genes()
 						repaint_seed()
-
 
 			update_genes()
 			operation = ""
@@ -349,7 +347,6 @@
 
 		for(var/datum/plant_gene/reagent/G in seed.genes)
 			reagent_genes += G
-
 		for(var/datum/plant_gene/trait/G in seed.genes)
 			trait_genes += G
 
@@ -390,7 +387,6 @@
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 	var/datum/plant_gene/gene
 	var/read_only = 0 //Well, it's still a floppy disk
-	unique_rename = 1
 
 /obj/item/weapon/disk/plantgene/New()
 	..()
@@ -407,14 +403,15 @@
 		if(!in_range(src, user) && loc != user)
 			return
 		if(t)
-			name = "'[t]' (Plant Data Disk)"
+			name = "plant data disk - '[t]'"
 		else
-			name = "Plant Data Disk"
+			name = "plant data disk"
 
- /obj/item/weapon/disk/plantgene/proc/update_name()
- 	if(gene)
-		name = "'[gene.get_name()]' (Plant Data Disk)"
-
+/obj/item/weapon/disk/plantgene/proc/update_name()
+	if(gene)
+		name = "plant data disk - '[gene.get_name()]'"
+	else
+		name = "plant data disk"
 
 /obj/item/weapon/disk/plantgene/attack_self(mob/user)
 	read_only = !read_only
