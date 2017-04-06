@@ -15,6 +15,7 @@
 	var/atom/prey //Whatever Ratvar is chasing
 	var/clashing = FALSE //If Ratvar is FUCKING FIGHTING WITH NAR-SIE
 	var/proselytize_range = 10
+	dangerous_possession = TRUE
 
 /obj/structure/destructible/clockwork/massive/ratvar/New()
 	..()
@@ -116,8 +117,8 @@
 			if(!isnewplayer(M))
 				flash_color(M, flash_color="#966400", flash_time=1)
 				shake_camera(M, 4, 3)
-		var/ratvar_chance = min(ticker.mode.servants_of_ratvar.len, 50)
-		var/narsie_chance = ticker.mode.cult.len
+		var/ratvar_chance = min(SSticker.mode.servants_of_ratvar.len, 50)
+		var/narsie_chance = SSticker.mode.cult.len
 		for(var/mob/living/simple_animal/hostile/construct/harvester/C in player_list)
 			narsie_chance++
 		ratvar_chance = rand(base_victory_chance, ratvar_chance)

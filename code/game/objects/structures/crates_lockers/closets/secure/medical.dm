@@ -4,7 +4,7 @@
 	icon_state = "med"
 	req_access = list(access_medical)
 
-/obj/structure/closet/secure_closet/medical1/New()
+/obj/structure/closet/secure_closet/medical1/PopulateContents()
 	..()
 	new /obj/item/weapon/reagent_containers/glass/beaker(src)
 	new /obj/item/weapon/reagent_containers/glass/beaker(src)
@@ -26,7 +26,7 @@
 	desc = "Used to knock people out."
 	req_access = list(access_surgery)
 
-/obj/structure/closet/secure_closet/medical2/New()
+/obj/structure/closet/secure_closet/medical2/PopulateContents()
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/weapon/tank/internals/anesthetic(src)
@@ -38,7 +38,7 @@
 	req_access = list(access_surgery)
 	icon_state = "med_secure"
 
-/obj/structure/closet/secure_closet/medical3/New()
+/obj/structure/closet/secure_closet/medical3/PopulateContents()
 	..()
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/weapon/defibrillator/loaded(src)
@@ -52,7 +52,7 @@
 	req_access = list(access_cmo)
 	icon_state = "cmo"
 
-/obj/structure/closet/secure_closet/CMO/New()
+/obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/weapon/storage/backpack/dufflebag/med(src)
@@ -69,7 +69,7 @@
 	new /obj/item/weapon/storage/belt/medical(src)
 	new /obj/item/device/assembly/flash/handheld(src)
 	new /obj/item/weapon/reagent_containers/hypospray/CMO(src)
-	new /obj/item/device/autoimplanter/cmo(src)
+	new /obj/item/device/autosurgeon/cmo(src)
 	new /obj/item/weapon/door_remote/chief_medical_officer(src)
 	new /obj/item/weapon/storage/belt/utility/full(src)
 
@@ -77,7 +77,7 @@
 	name = "animal control"
 	req_access = list(access_surgery)
 
-/obj/structure/closet/secure_closet/animal/New()
+/obj/structure/closet/secure_closet/animal/PopulateContents()
 	..()
 	new /obj/item/device/assembly/signaler(src)
 	for(var/i in 1 to 3)
@@ -88,7 +88,7 @@
 	desc = "Store dangerous chemicals in here."
 	icon_door = "chemical"
 
-/obj/structure/closet/secure_closet/chemical/New()
+/obj/structure/closet/secure_closet/chemical/PopulateContents()
 	..()
 	new /obj/item/weapon/storage/box/pillbottles(src)
 	new /obj/item/weapon/storage/box/pillbottles(src)

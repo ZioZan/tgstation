@@ -3,7 +3,7 @@
 	req_access = list(access_captain)
 	icon_state = "cap"
 
-/obj/structure/closet/secure_closet/captains/New()
+/obj/structure/closet/secure_closet/captains/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
 	if(prob(50))
@@ -37,7 +37,7 @@
 	req_access = list(access_hop)
 	icon_state = "hop"
 
-/obj/structure/closet/secure_closet/hop/New()
+/obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/hop(src)
 	new /obj/item/clothing/under/rank/head_of_personnel(src)
@@ -62,7 +62,7 @@
 	req_access = list(access_hos)
 	icon_state = "hos"
 
-/obj/structure/closet/secure_closet/hos/New()
+/obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/hos(src)
 	new /obj/item/weapon/cartridge/hos(src)
@@ -92,7 +92,7 @@
 	req_access = list(access_armory)
 	icon_state = "warden"
 
-/obj/structure/closet/secure_closet/warden/New()
+/obj/structure/closet/secure_closet/warden/PopulateContents()
 	..()
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/clothing/suit/armor/vest/warden(src)
@@ -116,7 +116,7 @@
 	req_access = list(access_security)
 	icon_state = "sec"
 
-/obj/structure/closet/secure_closet/security/New()
+/obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet/sec(src)
@@ -127,34 +127,34 @@
 
 /obj/structure/closet/secure_closet/security/sec
 
-/obj/structure/closet/secure_closet/security/sec/New()
+/obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
 	new /obj/item/weapon/storage/belt/security/full(src)
 
 /obj/structure/closet/secure_closet/security/cargo
 
-/obj/structure/closet/secure_closet/security/cargo/New()
+/obj/structure/closet/secure_closet/security/cargo/PopulateContents()
 	..()
 	new /obj/item/clothing/tie/armband/cargo(src)
 	new /obj/item/device/encryptionkey/headset_cargo(src)
 
 /obj/structure/closet/secure_closet/security/engine
 
-/obj/structure/closet/secure_closet/security/engine/New()
+/obj/structure/closet/secure_closet/security/engine/PopulateContents()
 	..()
 	new /obj/item/clothing/tie/armband/engine(src)
 	new /obj/item/device/encryptionkey/headset_eng(src)
 
 /obj/structure/closet/secure_closet/security/science
 
-/obj/structure/closet/secure_closet/security/science/New()
+/obj/structure/closet/secure_closet/security/science/PopulateContents()
 	..()
 	new /obj/item/clothing/tie/armband/science(src)
 	new /obj/item/device/encryptionkey/headset_sci(src)
 
 /obj/structure/closet/secure_closet/security/med
 
-/obj/structure/closet/secure_closet/security/med/New()
+/obj/structure/closet/secure_closet/security/med/PopulateContents()
 	..()
 	new /obj/item/clothing/tie/armband/medblue(src)
 	new /obj/item/device/encryptionkey/headset_med(src)
@@ -167,7 +167,7 @@
 	obj_integrity = 70
 	max_integrity = 70
 
-/obj/structure/closet/secure_closet/detective/New()
+/obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
 	new /obj/item/clothing/under/rank/det(src)
 	new /obj/item/clothing/suit/det_suit(src)
@@ -191,7 +191,7 @@
 	name = "lethal injections"
 	req_access = list(access_hos)
 
-/obj/structure/closet/secure_closet/injection/New()
+/obj/structure/closet/secure_closet/injection/PopulateContents()
 	..()
 	for(var/i in 1 to 5)
 		new /obj/item/weapon/reagent_containers/syringe/lethal/execution(src)
@@ -202,7 +202,7 @@
 	anchored = 1
 	var/id = null
 
-/obj/structure/closet/secure_closet/brig/New()
+/obj/structure/closet/secure_closet/brig/PopulateContents()
 	..()
 	new /obj/item/clothing/under/rank/prisoner( src )
 	new /obj/item/clothing/shoes/sneakers/orange( src )
@@ -211,7 +211,7 @@
 	name = "courtroom locker"
 	req_access = list(access_court)
 
-/obj/structure/closet/secure_closet/courtroom/New()
+/obj/structure/closet/secure_closet/courtroom/PopulateContents()
 	..()
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	for(var/i in 1 to 3)
@@ -226,7 +226,7 @@
 	req_access = list(access_armory)
 	icon_state = "armory"
 
-/obj/structure/closet/secure_closet/armory1/New()
+/obj/structure/closet/secure_closet/armory1/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/armor/laserproof(src)
 	for(var/i in 1 to 3)
@@ -241,7 +241,7 @@
 	req_access = list(access_armory)
 	icon_state = "armory"
 
-/obj/structure/closet/secure_closet/armory2/New()
+/obj/structure/closet/secure_closet/armory2/PopulateContents()
 	..()
 	new /obj/item/weapon/storage/box/firingpins(src)
 	for(var/i in 1 to 3)
@@ -254,7 +254,7 @@
 	req_access = list(access_armory)
 	icon_state = "armory"
 
-/obj/structure/closet/secure_closet/armory3/New()
+/obj/structure/closet/secure_closet/armory3/PopulateContents()
 	..()
 	new /obj/item/weapon/storage/box/firingpins(src)
 	new /obj/item/weapon/gun/energy/ionrifle(src)
@@ -268,7 +268,7 @@
 	req_access = list(access_armory)
 	icon_state = "tac"
 
-/obj/structure/closet/secure_closet/tac/New()
+/obj/structure/closet/secure_closet/tac/PopulateContents()
 	..()
 	new /obj/item/weapon/gun/ballistic/automatic/wt550(src)
 	new /obj/item/clothing/head/helmet/alt(src)
@@ -280,7 +280,7 @@
 	req_access = list(access_armory)
 	icon_state = "tac"
 
-/obj/structure/closet/secure_closet/lethalshots/New()
+/obj/structure/closet/secure_closet/lethalshots/PopulateContents()
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/weapon/storage/box/lethalshot(src)

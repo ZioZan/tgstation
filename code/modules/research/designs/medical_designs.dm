@@ -345,15 +345,15 @@
 	build_path = /obj/item/organ/cyberimp/arm/combat
 	category = list("Misc", "Medical Designs")
 
-/datum/design/autoimplanter
-	name = "Autoimplanter"
-	desc = "A device that automatically injects a cyber-implant into the user without the hassle of extensive surgery."
-	id = "autoimplanter"
+/datum/design/autosurgeon
+	name = "Autosurgeon"
+	desc = "A device that automatically injects a cybernetic organ into the user without the hassle of extensive surgery."
+	id = "autosurgeon"
 	req_tech = list("materials" = 7, "biotech" = 6, "magnets" = 7, "engineering" = 6, "combat" = 6, "powerstorage" = 8, "bluespace" = 6, "programming"=6, "syndicate" = 4)
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 100
 	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_URANIUM = 2000, MAT_DIAMOND = 2000, MAT_TITANIUM = 2000)
-	build_path = /obj/item/device/autoimplanter
+	build_path = /obj/item/device/autosurgeon
 	category = list("Misc", "Medical Designs")
 
 
