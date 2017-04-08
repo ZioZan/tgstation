@@ -95,25 +95,11 @@
 			if(B)
 				B.pixel_x = rand(-3, 3)
 				B.pixel_y = rand(-3, 3)
-				var/path = GetResistancesByIndex(text2num(href_list["create_vaccine"]))
 				var/vaccine_type = new_cures[text2num(href_list["cure"])]
-				var/vaccine_name = "Unknown"
-
-				if(!ispath(vaccine_type))
-					if(SSdisease.archive_diseases[path])
-						var/datum/disease/D = SSdisease.archive_diseases[path]
-						if(D)
-							vaccine_name = D.name
-							vaccine_type = path
-				else if(vaccine_type)
-					var/datum/disease/D = new vaccine_type(0, null)
-					if(D)
-						vaccine_name = D.name
-
 				if(vaccine_type)
 					if(!ispath(vaccine_type))
-						if(archive_diseases[vaccine_type])
-							var/datum/disease/D = archive_diseases[vaccine_type]
+						if(SSdisease.archive_diseases[vaccine_type])
+							var/datum/disease/D = SSdisease.archive_diseases[vaccine_type]
 							B.name = "[D.name] vaccine bottle"
 							B.reagents.add_reagent("vaccine", 15, list(vaccine_type))
 							replicator_cooldown(200)
@@ -129,17 +115,7 @@
 
 	else if (href_list["virus"])
 		if(!wait)
-
-			var/type = GetVirusTypeByIndex(text2num(href_list["create_virus_culture"]))//the path is received as string - converting
 			var/datum/disease/D = new_diseases[text2num(href_list["virus"])]
-			if(!ispath(type))
-				D = GetVirusByIndex(text2num(href_list["create_virus_culture"]))
-				var/datum/disease/advance/A = SSdisease.archive_diseases[D.GetDiseaseID()]
-				if(A)
-					D = new A.type(0, A)
-			else if(type)
-				if(type in SSdisease.diseases) // Make sure this is a disease
-					D = new type(0, null)
 			if(!D)
 				return
 			var/name = stripped_input(usr,"Name:","Name the culture",D.name,MAX_NAME_LEN)
@@ -366,7 +342,6 @@
 			if(!beaker)
 				dat += "<b>No beaker inserted.</b><BR>"
 
-
 			else
 				var/datum/reagents/R = beaker.reagents
 				var/datum/reagent/blood/Blood = null
@@ -392,7 +367,7 @@
 									if(istype(D, /datum/disease/advance))
 
 										var/datum/disease/advance/A = D
-										D = archive_diseases[A.GetDiseaseID()]
+										D = SSdisease.archive_diseases[A.GetDiseaseID()]
 										if(D && D.name == "Unknown")
 											dat += "<b><a href='?src=\ref[src];name_disease=[i]'>Name Disease</a></b><BR>"
 
@@ -404,12 +379,7 @@
 									dat += "<b>Description: </b> [(D.desc||"none")]<BR>"
 									dat += "<b>Spread:</b> [(D.spread_text||"none")]<BR><hr><br>"
 									dat += "<b>Possible cure:</b> [(D.cure_text||"none")]<BR>"
-									if(istype(D, /datum/disease/advance))
-										var/datum/disease/advance/A = D
-										dat += "<b>Stealth:</b> [(A.totalStealth())]<BR>"
-										dat += "<b>Resistance:</b> [(A.totalResistance())]<BR>"
-										dat += "<b>Stage Speed:</b> [(A.totalStageSpeed())]<BR>"
-										dat += "<b>Transmission:</b> [(A.totalTransmittable())]<BR><BR>"
+
 									if(istype(D, /datum/disease/advance))
 										var/datum/disease/advance/A = D
 										dat += "<b>Symptoms:</b> "
@@ -431,7 +401,7 @@
 							for(var/type in Blood.data["resistances"])
 								var/disease_name = "Unknown"
 								if(!ispath(type))
-									var/datum/disease/advance/A = archive_diseases[type]
+									var/datum/disease/advance/A = SSdisease.archive_diseases[type]
 									if(A)
 										disease_name = A.name
 								else
@@ -539,7 +509,7 @@
 			for(var/type in new_cures)
 				loop++
 				if(!ispath(type)) //Is an advanced disease
-					var/datum/disease/DD = archive_diseases[type]
+					var/datum/disease/DD = SSdisease.archive_diseases[type]
 					dat += "[DD.name] "
 				else
 					var/datum/disease/gn = new type(0, null)

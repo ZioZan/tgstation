@@ -191,10 +191,11 @@
 
 /obj/item/weapon/pdapinpointer/New()
 	..()
-	pinpointer_list += src
+	GLOB.pinpointer_list += src
 
 /obj/item/weapon/pdapinpointer/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
+	GLOB.pinpointer_list -= src
 	return ..()
 
 /obj/item/weapon/pdapinpointer/attack_self(mob/living/user)
