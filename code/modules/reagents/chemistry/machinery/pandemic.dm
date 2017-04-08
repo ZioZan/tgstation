@@ -95,7 +95,21 @@
 			if(B)
 				B.pixel_x = rand(-3, 3)
 				B.pixel_y = rand(-3, 3)
+				var/path = GetResistancesByIndex(text2num(href_list["create_vaccine"]))
 				var/vaccine_type = new_cures[text2num(href_list["cure"])]
+				var/vaccine_name = "Unknown"
+
+				if(!ispath(vaccine_type))
+					if(SSdisease.archive_diseases[path])
+						var/datum/disease/D = SSdisease.archive_diseases[path]
+						if(D)
+							vaccine_name = D.name
+							vaccine_type = path
+				else if(vaccine_type)
+					var/datum/disease/D = new vaccine_type(0, null)
+					if(D)
+						vaccine_name = D.name
+
 				if(vaccine_type)
 					if(!ispath(vaccine_type))
 						if(archive_diseases[vaccine_type])
@@ -115,7 +129,17 @@
 
 	else if (href_list["virus"])
 		if(!wait)
+
+			var/type = GetVirusTypeByIndex(text2num(href_list["create_virus_culture"]))//the path is received as string - converting
 			var/datum/disease/D = new_diseases[text2num(href_list["virus"])]
+			if(!ispath(type))
+				D = GetVirusByIndex(text2num(href_list["create_virus_culture"]))
+				var/datum/disease/advance/A = SSdisease.archive_diseases[D.GetDiseaseID()]
+				if(A)
+					D = new A.type(0, A)
+			else if(type)
+				if(type in SSdisease.diseases) // Make sure this is a disease
+					D = new type(0, null)
 			if(!D)
 				return
 			var/name = stripped_input(usr,"Name:","Name the culture",D.name,MAX_NAME_LEN)
@@ -143,8 +167,8 @@
 		if(..())
 			return
 		var/id = GetVirusTypeByIndex(text2num(href_list["name_disease"]))
-		if(archive_diseases[id])
-			var/datum/disease/advance/A = archive_diseases[id]
+		if(SSdisease.archive_diseases[id])
+			var/datum/disease/advance/A = SSdisease.archive_diseases[id]
 			A.AssignName(new_name)
 			for(var/datum/disease/advance/AD in SSdisease.processing)
 				AD.Refresh()
@@ -342,6 +366,7 @@
 			if(!beaker)
 				dat += "<b>No beaker inserted.</b><BR>"
 
+
 			else
 				var/datum/reagents/R = beaker.reagents
 				var/datum/reagent/blood/Blood = null
@@ -379,7 +404,12 @@
 									dat += "<b>Description: </b> [(D.desc||"none")]<BR>"
 									dat += "<b>Spread:</b> [(D.spread_text||"none")]<BR><hr><br>"
 									dat += "<b>Possible cure:</b> [(D.cure_text||"none")]<BR>"
-
+									if(istype(D, /datum/disease/advance))
+										var/datum/disease/advance/A = D
+										dat += "<b>Stealth:</b> [(A.totalStealth())]<BR>"
+										dat += "<b>Resistance:</b> [(A.totalResistance())]<BR>"
+										dat += "<b>Stage Speed:</b> [(A.totalStageSpeed())]<BR>"
+										dat += "<b>Transmission:</b> [(A.totalTransmittable())]<BR><BR>"
 									if(istype(D, /datum/disease/advance))
 										var/datum/disease/advance/A = D
 										dat += "<b>Symptoms:</b> "
