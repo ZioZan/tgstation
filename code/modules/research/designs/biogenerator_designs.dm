@@ -99,6 +99,14 @@
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/killer/pestkiller
 	category = list("initial","Botany Chemicals")
 
+/datum/design/mutagen
+	name = "Unstable mutagen"
+	id = "mutagen"
+	build_type = BIOGENERATOR
+	materials = list(MAT_BIOMASS = 100)
+	build_path = /obj/item/weapon/reagent_containers/glass/bottle/mutagen
+	category = list("initial","Botany Chemicals")
+
 /datum/design/botany_bottle
 	name = "Empty Bottle"
 	id = "botany_bottle"
