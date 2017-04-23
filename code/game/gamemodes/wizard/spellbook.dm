@@ -414,7 +414,7 @@
 	desc = "An ensorcelled suit of armour, protected by a powerful shield. The shield can completly negate sixteen attacks before being permanently depleted."
 	item_path = /obj/item/clothing/suit/space/hardsuit/shielded/wizard
 	limit = 1
-	var/cost = 6
+	cost = 6
 	category = "Defensive"
 
 /datum/spellbook_entry/item/battlemage_charge
