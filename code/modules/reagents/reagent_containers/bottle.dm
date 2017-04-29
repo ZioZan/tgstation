@@ -9,8 +9,8 @@
 	volume = 30
 
 
-/obj/item/weapon/reagent_containers/glass/bottle/Initialize()
-	. = ..()
+/obj/item/weapon/reagent_containers/glass/bottle/New()
+	..()
 	if(!icon_state)
 		icon_state = "bottle"
 	update_icon()
@@ -21,7 +21,7 @@
 /obj/item/weapon/reagent_containers/glass/bottle/update_icon()
 	cut_overlays()
 	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]-10")
+		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]-10")
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
@@ -139,8 +139,8 @@
 	icon_state = "bottle16"
 	var/extra_reagent = null
 
-/obj/item/weapon/reagent_containers/glass/bottle/traitor/Initialize()
-	. = ..()
+/obj/item/weapon/reagent_containers/glass/bottle/traitor/New()
+	..()
 	extra_reagent = pick("polonium", "histamine", "formaldehyde", "venom", "neurotoxin2", "cyanide")
 	reagents.add_reagent("[extra_reagent]", 3)
 
@@ -342,3 +342,74 @@
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	icon_state = "bottle5"
 	list_reagents = list("atropine" = 5, "epinephrine" = 5, "salbutamol" = 10, "spaceacillin" = 10)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision
+	name = "bottle"
+	desc = "A precision bottle."
+	possible_transfer_amounts = list(1,2,5,10,15,25,50)
+	volume = 50
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/plasma
+	name = "liquid plasma bottle"
+	desc = "A precision bottle of liquid plasma. Extremely toxic and reacts with micro-organisms inside blood."
+	list_reagents = list("plasma" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/synaptizine
+	name = "synaptizine bottle"
+	desc = "A precision bottle of synaptizine."
+	list_reagents = list("synaptizine" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/mutagen
+	name = "unstable mutagen bottle"
+	desc = "A precision bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
+	list_reagents = list("mutagen" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/eznutriment
+	name = "bottle of E-Z-Nutrient"
+	desc = "A precision bottle of e-z-nutrient. Contains a fertilizer that causes mild mutations with each harvest."
+	list_reagents = list("eznutriment" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/left4zednutriment
+	name = "bottle of Left 4 Zed"
+	desc = "A precision bottle of left 4 zed. Contains a fertilizer that limits plant yields to no more than one and causes significant mutations in plants."
+	list_reagents = list("left4zednutriment" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/robustharvestnutriment
+	name = "bottle of Robust Harvest"
+	desc = "A precision bottle of robust harvest. Contains a fertilizer that doubles the yield of a plant while causing no mutations."
+	list_reagents = list("robustharvestnutriment" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/plantbgone
+	name = "bottle of plant-b-gone"
+	desc = "A precision bottle of plant-b-gone. Contains a chemical toxic to plants kills them fast."
+	list_reagents = list("plantbgone" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/weedkiller
+	name = "bottle of weed killer"
+	desc = "A precision bottle of weed killer. Contains a herbicide."
+	list_reagents = list("weedkiller" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/pestkiller
+	name = "bottle of pest killer"
+	desc = "A precision bottle of pest killer. Contains a pesticide."
+	list_reagents = list("pestkiller" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/ash
+	name = "bottle of ash"
+	desc = "A precision bottle of ash. Contains a weak fertilizer that very slightly heals the plant while also killing weeds."
+	list_reagents = list("ash" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/ammonia
+	name = "bottle of ammonia"
+	desc = "A precision bottle of ammonia. Contains a fertilizer that slightly heals the plant while also in a sufficient amount able to increase plant yield."
+	list_reagents = list("ammonia" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/saltpetre
+	name = "bottle of saltpetre"
+	desc = "A precision bottle of saltpetre. Contains a chemical that very slightly heals the plant while also in a sufficient amount able to increase plant potency and growth rate."
+	list_reagents = list("saltpetre" = 30)
+
+/obj/item/weapon/reagent_containers/glass/bottle/precision/diethylamine
+	name = "bottle of diethylamine"
+	desc = "A precision bottle of diethylamine. Contains a strong fertilizer that heals the plant while also killing pests and in a sufficient amount able to increase plant yield at double the rate of ammonia."
+	list_reagents = list("diethylamine" = 30)

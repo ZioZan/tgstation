@@ -66,7 +66,6 @@
 
 
 /datum/chemical_reaction/slime/slimemutate_unstable/on_reaction(datum/reagents/holder)
-	feedback_add_details("slime_cores_used","[type]")
 	..()
 
 /datum/chemical_reaction/slime/slimeuran
@@ -153,7 +152,6 @@
 	required_other = 1
 
 /datum/chemical_reaction/slime/slimegold/on_reaction(datum/reagents/holder)
-	feedback_add_details("slime_cores_used","[type]")
 	var/turf/location = get_turf(holder.my_atom)
 	new /obj/item/stack/sheet/mineral/gold (location, 5)
 	..()
