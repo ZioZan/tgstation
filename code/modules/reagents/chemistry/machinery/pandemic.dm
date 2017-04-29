@@ -33,8 +33,8 @@
 	var/wait = null
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 
-/obj/machinery/computer/pandemic/New()
-	..()
+/obj/machinery/computer/pandemic/Initialize()
+	. = ..()
 	update_icon()
 
 /obj/machinery/computer/pandemic/proc/GetVirusByIndex(var/index)

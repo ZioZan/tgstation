@@ -122,8 +122,8 @@
 	item_state = "beaker"
 	materials = list(MAT_GLASS=500)
 
-/obj/item/weapon/reagent_containers/glass/beaker/New()
-	..()
+/obj/item/weapon/reagent_containers/glass/beaker/Initialize()
+	. = ..()
 	update_icon()
 
 /obj/item/weapon/reagent_containers/glass/beaker/on_reagent_change()
@@ -133,7 +133,7 @@
 	cut_overlays()
 
 	if(reagents.total_volume)
-		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]10")
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
@@ -175,8 +175,8 @@
 	amount_per_transfer_from_this = 10
 	flags = OPENCONTAINER
 
-/obj/item/weapon/reagent_containers/glass/beaker/noreact/New()
-	..()
+/obj/item/weapon/reagent_containers/glass/beaker/noreact/Initialize()
+	. = ..()
 	reagents.set_reacting(FALSE)
 
 /obj/item/weapon/reagent_containers/glass/beaker/bluespace
