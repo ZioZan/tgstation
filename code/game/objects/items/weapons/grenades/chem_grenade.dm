@@ -19,10 +19,10 @@
 	var/threatscale = 1 // Used by advanced grenades to make them slightly more worthy.
 	var/no_splash = FALSE //If the grenade deletes even if it has no reagents to splash with. Used for slime core reactions.
 
-/obj/item/weapon/grenade/chem_grenade/New()
+/obj/item/weapon/grenade/chem_grenade/Initialize()
+	. = ..()
 	create_reagents(1000)
 	stage_change() // If no argument is set, it will change the stage to the current stage, useful for stock grenades that start READY.
-	..()
 
 /obj/item/weapon/grenade/chem_grenade/examine(mob/user)
 	display_timer = (stage == READY && !nadeassembly)	//show/hide the timer based on assembly state
@@ -311,8 +311,8 @@
 	desc = "Used for emergency sealing of air breaches."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/metalfoam/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/metalfoam/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
@@ -329,8 +329,8 @@
 	desc = "Used for clearing rooms of living things."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/incendiary/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/incendiary/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
@@ -347,8 +347,8 @@
 	desc = "Used for purging large areas of invasive plant species. Contents under pressure. Do not directly inhale contents."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/antiweed/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/antiweed/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
@@ -366,8 +366,8 @@
 	desc = "BLAM!-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/cleaner/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/cleaner/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
@@ -384,8 +384,8 @@
 	desc = "Waffle Co.-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/ez_clean/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/ez_clean/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
 
@@ -403,8 +403,8 @@
 	desc = "Used for nonlethal riot control. Contents under pressure. Do not directly inhale contents."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/teargas/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/teargas/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/large/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/large/B2 = new(src)
 
@@ -422,8 +422,8 @@
 	desc = "Used for melting armoured opponents."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/facid/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/facid/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B2 = new(src)
 
@@ -442,8 +442,8 @@
 	desc = "Used for wide scale painting projects."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/colorful/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/colorful/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
@@ -461,8 +461,8 @@
 	stage = READY
 	var/glitter_type = "glitter"
 
-/obj/item/weapon/grenade/chem_grenade/glitter/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/glitter/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
@@ -494,8 +494,8 @@
 	desc = "BURN!-brand foaming clf3. In a special applicator for rapid purging of wide areas."
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/clf3/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/clf3/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B2 = new(src)
 
@@ -512,8 +512,8 @@
 	desc = "Tiger Cooperative chemical foam grenade. Causes temporary irration, blindness, confusion, mutism, and mutations to carbon based life forms. Contains additional spore toxin"
 	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/bioterrorfoam/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/bioterrorfoam/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B2 = new(src)
 
@@ -532,8 +532,8 @@
  	desc = "WARNING: GRENADE WILL RELEASE DEADLY SPORES CONTAINING ACTIVE AGENTS. SEAL SUIT AND AIRFLOW BEFORE USE."
  	stage = READY
 
-/obj/item/weapon/grenade/chem_grenade/tuberculosis/New()
-	..()
+/obj/item/weapon/grenade/chem_grenade/tuberculosis/Initialize()
+	. = ..()
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/bluespace/B2 = new(src)
 
