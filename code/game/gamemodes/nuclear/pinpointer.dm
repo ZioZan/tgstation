@@ -17,6 +17,7 @@
 	var/atom/movable/constant_target = null //The thing we're always focused on, if we're in the right mode
 	var/target_x = 0 //The target coordinates if we're tracking those
 	var/target_y = 0
+	var/minimum_range = 0 //at what range the pinpointer declares you to be at your destination
 	var/nuke_warning = FALSE // If we've set off a miniature alarm about an armed nuke
 	var/mode = TRACK_NUKE_DISK //What are we looking for?
 
@@ -129,7 +130,7 @@
 	if(here.z != there.z)
 		icon_state = "pinon[nuke_warning ? "alert" : ""]null"
 		return
-	if(here == there)
+	if(get_dist_euclidian(here,there)<=minimum_range)
 		icon_state = "pinon[nuke_warning ? "alert" : ""]direct"
 	else
 		setDir(get_dir(here, there))
@@ -277,4 +278,3 @@
 		if(isliving(loc))
 			var/mob/living/L = loc
 			L << "<span class='notice'>Tracking [target].</span>"
-
