@@ -163,12 +163,12 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 		var/turf/T = get_turf(src)
 		message_admins("Plasma sheets ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_COORDJMP(T)]",0,1)
 		log_game("Plasma sheets ignited by [key_name(user)] in [COORD(T)]")
-		fire_act()
+		fire_act(W.is_hot())
 	else
 		return ..()
 
 /obj/item/stack/sheet/mineral/plasma/fire_act(exposed_temperature, exposed_volume)
-	atmos_spawn_air("plasma=[amount*10];TEMP=1000")
+	atmos_spawn_air("plasma=[amount*10];TEMP=[exposed_temperature]")
 	qdel(src)
 
 /obj/item/stack/sheet/mineral/plasma/fifty
@@ -329,7 +329,6 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	force = 1
 	throwforce = 2
 	origin_tech = "materials=1"
-	sheettype = "snow"
 
 GLOBAL_LIST_INIT(snow_recipes, list ( \
 	new/datum/stack_recipe("Snow Wall",/turf/closed/wall/mineral/snow, 5, one_per_turf = 1, on_floor = 1), \
