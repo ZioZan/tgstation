@@ -152,7 +152,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 10)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/eznutriment
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/left4zednutriment_bottle
 	name = "Left 4 Zed Bottle"
@@ -160,7 +160,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 20)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/left4zednutriment
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/robustharvestnutriment_bottle
 	name = "Robust Harvest Bottle"
@@ -168,7 +168,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 25)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/robustharvestnutriment
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/plantbgone_bottle
 	name = "Plant-B-Gone Bottle"
@@ -176,7 +176,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 50)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/plantbgone
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/weedkiller_bottle
 	name = "Weed Killer Bottle"
@@ -184,7 +184,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 50)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/weedkiller
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/pestkiller_bottle
 	name = "Pest Killer Bottle"
@@ -192,7 +192,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 50)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/pestkiller
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/mutagen_bottle
 	name = "Unstable Mutagen Bottle"
@@ -200,7 +200,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 200)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/mutagen
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/ash_bottle
 	name = "Ash Bottle"
@@ -208,7 +208,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 15)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/ash
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/ammonia_bottle
 	name = "Ammonia Bottle"
@@ -216,7 +216,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 25)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/ammonia
-	category = list("initial","Botany Chemical Bottles")
+	category = list("initial","Botany Chemicals")
 
 /datum/design/saltpetre_bottle
 	name = "Saltpetre Bottle"
@@ -224,7 +224,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 50)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/saltpetre
-	category = list("initial", "Botany Chemical Bottles")
+	category = list("initial", "Botany Chemicals")
 
 /datum/design/diethylamine_bottle
 	name = "Diethylamine Bottle"
@@ -232,7 +232,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 100)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision/diethylamine
-	category = list("initial", "Botany Chemical Bottles")
+	category = list("initial", "Botany Chemicals")
 
 /datum/design/empty_bottle
 	name = "Empty Bottle"
@@ -240,7 +240,7 @@
 	build_type = BIOGENERATOR
 	materials = list(MAT_BIOMASS = 5)
 	build_path = /obj/item/weapon/reagent_containers/glass/bottle/precision
-	category = list("initial", "Botany Chemical Bottles")
+	category = list("initial", "Botany Chemicals")
 
 /datum/design/cloth
 	name = "Roll of cloth"
