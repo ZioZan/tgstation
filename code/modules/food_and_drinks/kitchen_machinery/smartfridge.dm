@@ -440,9 +440,9 @@
 		/obj/item/weapon/reagent_containers/syringe/antiviral = 4,
 		/obj/item/weapon/reagent_containers/glass/bottle/cold = 1,
 		/obj/item/weapon/reagent_containers/glass/bottle/flu_virion = 1,
-		/obj/item/weapon/reagent_containers/glass/bottle/mutagen = 1,
-		/obj/item/weapon/reagent_containers/glass/bottle/plasma = 1,
-		/obj/item/weapon/reagent_containers/glass/bottle/synaptizine = 1)
+		/obj/item/weapon/reagent_containers/glass/bottle/precision/mutagen = 3,
+		/obj/item/weapon/reagent_containers/glass/bottle/precision/plasma = 3,
+		/obj/item/weapon/reagent_containers/glass/bottle/precision/synaptizine = 6)
 
 // ----------------------------
 // Disk """fridge"""
