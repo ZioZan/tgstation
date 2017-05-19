@@ -61,3 +61,19 @@
 		user.updatehealth()
 		user.adjustBrainLoss(-hp_gained) // Zom Bee gibbers "BRAAAAISNSs!1!"
 		user.nutrition = min(user.nutrition + hp_gained, NUTRITION_LEVEL_FULL)
+
+/obj/item/zombie_hand/proc/tear_airlock(obj/machinery/door/airlock/A, mob/user)
+	removing_airlock = TRUE
+	user << "<span class='notice'>You start tearing apart the airlock...</span>"
+	playsound(src.loc, 'sound/machines/airlock_alien_prying.ogg', 100, 1)
+	A.audible_message("<span class='italics'>You hear a loud metallic grinding sound.</span>")
+	if(do_after(user, delay=160, needhand=FALSE, target=A, progress=TRUE))
+		playsound(src.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
+		A.audible_message("<span class='danger'>With a screech, [A] is torn apart!</span>")
+		var/obj/structure/door_assembly/door = new A.assemblytype(get_turf(A))
+		door.density = 0
+		door.anchored = 1
+		door.name = "ravaged [door]"
+		door.desc = "An airlock that has been torn apart. Looks like it won't be keeping much out now."
+		qdel(A)
+	removing_airlock = FALSE
