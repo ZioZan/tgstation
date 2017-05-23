@@ -372,7 +372,7 @@
 											datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "chem_dispenser", name, 550, 550, master_ui, state)
+		ui = new(user, src, ui_key, "chem_synth", name, 550, 550, master_ui, state)
 		ui.open()
 
 /obj/machinery/chem_dispenser/constructable/synth/ui_data()

@@ -20,7 +20,7 @@
     {{#each data.beakerTransferAmounts}}
       <ui-button icon='minus' action='remove' params='{"amount": {{.}}}'>{{.}}</ui-button>
     {{/each}}
-	<ui-button icon='scan' action='scan' params='{"reagent": "{{id}}"}'>Scan</ui-button>
+    <ui-button icon='scan' state='{{data.isBeakerLoaded ? null : "disabled"}}' action='scan' params='{"reagent": "{{id}}"}'>Scan</ui-button>
     <ui-button icon='eject' state='{{data.isBeakerLoaded ? null : "disabled"}}' action='eject'>Eject</ui-button>
   {{/partial}}
   <ui-section label='Contents'>
