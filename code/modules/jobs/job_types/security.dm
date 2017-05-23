@@ -23,14 +23,28 @@ Head of Security
 
 	outfit = /datum/outfit/job/hos
 
-	access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons,
-			            GLOB.access_forensics_lockers, GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_all_personal_lockers,
-			            GLOB.access_research, GLOB.access_engine, GLOB.access_mining, GLOB.access_medical, GLOB.access_construction, GLOB.access_mailsorting,
-			            GLOB.access_heads, GLOB.access_hos, GLOB.access_RC_announce, GLOB.access_keycard_auth, GLOB.access_gateway, GLOB.access_maint_tunnels)
-	minimal_access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons,
-			            GLOB.access_forensics_lockers, GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_all_personal_lockers,
-			            GLOB.access_research, GLOB.access_engine, GLOB.access_mining, GLOB.access_medical, GLOB.access_construction, GLOB.access_mailsorting,
-			            GLOB.access_heads, GLOB.access_hos, GLOB.access_RC_announce, GLOB.access_keycard_auth, GLOB.access_gateway, GLOB.access_maint_tunnels)
+	access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons, GLOB.access_eva,
+			            GLOB.access_forensics_lockers, GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_bar, GLOB.access_janitor, GLOB.access_all_personal_lockers,
+			            GLOB.access_research, GLOB.access_engine, GLOB.access_engine_equip, GLOB.access_tech_storage,GLOB.access_minisat,GLOB.access_tcomsat,
+			            GLOB.access_external_airlocks, GLOB.access_atmospherics, GLOB.access_emergency_storage, GLOB.access_eva, GLOB.access_mining, GLOB.access_mining_station, GLOB.access_medical,
+			            GLOB.access_genetics, GLOB.access_cloning, GLOB.access_mineral_storeroom, GLOB.access_chemistry, GLOB.access_virology,  GLOB.access_surgery,
+			            GLOB.access_construction, GLOB.access_crematorium, 
+			            GLOB.access_kitchen, GLOB.access_cargo, GLOB.access_cargo_bot, GLOB.access_mailsorting, GLOB.access_qm, GLOB.access_hydroponics, GLOB.access_lawyer,
+			            GLOB.access_theatre, GLOB.access_chapel_office, GLOB.access_library, GLOB.access_tox,
+			            GLOB.access_tox_storage, GLOB.access_teleporter,
+			            GLOB.access_research, GLOB.access_robotics, GLOB.access_xenobiology,
+			            GLOB.access_heads, GLOB.access_hos, GLOB.access_RC_announce, GLOB.access_keycard_auth, GLOB.access_gateway, GLOB.access_maint_tunnels, GLOB.access_mineral_storeroom)
+	minimal_access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons, GLOB.access_eva,
+			            GLOB.access_forensics_lockers, GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_bar, GLOB.access_janitor, GLOB.access_all_personal_lockers,
+			            GLOB.access_research, GLOB.access_engine, GLOB.access_engine_equip, GLOB.access_tech_storage,GLOB.access_minisat,GLOB.access_tcomsat,
+			            GLOB.access_external_airlocks, GLOB.access_atmospherics, GLOB.access_emergency_storage, GLOB.access_eva, GLOB.access_mining, GLOB.access_mining_station, GLOB.access_medical,
+			            GLOB.access_genetics, GLOB.access_cloning, GLOB.access_mineral_storeroom, GLOB.access_chemistry, GLOB.access_virology,  GLOB.access_surgery,
+			            GLOB.access_construction, GLOB.access_crematorium, 
+			            GLOB.access_kitchen, GLOB.access_cargo, GLOB.access_cargo_bot, GLOB.access_mailsorting, GLOB.access_qm, GLOB.access_hydroponics, GLOB.access_lawyer,
+			            GLOB.access_theatre, GLOB.access_chapel_office, GLOB.access_library, GLOB.access_tox,
+			            GLOB.access_tox_storage, GLOB.access_teleporter,
+			            GLOB.access_research, GLOB.access_robotics, GLOB.access_xenobiology,
+			            GLOB.access_heads, GLOB.access_hos, GLOB.access_RC_announce, GLOB.access_keycard_auth, GLOB.access_gateway, GLOB.access_maint_tunnels, GLOB.access_mineral_storeroom)
 
 /datum/outfit/job/hos
 	name = "Head of Security"
@@ -74,9 +88,28 @@ Warden
 
 	outfit = /datum/outfit/job/warden
 
-	access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_maint_tunnels, GLOB.access_morgue, GLOB.access_weapons, GLOB.access_forensics_lockers)
-	minimal_access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons) //See /datum/job/warden/get_access()
-
+	access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons, GLOB.access_eva,
+			            GLOB.access_forensics_lockers, GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_bar, GLOB.access_janitor, GLOB.access_all_personal_lockers,
+			            GLOB.access_research, GLOB.access_engine, GLOB.access_engine_equip, GLOB.access_tech_storage,GLOB.access_minisat,GLOB.access_tcomsat,
+			            GLOB.access_external_airlocks, GLOB.access_atmospherics, GLOB.access_emergency_storage, GLOB.access_eva, GLOB.access_mining, GLOB.access_mining_station, GLOB.access_medical,
+			            GLOB.access_genetics, GLOB.access_cloning, GLOB.access_mineral_storeroom, GLOB.access_chemistry, GLOB.access_virology,  GLOB.access_surgery,
+			            GLOB.access_construction,
+			            GLOB.access_kitchen, GLOB.access_cargo, GLOB.access_cargo_bot, GLOB.access_mailsorting, GLOB.access_qm, GLOB.access_hydroponics, GLOB.access_lawyer,
+			            GLOB.access_theatre, GLOB.access_chapel_office, GLOB.access_library, GLOB.access_tox,
+			            GLOB.access_tox_storage, GLOB.access_teleporter,
+			            GLOB.access_research, GLOB.access_robotics, GLOB.access_xenobiology,
+			            GLOB.access_gateway, GLOB.access_maint_tunnels, GLOB.access_mineral_storeroom)
+	minimal_access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_armory, GLOB.access_court, GLOB.access_weapons, GLOB.access_eva,
+			            GLOB.access_forensics_lockers, GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_bar, GLOB.access_janitor, GLOB.access_all_personal_lockers,
+			            GLOB.access_research, GLOB.access_engine, GLOB.access_engine_equip, GLOB.access_tech_storage,GLOB.access_minisat,GLOB.access_tcomsat,
+			            GLOB.access_external_airlocks, GLOB.access_atmospherics, GLOB.access_emergency_storage, GLOB.access_eva, GLOB.access_mining, GLOB.access_mining_station, GLOB.access_medical,
+			            GLOB.access_genetics, GLOB.access_cloning, GLOB.access_mineral_storeroom, GLOB.access_chemistry, GLOB.access_virology,  GLOB.access_surgery,
+			            GLOB.access_construction,
+			            GLOB.access_kitchen, GLOB.access_cargo, GLOB.access_cargo_bot, GLOB.access_mailsorting, GLOB.access_qm, GLOB.access_hydroponics, GLOB.access_lawyer,
+			            GLOB.access_theatre, GLOB.access_chapel_office, GLOB.access_library, GLOB.access_tox,
+			            GLOB.access_tox_storage, GLOB.access_teleporter,
+			            GLOB.access_research, GLOB.access_robotics, GLOB.access_xenobiology,
+			            GLOB.access_gateway, GLOB.access_maint_tunnels, GLOB.access_mineral_storeroom)
 /datum/job/warden/get_access()
 	var/list/L = list()
 	L = ..() | check_config_for_sec_maint()
@@ -172,9 +205,28 @@ Security Officer
 
 	outfit = /datum/outfit/job/security
 
-	access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_court, GLOB.access_maint_tunnels, GLOB.access_morgue, GLOB.access_weapons, GLOB.access_forensics_lockers)
-	minimal_access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_court, GLOB.access_weapons) //But see /datum/job/warden/get_access()
-
+	access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_court, GLOB.access_weapons, GLOB.access_eva,
+			            GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_bar, GLOB.access_janitor, GLOB.access_all_personal_lockers,
+			            GLOB.access_research, GLOB.access_engine, GLOB.access_engine_equip, GLOB.access_tech_storage,GLOB.access_minisat,GLOB.access_tcomsat,
+			            GLOB.access_external_airlocks, GLOB.access_atmospherics, GLOB.access_emergency_storage, GLOB.access_eva, GLOB.access_mining, GLOB.access_mining_station, GLOB.access_medical,
+			            GLOB.access_genetics, GLOB.access_cloning, GLOB.access_mineral_storeroom, GLOB.access_chemistry, GLOB.access_virology,  GLOB.access_surgery,
+			            GLOB.access_construction,
+			            GLOB.access_kitchen, GLOB.access_cargo, GLOB.access_cargo_bot, GLOB.access_mailsorting, GLOB.access_qm, GLOB.access_hydroponics, GLOB.access_lawyer,
+			            GLOB.access_theatre, GLOB.access_chapel_office, GLOB.access_library, GLOB.access_tox,
+			            GLOB.access_tox_storage, GLOB.access_teleporter,
+			            GLOB.access_research, GLOB.access_robotics, GLOB.access_xenobiology,
+			            GLOB.access_gateway, GLOB.access_maint_tunnels, GLOB.access_mineral_storeroom)
+	minimal_access = list(GLOB.access_security, GLOB.access_sec_doors, GLOB.access_brig, GLOB.access_court, GLOB.access_weapons, GLOB.access_eva,
+			            GLOB.access_morgue, GLOB.access_maint_tunnels, GLOB.access_bar, GLOB.access_janitor, GLOB.access_all_personal_lockers,
+			            GLOB.access_research, GLOB.access_engine, GLOB.access_engine_equip, GLOB.access_tech_storage,GLOB.access_minisat,GLOB.access_tcomsat,
+			            GLOB.access_external_airlocks, GLOB.access_atmospherics, GLOB.access_emergency_storage, GLOB.access_eva, GLOB.access_mining, GLOB.access_mining_station, GLOB.access_medical,
+			            GLOB.access_genetics, GLOB.access_cloning, GLOB.access_mineral_storeroom, GLOB.access_chemistry, GLOB.access_virology,  GLOB.access_surgery,
+			            GLOB.access_construction,
+			            GLOB.access_kitchen, GLOB.access_cargo, GLOB.access_cargo_bot, GLOB.access_mailsorting, GLOB.access_qm, GLOB.access_hydroponics, GLOB.access_lawyer,
+			            GLOB.access_theatre, GLOB.access_chapel_office, GLOB.access_library, GLOB.access_tox,
+			            GLOB.access_tox_storage, GLOB.access_teleporter,
+			            GLOB.access_research, GLOB.access_robotics, GLOB.access_xenobiology,
+			            GLOB.access_gateway, GLOB.access_maint_tunnels, GLOB.access_mineral_storeroom)
 
 /datum/job/officer/get_access()
 	var/list/L = list()
