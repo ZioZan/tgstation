@@ -45,6 +45,16 @@
 	build_path = /obj/item/device/mmi/posibrain
 	category = list("Misc", "Medical Designs")
 
+/datum/design/handscanner
+	name = "Handleheld Vitals Monitor"
+	desc = "Mobile crew vitals monitor."
+	id = "vitalsmonitor"
+	req_tech = list("programming" = 5, "biotech" = 5,  "engineering" = 5)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 2000, MAT_GLASS = 1000, MAT_GOLD = 500, MAT_PLASMA = 500)
+	build_path = /obj/item/device/sensor_device
+	category = list("Misc", "Medical Designs")
+
 /datum/design/bluespacebeaker
 	name = "Bluespace Beaker"
 	desc = "A bluespace beaker, powered by experimental bluespace technology and Element Cuban combined with the Compound Pete. Can hold up to 300 units."
