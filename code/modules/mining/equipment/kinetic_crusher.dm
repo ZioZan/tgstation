@@ -22,7 +22,7 @@
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
 	sharpness = IS_SHARP
 	var/charged = TRUE
-	var/charge_time = 14
+	var/charge_time = 10
 
 /obj/item/projectile/destabilizer
 	name = "destabilizing force"
