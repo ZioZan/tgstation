@@ -19,7 +19,7 @@
 			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
 			new /obj/item/device/soulstone/anybody(src)
-			new /obj/structure/constructshell(src
+			new /obj/structure/constructshell(src)
 		if(4)
 			new /obj/item/weapon/katana/cursed(src)
 		if(5)
@@ -31,7 +31,7 @@
 		if(8)
 			new /obj/item/weapon/scrying(src)
 		if(9)
-			new /obj/item/organ/alien/eggsac(src)(src)
+			new /obj/item/organ/alien/eggsac(src)
 		if(10)
 			new /obj/item/weapon/melee/ghost_sword(src)
 		if(11)
