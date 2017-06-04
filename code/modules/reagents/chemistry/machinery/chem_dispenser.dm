@@ -374,8 +374,8 @@
 	icon_state = "synth"
 	var/recharging_power_usage = 5000
 	var/default_power_usage = 5000 //default power usage without any upgrades
-	energy = 0
-	max_energy = 50
+	var/energy = 0
+	var/max_energy = 50
 	amount = 10
 	beaker = null
 	recharge_delay = 5  //Time it game ticks between recharges
