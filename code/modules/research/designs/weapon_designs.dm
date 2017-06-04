@@ -86,7 +86,7 @@
 	name = "Beam Marksman Rifle"
 	desc = "A powerful long ranged anti-material rifle that fires charged particle beams to obliterate targets."
 	id = "beamrifle"
-	req_tech = list("combat" = 5, "magnets" = 5, "powerstorage" = 5, "materials" = 6, "programming" = 5)
+	req_tech = list("combat" = 7, "magnets" = 5, "powerstorage" = 5, "materials" = 7, "programming" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 2000, MAT_DIAMOND = 2000, MAT_URANIUM = 2000, MAT_SILVER = 6000, MAT_GOLD = 6000)
 	build_path = /obj/item/weapon/gun/energy/beam_rifle

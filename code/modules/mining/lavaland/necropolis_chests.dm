@@ -11,7 +11,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,26)
+	var/loot = rand(1,28)
 	switch(loot)
 		if(1)
 			new /obj/item/device/shared_storage/red(src)
@@ -39,7 +39,7 @@
 		if(12)
 			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/beserker(src)
 		if(13)
-			new /obj/item/weapon/sord(src)
+			new /obj/item/borg/upgrade/modkit/cooldown/repeater(src)
 		if(14)
 			new /obj/item/weapon/nullrod/scythe/talking(src)
 		if(15)
@@ -71,8 +71,11 @@
 		if(26)
 			new /obj/item/weapon/spellbook/oneuse/forcewall(src)
 			new /obj/item/book_of_babel(src)
-
-
+		if(27)
+			new /obj/item/borg/upgrade/modkit/lifesteal(src)
+			new /obj/item/weapon/bedsheet/cult(src)
+		if(28)
+			new /obj/item/borg/upgrade/modkit/resonator_blasts(src)
 
 //Spooky special loot
 
