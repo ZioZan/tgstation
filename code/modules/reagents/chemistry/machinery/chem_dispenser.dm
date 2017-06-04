@@ -372,20 +372,38 @@
 	desc = "Synthesizes advanced chemicals."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "synth"
-	var/recharging_power_usage = 5000
-	var/default_power_usage = 5000 //default power usage without any upgrades
-	var/energy = 0
-	var/max_energy = 50
-	amount = 10
-	beaker = null
-	recharge_delay = 5  //Time it game ticks between recharges
-	//var/image/icon_beaker = null //cached overlay, might not be needed here.
-	list/dispensable_reagents = list() //starts with no known chems
+	use_power = 1
+	idle_power_usage = 40
+	interact_offline = 1
+	cell_type = /obj/item/weapon/stock_parts/cell/high
+	obj/item/weapon/stock_parts/cell/cell
+	powerefficiency = 0.01
+	amount = 30
+	recharged = 0
+	recharge_delay = 5
 
-/obj/machinery/chem_dispenser/constructable/synth/fullenergy
-	energy = 50
 
-/obj/machinery/chem_dispenser/constructable/synth/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, \
+/obj/machinery/chem_dispenser/constructable/synth/Initialize()
+	. = ..()
+	cell = new cell_type
+	recharge()
+	dispensable_reagents = sortList(dispensable_reagents)
+
+/obj/machinery/chem_dispenser/constructable/synth/process()
+
+	if(recharged < 0)
+		recharge()
+		recharged = recharge_delay
+	else
+		recharged -= 1
+
+/obj/machinery/chem_dispenser/constructable/synth/recharge()
+	if(stat & (BROKEN|NOPOWER)) return
+	var/usedpower = cell.give( 1 / powerefficiency) //Should always be a gain of one on the UI.
+	if(usedpower)
+		use_power(3000)
+
+/obj/machinery/chem_dispenser/constructable/synth/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0,
 											datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
@@ -395,8 +413,8 @@
 /obj/machinery/chem_dispenser/constructable/synth/ui_data()
 	var/data = list()
 	data["amount"] = amount
-	data["energy"] = energy
-	data["maxEnergy"] = max_energy
+	data["energy"] = cell.charge ? cell.charge * powerefficiency : "0" //To prevent NaN in the UI.
+	data["maxEnergy"] = cell.maxcharge * powerefficiency
 	data["isBeakerLoaded"] = beaker ? 1 : 0
 
 	var beakerContents[0]
@@ -438,10 +456,10 @@
 			if(beaker && dispensable_reagents.Find(reagent))
 				var/datum/reagents/R = beaker.reagents
 				var/free = R.maximum_volume - R.total_volume
-				var/actual = min(amount, energy * 10, free)
+				var/actual = min(amount, (cell.charge * powerefficiency)*10, free)
 
 				R.add_reagent(reagent, actual)
-				energy = max(energy - actual / 10, 0)
+				cell.use((actual / 10) / powerefficiency)
 				. = TRUE
 		if("scan")
 			var/obj/item/weapon/reagent_containers/glass/B = beaker
@@ -465,7 +483,8 @@
 				beaker.forceMove(loc)
 				beaker = null
 				cut_overlays()
-				. = TRUE		
+				. = TRUE
+
 
 /obj/machinery/chem_dispenser/constructable/synth/proc/add_known_reagent(r_id)
 	if(!(r_id in dispensable_reagents))
@@ -475,33 +494,25 @@
 
 /obj/machinery/chem_dispenser/constructable/synth/RefreshParts()
 	var/time = 0
-	var/temp_energy = 0
-	var/i = 0
+	var/i
+	for(var/obj/item/weapon/stock_parts/cell/P in component_parts)
+		cell = P
 	for(var/obj/item/weapon/stock_parts/matter_bin/M in component_parts)
-		temp_energy += M.rating
-	temp_energy--
-	max_energy = temp_energy * 20  //max energy = (bin1.rating + bin2.rating - 1) * 5, 20 on lowest 100 on highest
-	energy = min(energy, max_energy)
+		time += M.rating
 	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
 		time += C.rating
-	for(var/obj/item/weapon/stock_parts/cell/P in component_parts)
-		time += round(P.maxcharge, 10000) / 10000
 	recharge_delay /= time/2         //delay between recharges, double the usual time on lowest 50% less than usual on highest
-	i = 0
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		if(i<=M.rating)
-			i++
-	if(i)
-		recharging_power_usage = default_power_usage / i //better manipulator = less power consumed to recharge
-	else
-		recharging_power_usage = default_power_usage * 2 //shouldn't really happen, but wathever
+		for(i=1, i<=M.rating, i++)
+			dispensable_reagents |= dispensable_reagent_tiers[i]
+	dispensable_reagents = sortList(dispensable_reagents)
 
 /obj/machinery/chem_dispenser/constructable/synth/emag_act(mob/user as mob)
 	if(!emagged)
 		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = 1
 		user << "<span class='notice'> You you disable the safety regulation unit.</span>"
-		
+
 /obj/machinery/chem_dispenser/drinks
 	name = "soda dispenser"
 	desc = "Contains a large reservoir of soft drinks."
