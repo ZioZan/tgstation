@@ -109,7 +109,7 @@
 	req_tech = list("combat" = 4, "materials" = 3)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_GOLD = 1000, MAT_URANIUM = 1000)
-	build_path = /obj/item/weapon/gun/ballistic/automatic/wt550
+	build_path = /obj/item/weapon/gun/ballistic/automatic/wt550/sci
 	category = list("Weapons")
 
 /datum/design/decloner
