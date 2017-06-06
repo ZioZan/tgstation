@@ -77,14 +77,11 @@
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
 	id = "synaptizine"
-	description = "Increases resistance to stuns as well as reducing drowsiness and hallucinations."
+	description = "Reduces drowsiness and hallucinations."
 	color = "#FF00FF"
 
 /datum/reagent/medicine/synaptizine/on_mob_life(mob/living/M)
 	M.drowsyness = max(M.drowsyness-5, 0)
-	M.AdjustParalysis(-1, 0)
-	M.AdjustStunned(-1, 0)
-	M.AdjustWeakened(-1, 0)
 	if(holder.has_reagent("mindbreaker"))
 		holder.remove_reagent("mindbreaker", 5)
 	M.hallucination = max(0, M.hallucination - 10)
@@ -537,7 +534,7 @@
 /datum/reagent/medicine/ephedrine
 	name = "Ephedrine"
 	id = "ephedrine"
-	description = "Increases stun resistance and movement speed. Overdose deals toxin damage and inhibits breathing."
+	description = "Increases movement speed. Overdose deals toxin damage and inhibits breathing."
 	reagent_state = LIQUID
 	color = "#D2FFFA"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -546,10 +543,11 @@
 
 /datum/reagent/medicine/ephedrine/on_mob_life(mob/living/M)
 	M.status_flags |= GOTTAGOFAST
-	M.AdjustParalysis(-1, 0)
-	M.AdjustStunned(-1, 0)
-	M.AdjustWeakened(-1, 0)
-	M.adjustStaminaLoss(-1*REM, 0)
+	if(M.reagents.has_reagent("methamphetamine"))
+		if(prob(15))
+			M.adjust_fire_stacks(2)
+			M.IgniteMob()
+			M << "<span class='boldwarning'>The Meth in your system reacts violently with the Ephedrine and you burst into flames!</span>"
 	..()
 	. = 1
 

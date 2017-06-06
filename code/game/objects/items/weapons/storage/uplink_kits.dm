@@ -31,7 +31,7 @@
 			new /obj/item/ammo_box/magazine/m10mm(src)
 			new /obj/item/clothing/under/chameleon(src)
 			new /obj/item/weapon/card/id/syndicate(src)
-			new /obj/item/weapon/reagent_containers/syringe/stimulants(src)
+			new /obj/item/weapon/reagent_containers/syringe/nanoboost(src)
 
 		if("screwed") // 29 tc
 			new /obj/item/device/sbeacondrop/bomb(src)
@@ -63,7 +63,7 @@
 			new /obj/item/weapon/implanter/freedom(src)
 			new /obj/item/weapon/implanter/uplink/precharged(src)
 			new /obj/item/weapon/implanter/emp(src)
-			new /obj/item/weapon/implanter/adrenalin(src)
+			new /obj/item/weapon/implanter/comstimm(src)
 			new /obj/item/weapon/implanter/explosive(src)
 			new /obj/item/weapon/implanter/storage(src)
 
@@ -119,7 +119,7 @@
 
 		if("ninja") // 33 tc worth
 			new /obj/item/weapon/katana(src) // Unique , hard to tell how much tc this is worth. 8 tc?
-			new /obj/item/weapon/implanter/adrenalin(src) // 8 tc
+			new /obj/item/weapon/implanter/comstimm(src) // 8 tc
 			new /obj/item/weapon/throwing_star(src) // ~5 tc for all 6
 			new /obj/item/weapon/throwing_star(src)
 			new /obj/item/weapon/throwing_star(src)
@@ -176,12 +176,12 @@
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/reagent_containers/syringe/bioterror(src)
 
-/obj/item/weapon/storage/box/syndie_kit/imp_adrenal
-	name = "boxed adrenal implant (with injector)"
+/obj/item/weapon/storage/box/syndie_kit/imp_comstimms
+	name = "boxed combat stims implant (with injector)"
 
-/obj/item/weapon/storage/box/syndie_kit/imp_adrenal/PopulateContents()
+/obj/item/weapon/storage/box/syndie_kit/imp_comstimms/PopulateContents()
 	var/obj/item/weapon/implanter/O = new(src)
-	O.imp = new /obj/item/weapon/implant/adrenalin(O)
+	O.imp = new /obj/item/weapon/implant/comstimms(O)
 	O.update_icon()
 
 /obj/item/weapon/storage/box/syndie_kit/imp_storage

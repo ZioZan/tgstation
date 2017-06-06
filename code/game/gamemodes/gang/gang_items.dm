@@ -313,11 +313,11 @@
 	cost = 18
 	item_path = /obj/item/weapon/grenade/syndieminibomb/concussion/frag
 
-/datum/gang_item/equipment/stimpack
-	name = "Black Market Stimulants"
-	id = "stimpack"
+/datum/gang_item/equipment/nanoboost
+	name = "Black Market Nanomachines"
+	id = "nanoboost"
 	cost = 12
-	item_path = /obj/item/weapon/reagent_containers/syringe/stimulants
+	item_path = /obj/item/weapon/reagent_containers/syringe/nanoboost
 
 /datum/gang_item/equipment/implant_breaker
 	name = "Implant Breaker"
