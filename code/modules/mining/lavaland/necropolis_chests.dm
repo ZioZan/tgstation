@@ -75,7 +75,8 @@
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/weapon/bedsheet/cult(src)
 		if(28)
-			new /obj/item/borg/upgrade/modkit/resonator_blasts(src)
+			new /obj/item/borg/upgrade/modkit/bounty(src)
+
 
 //Spooky special loot
 
