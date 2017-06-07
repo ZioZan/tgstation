@@ -205,9 +205,11 @@ update_label("John Doe", "Clowny")
 	registered_name = "Captain"
 	assignment = "Captain"
 
+
 /obj/item/weapon/card/id/captains_spare/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
+	poi_list += src
 	..()
 
 /obj/item/weapon/card/id/centcom
