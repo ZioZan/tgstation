@@ -209,8 +209,12 @@ update_label("John Doe", "Clowny")
 /obj/item/weapon/card/id/captains_spare/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
-	poi_list += src
 	..()
+	GLOB.poi_list |= src
+
+/obj/item/weapon/card/id/captains_spare/Destroy()
+	GLOB.poi_list -= src
+	. = ..()
 
 /obj/item/weapon/card/id/centcom
 	name = "\improper Centcom ID"
