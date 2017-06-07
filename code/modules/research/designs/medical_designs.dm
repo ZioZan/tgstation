@@ -417,8 +417,18 @@
 	id = "implant_freedom"
 	req_tech = list("materials" = 2, "biotech" = 3, "magnets" = 3, "syndicate" = 4)
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 800, MAT_GLASS = 500, MAT_GOLD = 500)
-	build_path = /obj/item/weapon/implantcase/freedom
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 500, MAT_GOLD = 500, MAT_URANIUM = 600)
+	build_path = /obj/item/weapon/implantcase/chem
+	category = list("Medical Designs")
+
+/datum/design/implant_chem
+	name = "Chemical Implant Case"
+	desc = "A glass case containing an implant."
+	id = "implant_chem"
+	req_tech = list("materials" = 3, "biotech" = 5)
+	build_type = PROTOLATHE
+	materials = list(MAT_GLASS = 700)
+	build_path = /obj/item/weapon/implantcase/chem
 	category = list("Medical Designs")
 
 /datum/design/implant_comstimms
@@ -429,4 +439,14 @@
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 1000, MAT_GLASS = 500, MAT_GOLD = 500, MAT_URANIUM = 600, MAT_DIAMOND = 600)
 	build_path = /obj/item/weapon/implantcase/comstimm
+	category = list("Medical Designs")
+
+/datum/design/implant_tracking
+	name = "Tracking Implant Case"
+	desc = "A glass case containing an implant."
+	id = "implant_tracking"
+	req_tech = list("materials" = 2, "biotech" = 3, "magnets" = 3, "programming" = 2)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/weapon/implantcase/track
 	category = list("Medical Designs")
