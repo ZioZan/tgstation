@@ -485,7 +485,7 @@
 	SSblackbox.add_details("wizard_spell_learned", name)
 	rightandwrong(0, user, 25)
 	active = 1
-	playsound(get_turf(user), 'sound/magic/CastSummon.ogg', 50, 1)
+	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
 	to_chat(user, "<span class='notice'>You have cast summon guns!</span>")
 	return 1
 
@@ -502,7 +502,7 @@
 	SSblackbox.add_details("wizard_spell_learned", name)
 	rightandwrong(1, user, 25)
 	active = 1
-	playsound(get_turf(user), 'sound/magic/CastSummon.ogg', 50, 1)
+	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
 	to_chat(user, "<span class='notice'>You have cast summon magic!</span>")
 	return 1
 
@@ -520,7 +520,7 @@
 	SSblackbox.add_details("wizard_spell_learned", name)
 	summonevents()
 	times++
-	playsound(get_turf(user), 'sound/magic/CastSummon.ogg', 50, 1)
+	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
 	to_chat(user, "<span class='notice'>You have cast summon events.</span>")
 	return 1
 

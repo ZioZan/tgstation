@@ -17576,6 +17576,8 @@
 	name = "Station Intercom";
 	pixel_y = 26
 	},
+/obj/item/toy/figure/clown,
+/obj/item/weapon/clipboard,
 /turf/open/floor/plasteel/redblue,
 /area/crew_quarters/theatre)
 "aKQ" = (
@@ -19702,10 +19704,7 @@
 /obj/item/weapon/reagent_containers/glass/bottle/facid{
 	pixel_x = 7
 	},
-/obj/item/weapon/storage/backpack/dufflebag/sec{
-	contents = newlist(/obj/item/weapon/scalpel,/obj/item/weapon/hemostat,/obj/item/weapon/retractor,/obj/item/weapon/cautery,/obj/item/weapon/circular_saw,/obj/item/weapon/surgical_drapes,/obj/item/clothing/mask/surgical);
-	desc = "A large dufflebag for holding extra supplies - this one has a material inlay with space for various sharp-looking tools.";
-	name = "dufflebag";
+/obj/item/weapon/storage/backpack/duffelbag/sec/surgery{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/darkred/side{
@@ -37402,6 +37401,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/storage/primary)
 "bxt" = (
@@ -41693,7 +41695,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
-/obj/item/clothing/head/det_hat{
+/obj/item/clothing/head/fedora/det_hat{
 	icon_state = "curator"
 	},
 /obj/item/clothing/suit/det_suit{
@@ -46248,6 +46250,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/storage/primary)
 "bOh" = (
@@ -46258,6 +46263,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/storage/primary)
@@ -53324,7 +53332,6 @@
 /obj/machinery/camera/emp_proof{
 	c_tag = "Containment - Fore Starboard";
 	dir = 8;
-	icon_state = "camera";
 	network = list("Singularity")
 	},
 /turf/open/floor/plating/airless,
@@ -55055,7 +55062,6 @@
 /obj/machinery/camera/emp_proof{
 	c_tag = "Containment - Fore Port";
 	dir = 4;
-	icon_state = "camera";
 	network = list("Singularity")
 	},
 /turf/open/space,
@@ -59878,6 +59884,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
 "coE" = (
@@ -61484,12 +61493,7 @@
 /turf/open/floor/plasteel/black,
 /area/library)
 "crP" = (
-/obj/structure/closet/crate,
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/under/rank/curator/treasure_hunter,
-/obj/item/clothing/suit/curator,
-/obj/item/clothing/head/curator,
-/obj/item/weapon/storage/backpack/satchel/explorer,
+/obj/structure/closet/wardrobe/curator,
 /turf/open/floor/plasteel/black,
 /area/library)
 "crQ" = (
@@ -63510,7 +63514,6 @@
 /obj/machinery/camera/emp_proof{
 	c_tag = "Containment - Aft Port";
 	dir = 4;
-	icon_state = "camera";
 	network = list("Singularity")
 	},
 /turf/open/space,
@@ -65196,7 +65199,6 @@
 /obj/machinery/camera/emp_proof{
 	c_tag = "Containment - Aft Starboard";
 	dir = 8;
-	icon_state = "camera";
 	network = list("Singularity")
 	},
 /turf/open/floor/plating/airless,
@@ -65482,6 +65484,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/library)
@@ -67968,6 +67973,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness/recreation)
 "cEI" = (
@@ -70198,6 +70206,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness/recreation)
@@ -79073,6 +79084,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/science/research)
 "dbt" = (
@@ -79707,6 +79721,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/science/research)
@@ -80454,6 +80471,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/science/research)
@@ -82304,6 +82324,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/construction)
 "diw" = (
@@ -82311,12 +82334,18 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/construction)
 "dix" = (
 /obj/machinery/pipedispenser/disposal/transit_tube,
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/construction)
@@ -90528,7 +90557,7 @@
 "dzi" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/storage/backpack/dufflebag/med,
+/obj/item/weapon/storage/backpack/duffelbag/med,
 /obj/item/device/flashlight/pen,
 /turf/open/floor/plating,
 /area/medical/morgue)
@@ -104871,12 +104900,10 @@
 /turf/open/floor/plasteel/redblue,
 /area/crew_quarters/theatre)
 "efc" = (
-/obj/structure/table/wood,
-/obj/item/weapon/clipboard,
-/obj/item/toy/figure/clown,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
+/obj/structure/closet/crate/wooden/toy,
 /turf/open/floor/plasteel/redblue,
 /area/crew_quarters/theatre)
 "efd" = (
@@ -139991,7 +140018,7 @@ akm
 ajl
 bKc
 aip
-aol
+eph
 bQf
 bSn
 bUr
@@ -140429,14 +140456,14 @@ aaf
 aaf
 aaf
 aax
-ach
+epb
 aax
 aaf
 aaa
 aaa
 aaf
 aax
-ach
+epb
 aax
 aaf
 aaf
@@ -140943,14 +140970,14 @@ aax
 aaD
 abT
 aax
-acj
+epc
 aax
 acC
 acT
 ack
 adq
 aax
-ach
+epb
 aax
 abR
 aaD
@@ -143268,9 +143295,9 @@ edp
 edp
 edp
 een
-epf
+epc
 aci
-epg
+epc
 agl
 agN
 ahu
@@ -144291,7 +144318,7 @@ aaf
 aaf
 aaf
 aax
-epd
+epc
 aax
 aaf
 aaf
@@ -144805,7 +144832,7 @@ acV
 adg
 adr
 aax
-epe
+epb
 aax
 abT
 aaD
@@ -167002,10 +167029,10 @@ cqf
 cqf
 cqf
 cqf
-cEE
+epj
 cqf
 cqf
-cIU
+epk
 cqf
 cqf
 cqf
