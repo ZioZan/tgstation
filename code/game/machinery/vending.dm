@@ -1005,6 +1005,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		/obj/item/seeds/lemon = 3,
 		/obj/item/seeds/lime = 3,
 		/obj/item/seeds/orange = 3,
+		/obj/item/seeds/onion = 3,
 		/obj/item/seeds/potato = 3,
 		/obj/item/seeds/poppy = 3,
 		/obj/item/seeds/pumpkin = 3,
