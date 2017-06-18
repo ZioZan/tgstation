@@ -286,3 +286,17 @@
 	item_state = null
 	icon_state = "gravity_gun"
 	var/power = 4
+
+/obj/item/weapon/gun/energy/gauss
+	name = "Gauss Rifle"
+	desc = "A seriously powerful rifle with an electromagnetic acceleration core, capable of blowing limbs off. Effective against armor. Fires extremly dense energy blasts."
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	flags =  CONDUCT
+	slot_flags = SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/gauss)
+	origin_tech = "combat=4;magnets=5;powerstorage=5"
+	armour_penetration = 75
+	pin = null
+	icon_state = "gauss"
+	item_state = "alc"

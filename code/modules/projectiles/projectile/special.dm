@@ -366,3 +366,9 @@
 	for(var/turf/Z in range(T,power))
 		new /obj/effect/temp_visual/gravpush(Z)
 
+/obj/item/projectile/gauss
+	name = "gauss bolt"
+	icon_state = "gauss"
+	damage = 30
+	damage_type = BRUTE
+	dismemberment = 35
