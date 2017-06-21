@@ -318,7 +318,8 @@
 	icon_state = "bola"
 	breakouttime = 35//easy to apply, easy to break out of
 	gender = NEUTER
-	var/weaken = 0
+	origin_tech = "engineering=3;combat=1"
+	var/knockdown = 0
 
 /obj/item/weapon/restraints/legcuffs/bola/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)
 	if(!..())
@@ -336,14 +337,15 @@
 		C.update_inv_legcuffed()
 		SSblackbox.add_details("handcuffs","[type]")
 		to_chat(C, "<span class='userdanger'>\The [src] ensnares you!</span>")
-		C.Weaken(weaken)
+		C.Knockdown(knockdown)
 
 /obj/item/weapon/restraints/legcuffs/bola/tactical//traitor variant
 	name = "reinforced bola"
 	desc = "A strong bola, made with a long steel chain. It looks heavy, enough so that it could trip somebody."
 	icon_state = "bola_r"
 	breakouttime = 70
-	weaken = 1
+	origin_tech = "engineering=4;combat=3"
+	knockdown = 20
 
 /obj/item/weapon/restraints/legcuffs/bola/energy //For Security
 	name = "energy bola"

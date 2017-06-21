@@ -66,8 +66,8 @@
 	addiction_threshold = 5
 
 /datum/reagent/drug/crank/on_mob_life(mob/living/M)
-	var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
 	if(prob(5))
+		var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
 		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.AdjustParalysis(-1, 0)
 	M.AdjustStunned(-1, 0)
@@ -170,9 +170,9 @@
 	var/high_message = pick("You feel hyper!", "You feel like you're unstoppable!", "You feel like you can take on the world!")
 	if(prob(5))
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	M.AdjustParalysis(-2, 0)
-	M.AdjustStunned(-2, 0)
-	M.AdjustWeakened(-2, 0)
+	M.AdjustStun(-40, 0)
+	M.AdjustKnockdown(-40, 0)
+	M.AdjustUnconscious(-40, 0)
 	M.adjustStaminaLoss(-2, 0)
 	M.Jitter(2)
 	M.adjustBrainLoss(0.25)
