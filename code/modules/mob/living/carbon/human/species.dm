@@ -888,14 +888,14 @@
 	if(!(RADIMMUNE in species_traits))
 		if(H.radiation)
 			if (H.radiation > 100)
-				if(!H.knockdown)
+				if(!H.IsKnockdown())
 					H.emote("collapse")
 				H.Knockdown(200)
 				to_chat(H, "<span class='danger'>You feel weak.</span>")
 			switch(H.radiation)
 				if(50 to 75)
 					if(prob(5))
-						if(!H.knockdown)
+						if(!H.IsKnockdown())
 							H.emote("collapse")
 						H.Knockdown(60)
 						to_chat(H, "<span class='danger'>You feel weak.</span>")
@@ -1258,7 +1258,7 @@
 		return 0
 
 	var/obj/item/bodypart/BP = null
-	if(islimb(def_zone))
+	if(isbodypart(def_zone))
 		BP = def_zone
 	else
 		if(!def_zone)
