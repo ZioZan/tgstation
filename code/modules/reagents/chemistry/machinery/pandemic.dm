@@ -86,9 +86,7 @@
 /obj/machinery/computer/pandemic/Topic(href, href_list)
 	if(..())
 		return
-
 	usr.set_machine(src)
-
 	if (href_list["cure"])
 		if(!src.wait)
 			var/obj/item/weapon/reagent_containers/glass/bottle/B = new/obj/item/weapon/reagent_containers/glass/bottle(src.loc)
