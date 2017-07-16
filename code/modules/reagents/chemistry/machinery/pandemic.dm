@@ -144,7 +144,7 @@
 		if(SSdisease.archive_diseases[id])
 			var/datum/disease/advance/A = SSdisease.archive_diseases[id]
 			A.AssignName(new_name)
-			for(var/datum/disease/advance/AD in SSdisease.processing)
+			for(var/datum/disease/advance/AD in SSdisease.active_diseases)
 				AD.Refresh()
 			if(beaker && beaker.reagents && beaker.reagents.reagent_list.len)
 				var/datum/reagent/blood/BL = locate() in beaker.reagents.reagent_list
