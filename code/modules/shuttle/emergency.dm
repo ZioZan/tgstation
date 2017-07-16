@@ -16,7 +16,7 @@
 		say("Please equip your ID card into your ID slot to authenticate.")
 	. = ..()
 
-/obj/machinery/computer/emergency_shuttle/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.human_adjacent_state)
+/obj/machinery/computer/emergency_shuttle/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.human_adjacent_state)
 
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
@@ -63,7 +63,7 @@
 		to_chat(user, "<span class='warning'>You don't have an ID.</span>")
 		return
 
-	if(!(GLOB.access_heads in ID.access))
+	if(!(ACCESS_HEADS in ID.access))
 		to_chat(user, "<span class='warning'>The access level of your card is not high enough.</span>")
 		return
 
@@ -441,16 +441,17 @@
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "dorm_available"
 	light_color = LIGHT_COLOR_BLUE
-	density = 0
+	density = FALSE
 	clockwork = TRUE //it'd look weird
 
 /obj/machinery/computer/shuttle/pod/update_icon()
 	return
 
 /obj/machinery/computer/shuttle/pod/emag_act(mob/user)
-	if(!emagged)
-		emagged = TRUE
-		to_chat(user, "<span class='warning'>You fry the pod's alert level checking system.</span>")
+	if(emagged)
+		return
+	emagged = TRUE
+	to_chat(user, "<span class='warning'>You fry the pod's alert level checking system.</span>")
 
 /obj/docking_port/stationary/random
 	name = "escape pod"
@@ -499,8 +500,8 @@
 /obj/item/weapon/storage/pod
 	name = "emergency space suits"
 	desc = "A wall mounted safe containing space suits. Will only open in emergencies."
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "safe"
 	var/unlocked = FALSE
