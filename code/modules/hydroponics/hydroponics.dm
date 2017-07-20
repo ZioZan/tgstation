@@ -110,7 +110,7 @@
 /obj/machinery/hydroponics/bullet_act(obj/item/projectile/Proj) //Works with the Somatoray to modify plant variables.
 	if(!myseed)
 		return ..()
-	if(istype(Proj ,/obj/item/projectile/energy/floramut))
+	if(istype(Proj , /obj/item/projectile/energy/floramut))
 		mutate()
 	else if(istype(Proj ,/obj/item/projectile/energy/advfloramut))
 		mutatespecie()
@@ -882,7 +882,7 @@
 /obj/machinery/hydroponics/proc/update_tray(mob/user = usr)
 	harvest = 0
 	lastproduce = age
-	if(istype(myseed,/obj/item/seeds/replicapod))
+	if(istype(myseed, /obj/item/seeds/replicapod))
 		to_chat(user, "<span class='notice'>You harvest from the [myseed.plantname].</span>")
 	else if(myseed.getYield() <= 0)
 		to_chat(user, "<span class='warning'>You fail to harvest anything useful!</span>")
