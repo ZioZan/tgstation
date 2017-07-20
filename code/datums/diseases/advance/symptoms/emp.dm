@@ -35,12 +35,12 @@ BONUS
 		M << "<span class='notice'>You discharge.</span>"
 		switch(A.stage)
 			if(1,2)
-				empulse(get_turf(M), 1, 2)
+				empulse(get_turf(H), 1, 2)
 				M.adjustStaminaLoss(10)
 			if(3,4)
-				empulse(get_turf(M), 2, 4)
+				empulse(get_turf(H), 2, 4)
 				M.adjustStaminaLoss(20)
 			else
-				empulse(get_turf(M), 3, 6)
+				empulse(get_turf(H), 3, 6)
 				M.adjustStaminaLoss(30)
 	return

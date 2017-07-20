@@ -26,7 +26,7 @@ Bonus
 
 /datum/symptom/dna_disintegration/Activate(var/datum/disease/advance/A)
 	..()
-	if(prob(SYMPTOM_ACTIVATION_PROB * 2))
+	if(prob(15))
 		var/mob/living/M = A.affected_mob
 		switch(A.stage)
 			if(4, 5)
