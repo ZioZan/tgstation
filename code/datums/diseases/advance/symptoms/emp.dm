@@ -23,11 +23,15 @@ BONUS
 	stage_speed = -1
 	transmittable = -1
 	level = 5
+	symptom_delay_min = 18
+	symptom_delay_max = 36
 
 /datum/symptom/emp/Activate(var/datum/disease/advance/A)
-	..()
-	if(prob(SYMPTOM_ACTIVATION_PROB))
-		var/mob/living/M = A.affected_mob
+	if(!..())
+		return
+	var/mob/living/M = A.affected_mob
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
 		M << "<span class='notice'>You discharge.</span>"
 		switch(A.stage)
 			if(1,2)

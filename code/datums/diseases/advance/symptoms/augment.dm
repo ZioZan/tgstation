@@ -23,10 +23,16 @@ BONUS
 	stage_speed = -4
 	transmittable = -3
 	level = 6
-
+	symptom_delay_min = 18
+	symptom_delay_max = 36
+	
 /datum/symptom/augment/Activate(var/datum/disease/advance/A)
-	..()
-	if(prob(SYMPTOM_ACTIVATION_PROB / 3) && A.stage == 5)
+	if(!..())
+		return
+	var/mob/living/M = A.affected_mob
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+	if(prob(25) && A.stage == 5)
 		var/mob/living/carbon/human/M = A.affected_mob
 		var/obj/item/bodypart/L = M.get_bodypart(pick("chest", "head", "l_leg", "r_leg", "l_arm", "r_arm"))
 		if(L.status == ORGAN_ORGANIC)

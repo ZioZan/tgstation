@@ -23,16 +23,20 @@ Bonus
 	stage_speed = -2
 	transmittable = -4
 	level = 3
+	symptom_delay_min = 18
+	symptom_delay_max = 36
 
 /datum/symptom/stimulant/Activate(datum/disease/advance/A)
-	..()
-	if(prob(SYMPTOM_ACTIVATION_PROB * 10))
-		var/mob/living/M = A.affected_mob
+	if(!..())
+		return
+	var/mob/living/M = A.affected_mob
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
 		switch(A.stage)
 			if(5)
 				if (M.reagents.get_reagent_amount("ephedrine") < 10)
 					M.reagents.add_reagent("ephedrine", 10)
 			else
-				if(prob(SYMPTOM_ACTIVATION_PROB * 5))
+				if(prob(10))
 					M << "<span class='notice'>[pick("You feel restless.", "You feel like running laps around the station.")]</span>"
 	return

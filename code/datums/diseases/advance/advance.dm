@@ -7,7 +7,7 @@
 
 */
 
-#define SYMPTOM_LIMIT 6
+#define SYMPTOM_LIMIT 8
 
 
 
