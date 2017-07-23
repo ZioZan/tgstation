@@ -64,8 +64,63 @@
 		return D.GetDiseaseID()
 	return null
 
+
 /obj/machinery/computer/pandemic/proc/replicator_cooldown(var/waittime)
 	wait = 1
+
+/obj/machinery/computer/pandemic/proc/get_viruses_data(datum/reagent/blood/B)
+	. = list()
+	if(!islist(B.data["viruses"]))
+		return
+	var/list/V = B.data["viruses"]
+	var/index = 1
+	for(var/virus in V)
+		var/datum/disease/D = virus
+		if(!istype(D) || D.visibility_flags & HIDDEN_PANDEMIC)
+			continue
+
+		var/list/this = list()
+		this["name"] = D.name
+		if(istype(D, /datum/disease/advance))
+			var/datum/disease/advance/A = D
+			var/datum/disease/advance/archived = SSdisease.archive_diseases[D.GetDiseaseID()]
+			if(archived.name == "Unknown")
+				this["can_rename"] = TRUE
+			this["name"] = archived.name
+			this["is_adv"] = TRUE
+			this["resistance"] = A.totalResistance()
+			this["stealth"] = A.totalStealth()
+			this["stage_speed"] = A.totalStageSpeed()
+			this["transmission"] = A.totalTransmittable()
+			this["symptoms"] = list()
+			for(var/symptom in A.symptoms)
+				var/datum/symptom/S = symptom
+				var/list/this_symptom = list()
+				this_symptom["name"] = S.name
+				this["symptoms"] += list(this_symptom)
+		this["index"] = index++
+		this["agent"] = D.agent
+		this["description"] = D.desc || "none"
+		this["spread"] = D.spread_text || "none"
+		this["cure"] = D.cure_text || "none"
+
+		. += list(this)
+
+/obj/machinery/computer/pandemic/proc/get_resistance_data(datum/reagent/blood/B)
+	. = list()
+	if(!islist(B.data["resistances"]))
+		return
+	var/list/resistances = B.data["resistances"]
+	for(var/id in resistances)
+		var/list/this = list()
+		var/datum/disease/D = SSdisease.archive_diseases[id]
+		if(D)
+			this["id"] = id
+			this["name"] = D.name
+		. += list(this)
+
+/obj/machinery/computer/pandemic/proc/reset_replicator_cooldown()
+	wait = FALSE
 	update_icon()
 	spawn(waittime)
 		src.wait = null
