@@ -32,6 +32,7 @@
 	var/tab_open = TAB_ANALYSIS //the magic of defines!
 	var/temp_html = ""
 	var/wait = null
+	var/waittime = 5
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 
 /obj/machinery/computer/pandemic/Initialize()
@@ -200,7 +201,7 @@
 		if(SSdisease.archive_diseases[id])
 			var/datum/disease/advance/A = SSdisease.archive_diseases[id]
 			A.AssignName(new_name)
-			for(var/datum/disease/advance/AD in SSdisease.processing)
+			for(var/datum/disease/advance/AD in SSdisease.active_diseases)
 				AD.Refresh()
 			if(beaker && beaker.reagents && beaker.reagents.reagent_list.len)
 				var/datum/reagent/blood/BL = locate() in beaker.reagents.reagent_list
@@ -313,7 +314,6 @@
 					usr << "Stable uranium gel administered."
 				else
 					usr << "Not enough Stable uranium gel!"
-						if("uraniumplasmavirusfood_stable")
 			if("formaldehyde")
 				if(formaldehyde_amount>0)
 					beaker.reagents.add_reagent("formaldehyde",min(beaker.reagents.maximum_volume-beaker.reagents.total_volume,1))
@@ -321,7 +321,6 @@
 					usr << "Formaldehyde administered."
 				else
 					usr << "Not enough Formaldehyde!"
-						if("uraniumplasmavirusfood_stable")
 		src.updateUsrDialog()
 		return
 	else if(href_list["chem_transfer"])

@@ -31,7 +31,6 @@ Bonus
 		return
 	var/mob/living/M = A.affected_mob
 	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
 		switch(A.stage)
 			if(5)
 				if (M.reagents.get_reagent_amount("ephedrine") < 10)
