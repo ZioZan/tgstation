@@ -18,6 +18,8 @@
 	exotic_bloodtype = "L"
 	blacklisted = 1
 	dangerous_existence = 1
+	disliked_food = GRAIN | DAIRY
+	liked_food = GROSS | MEAT
 
 /datum/species/lizard/after_equip_job(datum/job/J, mob/living/carbon/human/H)
 	H.grant_language(/datum/language/draconic)

@@ -1,13 +1,15 @@
 /obj/machinery/chem_master
 	name = "ChemMaster 3000"
-	desc = "Used to seperate chemicals and distribute them in a variety of forms."
+	desc = "Used to separate chemicals and distribute them in a variety of forms."
 	density = TRUE
 	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "mixer0"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	circuit = /obj/item/weapon/circuitboard/machine/chem_master
 	var/obj/item/weapon/reagent_containers/beaker = null
 	var/obj/item/weapon/storage/pill_bottle/bottle = null
 	var/mode = 1
@@ -15,23 +17,12 @@
 	var/screen = "home"
 	var/analyzeVars[0]
 	var/useramount = 30 // Last used amount
-	layer = BELOW_OBJ_LAYER
 
 /obj/machinery/chem_master/Initialize()
 	create_reagents(100)
 	add_overlay("waitlight")
-	var/obj/item/weapon/circuitboard/machine/B = new /obj/item/weapon/circuitboard/machine/chem_master(null)
-	B.apply_default_parts(src)
 	. = ..()
 
-/obj/item/weapon/circuitboard/machine/chem_master
-	name = "ChemMaster 3000 (Machine Board)"
-	build_path = /obj/machinery/chem_master
-	origin_tech = "materials=2;programming=2;biotech=1"
-	req_components = list(
-							/obj/item/weapon/reagent_containers/glass/beaker = 2,
-							/obj/item/weapon/stock_parts/manipulator = 1,
-							/obj/item/weapon/stock_parts/console_screen = 1)
 
 /obj/item/weapon/circuitboard/machine/chem_master/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/weapon/screwdriver))
@@ -360,7 +351,3 @@
 	name = "CondiMaster 3000"
 	desc = "Used to create condiments and other cooking supplies."
 	condi = 1
-
-/obj/item/weapon/circuitboard/machine/chem_master/condi
-	name = "CondiMaster 3000 (Machine Board)"
-	build_path = /obj/machinery/chem_master/condimaster

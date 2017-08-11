@@ -5,6 +5,7 @@
 	desc = "It's so sour, your face will twist."
 	icon_state = "lime"
 	bitesize_mod = 2
+	foodtype = FRUIT
 
 // Lime
 /obj/item/seeds/lime
@@ -105,6 +106,7 @@
 	icon_state = "firelemon"
 	bitesize_mod = 2
 	var/isprimed = FALSE
+	foodtype = FRUIT
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/firelemon/attack_self(mob/living/user)
 	if(isprimed)

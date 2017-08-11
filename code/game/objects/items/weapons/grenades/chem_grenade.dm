@@ -545,7 +545,3 @@
 
 	beakers += B1
 	beakers += B2
-
-#undef EMPTY
-#undef WIRED
-#undef READY
