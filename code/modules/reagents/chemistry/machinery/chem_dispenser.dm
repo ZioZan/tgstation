@@ -275,6 +275,7 @@
 
 
 /obj/item/weapon/circuitboard/machine/chem_dispenser/attackby(obj/item/I as obj, mob/user as mob, params)
+	var/finish_type = "chemical dispenser"
 	if(istype(I,/obj/item/weapon/screwdriver))
 		var/board_choice = input("Current mode is set to: [finish_type]","Circuitboard interface") in list("Advanced Chem Synthesizer","Chemical Dispenser", "Booze Dispenser", "Soda Dispenser", "Cancel")
 		switch( board_choice )

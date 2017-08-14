@@ -18,6 +18,11 @@
 	build_path = /obj/machinery/computer/security
 	origin_tech = "programming=2;combat=2"
 
+/obj/item/weapon/circuitboard/computer/advanced_security
+	name = "Advanced security cameras (Computer Board)"
+	build_path = /obj/machinery/computer/camera_advanced
+	origin_tech = "programming=4;combat=4"
+
 /obj/item/weapon/circuitboard/computer/xenobiology
 	name = "circuit board (Xenobiology Console)"
 	build_path = /obj/machinery/computer/camera_advanced/xenobio
@@ -92,6 +97,11 @@
 	name = "Teleporter (Computer Board)"
 	build_path = /obj/machinery/computer/teleporter
 	origin_tech = "programming=3;bluespace=3;plasmatech=3"
+
+/obj/item/weapon/circuitboard/computer/telesci_console
+	name = "Telepad Control Console (Computer Board)"
+	build_path = /obj/machinery/computer/telescience
+	origin_tech = "programming=4;bluespace=4;plasmatech=2"
 
 /obj/item/weapon/circuitboard/computer/secure_data
 	name = "Security Records Console (Computer Board)"

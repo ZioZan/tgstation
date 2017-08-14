@@ -124,6 +124,17 @@
 		/obj/item/weapon/stock_parts/capacitor = 1,
 		/obj/item/stack/cable_coil = 3)
 
+/obj/item/weapon/circuitboard/machine/telesci_pad
+	name = "Telepad (Machine Board)"
+	build_path = /obj/machinery/telepad
+	origin_tech = "programming=4;engineering=3;materials=3;bluespace=4"
+	req_components = list(
+							/obj/item/weapon/ore/bluespace_crystal = 2,
+							/obj/item/weapon/stock_parts/capacitor = 1,
+							/obj/item/stack/cable_coil = 1,
+							/obj/item/weapon/stock_parts/console_screen = 1)
+	def_components = list(/obj/item/weapon/ore/bluespace_crystal = /obj/item/weapon/ore/bluespace_crystal/artificial)
+
 /obj/item/weapon/circuitboard/machine/telecomms/broadcaster
 	name = "Subspace Broadcaster (Machine Board)"
 	build_path = /obj/machinery/telecomms/broadcaster
@@ -196,7 +207,7 @@
 /obj/item/weapon/circuitboard/machine/teleporter_hub
 	name = "Teleporter Hub (Machine Board)"
 	build_path = /obj/machinery/teleport/hub
-	origin_tech = "programming=3;engineering=4;bluespace=4;materials=4"
+	origin_tech = "programming=3;engineering=4;bluespace=5;materials=4"
 	req_components = list(
 		/obj/item/weapon/ore/bluespace_crystal = 3,
 		/obj/item/weapon/stock_parts/matter_bin = 1)
