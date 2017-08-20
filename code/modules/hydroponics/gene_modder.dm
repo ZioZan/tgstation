@@ -5,10 +5,10 @@
 	icon_state = "dnamod"
 	density = TRUE
 	anchored = TRUE
-	circuit = /obj/item/weapon/circuitboard/machine/plantgenes
+	circuit = /obj/item/circuitboard/machine/plantgenes
 
 	var/obj/item/seeds/seed
-	var/obj/item/weapon/disk/plantgene/disk
+	var/obj/item/disk/plantgene/disk
 
 	var/list/core_genes = list()
 	var/list/reagent_genes = list()
@@ -66,7 +66,7 @@
 			to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
 			interact(user)
 		return
-	else if(istype(I, /obj/item/weapon/disk/plantgene))
+	else if(istype(I, /obj/item/disk/plantgene))
 		if(disk)
 			to_chat(user, "<span class='warning'>A data disk is already loaded into the machine!</span>")
 		else
@@ -236,7 +236,7 @@
 			update_genes()
 		else
 			var/obj/item/I = usr.get_active_held_item()
-			if(istype(I, /obj/item/weapon/disk/plantgene))
+			if(istype(I, /obj/item/disk/plantgene))
 				if(!usr.drop_item())
 					return
 				disk = I
@@ -348,49 +348,39 @@
 
 // Gene modder for seed vault ship, built with high tech alien parts.
 /obj/machinery/plantgenes/seedvault
-	circuit = /obj/item/weapon/circuitboard/machine/plantgenes/vault
+	circuit = /obj/item/circuitboard/machine/plantgenes/vault
 
 /*
  *  Plant DNA disk
  */
 
-/obj/item/weapon/disk/plantgene
+/obj/item/disk/plantgene
 	name = "plant data disk"
 	desc = "A disk for storing plant genetic data."
-	icon_state = "datadisk2"
+	icon_state = "datadisk_hydro"
 	materials = list(MAT_METAL=30, MAT_GLASS=10)
 	var/datum/plant_gene/gene
 	var/read_only = 0 //Well, it's still a floppy disk
+	unique_rename = 1
 
-/obj/item/weapon/disk/plantgene/New()
+
+/obj/item/disk/plantgene/New()
 	..()
 	add_overlay("datadisk_gene")
 	src.pixel_x = rand(-5, 5)
 	src.pixel_y = rand(-5, 5)
 
-/obj/item/weapon/disk/plantgene/attackby(obj/item/weapon/W, mob/user, params)
-	..()
-	if(istype(W, /obj/item/weapon/pen))
-		var/t = stripped_input(user, "What would you like the label to be?", name, null)
-		if(user.get_active_held_item() != W)
-			return
-		if(!in_range(src, user) && loc != user)
-			return
-		if(t)
-			name = "plant data disk - '[t]'"
-		else
-			name = "plant data disk"
 
-/obj/item/weapon/disk/plantgene/proc/update_name()
+/obj/item/disk/plantgene/proc/update_name()
 	if(gene)
-		name = "plant data disk - '[gene.get_name()]'"
+		name = "[gene.get_name()] (Plant Data Disk)"
 	else
 		name = "plant data disk"
 
-/obj/item/weapon/disk/plantgene/attack_self(mob/user)
+/obj/item/disk/plantgene/attack_self(mob/user)
 	read_only = !read_only
 	to_chat(user, "<span class='notice'>You flip the write-protect tab to [src.read_only ? "protected" : "unprotected"].</span>")
 
-/obj/item/weapon/disk/plantgene/examine(mob/user)
+/obj/item/disk/plantgene/examine(mob/user)
 	..()
 	to_chat(user, "The write-protect tab is set to [src.read_only ? "protected" : "unprotected"].")

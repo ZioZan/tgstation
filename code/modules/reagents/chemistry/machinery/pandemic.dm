@@ -9,7 +9,7 @@
 	anchored = 1
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "mixer0"
-	circuit = /obj/item/weapon/circuitboard/computer/pandemic
+	circuit = /obj/item/circuitboard/computer/pandemic
 	use_power = 1
 	idle_power_usage = 20
 	resistance_flags = ACID_PROOF
@@ -33,7 +33,7 @@
 	var/temp_html = ""
 	var/wait = null
 	var/waittime = 5
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 
 /obj/machinery/computer/pandemic/Initialize()
 	. = ..()
@@ -71,9 +71,7 @@
 
 /obj/machinery/computer/pandemic/proc/get_viruses_data(datum/reagent/blood/B)
 	. = list()
-	if(!islist(B.data["viruses"]))
-		return
-	var/list/V = B.data["viruses"]
+	var/list/V = B.get_diseases()
 	var/index = 1
 	for(var/virus in V)
 		var/datum/disease/D = virus
@@ -84,21 +82,24 @@
 		this["name"] = D.name
 		if(istype(D, /datum/disease/advance))
 			var/datum/disease/advance/A = D
-			var/datum/disease/advance/archived = SSdisease.archive_diseases[D.GetDiseaseID()]
-			if(archived.name == "Unknown")
+			var/disease_name = SSdisease.get_disease_name(A.GetDiseaseID())
+			if(disease_name == "Unknown")
 				this["can_rename"] = TRUE
-			this["name"] = archived.name
+			this["name"] = disease_name
 			this["is_adv"] = TRUE
-			this["resistance"] = A.totalResistance()
-			this["stealth"] = A.totalStealth()
-			this["stage_speed"] = A.totalStageSpeed()
-			this["transmission"] = A.totalTransmittable()
 			this["symptoms"] = list()
+			var/symptom_index = 1
 			for(var/symptom in A.symptoms)
 				var/datum/symptom/S = symptom
 				var/list/this_symptom = list()
 				this_symptom["name"] = S.name
+				this_symptom["sym_index"] = symptom_index
+				symptom_index++
 				this["symptoms"] += list(this_symptom)
+			this["resistance"] = A.totalResistance()
+			this["stealth"] = A.totalStealth()
+			this["stage_speed"] = A.totalStageSpeed()
+			this["transmission"] = A.totalTransmittable()
 		this["index"] = index++
 		this["agent"] = D.agent
 		this["description"] = D.desc || "none"
@@ -106,6 +107,20 @@
 		this["cure"] = D.cure_text || "none"
 
 		. += list(this)
+
+/obj/machinery/computer/pandemic/proc/get_symptom_data(datum/symptom/S)
+	. = list()
+	var/list/this = list()
+	this["name"] = S.name
+	this["desc"] = S.desc
+	this["stealth"] = S.stealth
+	this["resistance"] = S.resistance
+	this["stage_speed"] = S.stage_speed
+	this["transmission"] = S.transmittable
+	this["level"] = S.level
+	this["neutered"] = S.neutered
+	this["threshold_desc"] = S.threshold_desc
+	. += this
 
 /obj/machinery/computer/pandemic/proc/get_resistance_data(datum/reagent/blood/B)
 	. = list()
@@ -118,6 +133,7 @@
 		if(D)
 			this["id"] = id
 			this["name"] = D.name
+
 		. += list(this)
 
 /obj/machinery/computer/pandemic/proc/reset_replicator_cooldown()
@@ -146,7 +162,7 @@
 	usr.set_machine(src)
 	if (href_list["cure"])
 		if(!src.wait)
-			var/obj/item/weapon/reagent_containers/glass/bottle/B = new/obj/item/weapon/reagent_containers/glass/bottle(src.loc)
+			var/obj/item/reagent_containers/glass/bottle/B = new/obj/item/reagent_containers/glass/bottle(src.loc)
 			if(B)
 				B.pixel_x = rand(-3, 3)
 				B.pixel_y = rand(-3, 3)
@@ -176,7 +192,7 @@
 			var/name = stripped_input(usr,"Name:","Name the culture",D.name,MAX_NAME_LEN)
 			if(name == null || wait)
 				return
-			var/obj/item/weapon/reagent_containers/glass/bottle/B = new/obj/item/weapon/reagent_containers/glass/bottle(src.loc)
+			var/obj/item/reagent_containers/glass/bottle/B = new/obj/item/reagent_containers/glass/bottle(src.loc)
 			B.icon_state = "bottle3"
 			B.pixel_x = rand(-3, 3)
 			B.pixel_y = rand(-3, 3)
@@ -190,6 +206,7 @@
 			src.temp_html = "The replicator is not ready yet."
 		src.updateUsrDialog()
 		return
+
 
 	else if(href_list["name_disease"])
 		var/new_name = stripped_input(usr, "Name the Disease", "New Name", "", MAX_NAME_LEN)
@@ -215,7 +232,7 @@
 
 	else if (href_list["eject"])
 		if(beaker)
-			var/obj/item/weapon/reagent_containers/glass/B = beaker
+			var/obj/item/reagent_containers/glass/B = beaker
 			B.loc = loc
 			beaker = null
 			icon_state = "mixer0"
@@ -593,7 +610,7 @@
 	return
 
 /obj/machinery/computer/pandemic/attackby(var/obj/I as obj, var/mob/user as mob, params)
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/reagent_containers/glass))
 		. = 1 //no afterattack
 		if(stat & (NOPOWER|BROKEN))
 			return
@@ -691,7 +708,7 @@
 		updateUsrDialog()
 		icon_state = "mixer1"
 
-	else if(istype(I, /obj/item/weapon/screwdriver))
+	else if(istype(I, /obj/item/screwdriver))
 		if(src.beaker)
 			beaker.loc = get_turf(src)
 		..()

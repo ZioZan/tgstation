@@ -8,7 +8,7 @@
 	build_type = IMPRINTER
 	materials = list(MAT_GLASS = 1000)
 	reagents_list = list("sacid" = 20)
-	build_path = /obj/item/weapon/circuitboard/computer/arcade/battle
+	build_path = /obj/item/circuitboard/computer/arcade/battle
 	category = list("Computer Boards")
 
 /datum/design/board/orion_trail
@@ -16,7 +16,7 @@
 	desc = "Allows for the construction of circuit boards used to build a new Orion Trail machine."
 	id = "arcade_orion"
 	req_tech = list("programming" = 1)
-	build_path = /obj/item/weapon/circuitboard/computer/arcade/orion_trail
+	build_path = /obj/item/circuitboard/computer/arcade/orion_trail
 	category = list("Computer Boards")
 
 
@@ -25,7 +25,7 @@
 	desc = "Allows for the construction of circuit boards used to build security camera computers."
 	id = "seccamera"
 	req_tech = list("programming" = 2, "combat" = 1)
-	build_path = /obj/item/weapon/circuitboard/computer/security
+	build_path = /obj/item/circuitboard/computer/security
 	category = list("Computer Boards")
 
 /datum/design/board/xenobiocamera
@@ -33,7 +33,7 @@
 	desc = "Allows for the construction of circuit boards used to build xenobiology camera computers."
 	id = "xenobioconsole"
 	req_tech = list("programming" = 3, "biotech" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/xenobiology
+	build_path = /obj/item/circuitboard/computer/xenobiology
 	category = list("Computer Boards")
 
 
@@ -42,7 +42,7 @@
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
 	id = "aiupload"
 	req_tech = list("programming" = 4)
-	build_path = /obj/item/weapon/circuitboard/computer/aiupload
+	build_path = /obj/item/circuitboard/computer/aiupload
 	category = list("Computer Boards")
 
 /datum/design/board/borgupload
@@ -50,7 +50,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Cyborg Upload Console."
 	id = "borgupload"
 	req_tech = list("programming" = 5, "engineering" = 4)
-	build_path = /obj/item/weapon/circuitboard/computer/borgupload
+	build_path = /obj/item/circuitboard/computer/borgupload
 	category = list("Computer Boards")
 
 /datum/design/board/med_data
@@ -58,7 +58,7 @@
 	desc = "Allows for the construction of circuit boards used to build a medical records console."
 	id = "med_data"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/med_data
+	build_path = /obj/item/circuitboard/computer/med_data
 	category = list("Computer Boards")
 
 /datum/design/board/operating
@@ -66,7 +66,7 @@
 	desc = "Allows for the construction of circuit boards used to build an operating computer console."
 	id = "operating"
 	req_tech = list("programming" = 2, "biotech" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/operating
+	build_path = /obj/item/circuitboard/computer/operating
 	category = list("Computer Boards")
 
 /datum/design/board/pandemic
@@ -74,7 +74,7 @@
 	desc = "Allows for the construction of circuit boards used to build a PanD.E.M.I.C. 2200 console."
 	id = "pandemic"
 	req_tech = list("programming" = 2, "biotech" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/pandemic
+	build_path = /obj/item/circuitboard/computer/pandemic
 	category = list("Computer Boards")
 
 /datum/design/board/scan_console
@@ -82,7 +82,7 @@
 	desc = "Allows for the construction of circuit boards used to build a new DNA scanning console."
 	id = "scan_console"
 	req_tech = list("programming" = 2, "biotech" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/scan_consolenew
+	build_path = /obj/item/circuitboard/computer/scan_consolenew
 	category = list("Computer Boards")
 
 /datum/design/board/comconsole
@@ -90,7 +90,7 @@
 	desc = "Allows for the construction of circuit boards used to build a communications console."
 	id = "comconsole"
 	req_tech = list("programming" = 3, "magnets" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/communications
+	build_path = /obj/item/circuitboard/computer/communications
 	category = list("Computer Boards")
 
 /datum/design/board/idcardconsole
@@ -98,7 +98,7 @@
 	desc = "Allows for the construction of circuit boards used to build an ID computer."
 	id = "idcardconsole"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/card
+	build_path = /obj/item/circuitboard/computer/card
 	category = list("Computer Boards")
 
 /datum/design/board/crewconsole
@@ -106,7 +106,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Crew monitoring computer."
 	id = "crewconsole"
 	req_tech = list("programming" = 3, "magnets" = 2, "biotech" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/crew
+	build_path = /obj/item/circuitboard/computer/crew
 	category = list("Computer Boards")
 
 /datum/design/board/secdata
@@ -114,7 +114,7 @@
 	desc = "Allows for the construction of circuit boards used to build a security records console."
 	id = "secdata"
 	req_tech = list("programming" = 2, "combat" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/secure_data
+	build_path = /obj/item/circuitboard/computer/secure_data
 	category = list("Computer Boards")
 
 /datum/design/board/atmosalerts
@@ -122,7 +122,7 @@
 	desc = "Allows for the construction of circuit boards used to build an atmosphere alert console."
 	id = "atmosalerts"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/atmos_alert
+	build_path = /obj/item/circuitboard/computer/atmos_alert
 	category = list("Computer Boards")
 
 /datum/design/board/atmos_control
@@ -130,7 +130,7 @@
 	desc = "Allows for the construction of circuit boards used to build an Atmospheric Monitor."
 	id = "atmos_control"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/atmos_control
+	build_path = /obj/item/circuitboard/computer/atmos_control
 	category = list("Computer Boards")
 
 /datum/design/board/robocontrol
@@ -138,7 +138,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Robotics Control console."
 	id = "robocontrol"
 	req_tech = list("programming" = 4)
-	build_path = /obj/item/weapon/circuitboard/computer/robotics
+	build_path = /obj/item/circuitboard/computer/robotics
 	category = list("Computer Boards")
 
 /datum/design/board/slot_machine
@@ -146,7 +146,7 @@
 	desc = "Allows for the construction of circuit boards used to build a new slot machine."
 	id = "slotmachine"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/slot_machine
+	build_path = /obj/item/circuitboard/computer/slot_machine
 	category = list("Computer Boards")
 
 /datum/design/board/powermonitor
@@ -154,7 +154,7 @@
 	desc = "Allows for the construction of circuit boards used to build a new power monitor."
 	id = "powermonitor"
 	req_tech = list("programming" = 2, "powerstorage" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/powermonitor
+	build_path = /obj/item/circuitboard/computer/powermonitor
 	category = list("Computer Boards")
 
 /datum/design/board/solarcontrol
@@ -162,7 +162,7 @@
 	desc = "Allows for the construction of circuit boards used to build a solar control console."
 	id = "solarcontrol"
 	req_tech = list("programming" = 2, "powerstorage" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/solar_control
+	build_path = /obj/item/circuitboard/computer/solar_control
 	category = list("Computer Boards")
 
 /datum/design/board/prisonmanage
@@ -170,7 +170,7 @@
 	desc = "Allows for the construction of circuit boards used to build a prisoner management console."
 	id = "prisonmanage"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/prisoner
+	build_path = /obj/item/circuitboard/computer/prisoner
 	category = list("Computer Boards")
 
 /datum/design/board/mechacontrol
@@ -178,7 +178,7 @@
 	desc = "Allows for the construction of circuit boards used to build an exosuit control console."
 	id = "mechacontrol"
 	req_tech = list("programming" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/mecha_control
+	build_path = /obj/item/circuitboard/computer/mecha_control
 	category = list("Computer Boards")
 
 /datum/design/board/mechapower
@@ -186,7 +186,7 @@
 	desc = "Allows for the construction of circuit boards used to build a mech bay power control console."
 	id = "mechapower"
 	req_tech = list("programming" = 2, "powerstorage" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/mech_bay_power_console
+	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")
 
 /datum/design/board/rdconsole
@@ -194,7 +194,7 @@
 	desc = "Allows for the construction of circuit boards used to build a new R&D console."
 	id = "rdconsole"
 	req_tech = list("programming" = 4)
-	build_path = /obj/item/weapon/circuitboard/computer/rdconsole
+	build_path = /obj/item/circuitboard/computer/rdconsole
 	category = list("Computer Boards")
 
 /datum/design/board/cargo
@@ -202,7 +202,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Supply Console."
 	id = "cargo"
 	req_tech = list("programming" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/cargo
+	build_path = /obj/item/circuitboard/computer/cargo
 	category = list("Computer Boards")
 
 /datum/design/board/cargorequest
@@ -210,7 +210,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Supply Request Console."
 	id = "cargorequest"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/cargo/request
+	build_path = /obj/item/circuitboard/computer/cargo/request
 	category = list("Computer Boards")
 
 /datum/design/board/stockexchange
@@ -218,7 +218,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Stock Exchange Console."
 	id = "stockexchange"
 	req_tech = list("programming" = 3)
-	build_path = /obj/item/weapon/circuitboard/computer/stockexchange
+	build_path = /obj/item/circuitboard/computer/stockexchange
 	category = list("Computer Boards")
 
 /datum/design/board/mining
@@ -226,7 +226,7 @@
 	desc = "Allows for the construction of circuit boards used to build an outpost status display console."
 	id = "mining"
 	req_tech = list("programming" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/mining
+	build_path = /obj/item/circuitboard/computer/mining
 	category = list("Computer Boards")
 
 /datum/design/board/comm_monitor
@@ -234,7 +234,7 @@
 	desc = "Allows for the construction of circuit boards used to build a telecommunications monitor."
 	id = "comm_monitor"
 	req_tech = list("programming" = 3, "bluespace" = 1)
-	build_path = /obj/item/weapon/circuitboard/computer/comm_monitor
+	build_path = /obj/item/circuitboard/computer/comm_monitor
 	category = list("Computer Boards")
 
 /datum/design/board/comm_server
@@ -242,7 +242,7 @@
 	desc = "Allows for the construction of circuit boards used to build a telecommunication server browser and monitor."
 	id = "comm_server"
 	req_tech = list("programming" = 3, "magnets" = 3, "bluespace" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/comm_server
+	build_path = /obj/item/circuitboard/computer/comm_server
 	category = list("Computer Boards")
 
 /datum/design/board/message_monitor
@@ -250,7 +250,7 @@
 	desc = "Allows for the construction of circuit boards used to build a messaging monitor console."
 	id = "message_monitor"
 	req_tech = list("programming" = 5)
-	build_path = /obj/item/weapon/circuitboard/computer/message_monitor
+	build_path = /obj/item/circuitboard/computer/message_monitor
 	category = list("Computer Boards")
 
 /datum/design/board/camera_advanced
@@ -259,7 +259,7 @@
 	id = "camera_advanced"
 	req_tech = list("programming" = 6, "combat" = 6, "magnets" = 7, "engineering" = 6)
 	materials = list(MAT_GLASS = 1000, MAT_DIAMOND = 100)
-	build_path = /obj/item/weapon/circuitboard/computer/advanced_security
+	build_path = /obj/item/circuitboard/computer/advanced_security
 	category = list("Computer Boards")
 
 /datum/design/board/aifixer
@@ -267,7 +267,7 @@
 	desc = "Allows for the construction of circuit boards used to build an AI Integrity Restorer."
 	id = "aifixer"
 	req_tech = list("programming" = 3, "magnets" = 2)
-	build_path = /obj/item/weapon/circuitboard/computer/aifixer
+	build_path = /obj/item/circuitboard/computer/aifixer
 	category = list("Computer Boards")
 
 /datum/design/board/libraryconsole
@@ -275,7 +275,7 @@
 	desc = "Allows for the construction of circuit boards used to build a new library console."
 	id = "libraryconsole"
 	req_tech = list("programming" = 1)
-	build_path = /obj/item/weapon/circuitboard/computer/libraryconsole
+	build_path = /obj/item/circuitboard/computer/libraryconsole
 	category = list("Computer Boards")
 
 /datum/design/board/apc_control
@@ -283,5 +283,5 @@
 	desc = "Allows for the construction of circuit boards used to build a new APC control console."
 	id = "apc_control"
 	req_tech = list("programming" = 4, "engineering" = 4, "powerstorage" = 5)
-	build_path = /obj/item/weapon/circuitboard/computer/apc_control
+	build_path = /obj/item/circuitboard/computer/apc_control
 	category = list("Computer Boards")
