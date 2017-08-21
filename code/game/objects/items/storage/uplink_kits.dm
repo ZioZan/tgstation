@@ -176,12 +176,12 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/syringe/bioterror(src)
 
-/obj/item/storage/box/syndie_kit/imp_adrenal
-	name = "boxed adrenal implant (with injector)"
+/obj/item/storage/box/syndie_kit/imp_comstimms
+	name = "boxed combat stimulant implant (with injector)"
 
-/obj/item/storage/box/syndie_kit/imp_adrenal/PopulateContents()
+/obj/item/storage/box/syndie_kit/imp_comstimms/PopulateContents()
 	var/obj/item/implanter/O = new(src)
-	O.imp = new /obj/item/implant/adrenalin(O)
+	O.imp = new /obj/item/implant/comstimms(O)
 	O.update_icon()
 
 /obj/item/storage/box/syndie_kit/imp_storage

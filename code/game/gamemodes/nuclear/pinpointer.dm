@@ -175,12 +175,12 @@
 	mode = TRACK_OPERATIVES
 	flags_1 = NODROP_1
 
-/obj/item/weapon/pdapinpointer
+/obj/item/pdapinpointer
 	name = "pda pinpointer"
 	desc = "A pinpointer that has been illegally modified to track the PDA of a crewmember for malicious reasons."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinoff"
-	flags = CONDUCT
+	flags_1 = CONDUCT_1
 	slot_flags = SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_state = "electronic"
@@ -192,16 +192,16 @@
 	var/used = 0
 	var/obj/target = null
 
-/obj/item/weapon/pdapinpointer/New()
+/obj/item/pdapinpointer/New()
 	..()
 	GLOB.pinpointer_list += src
 
-/obj/item/weapon/pdapinpointer/Destroy()
+/obj/item/pdapinpointer/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	GLOB.pinpointer_list -= src
 	return ..()
 
-/obj/item/weapon/pdapinpointer/attack_self(mob/living/user)
+/obj/item/pdapinpointer/attack_self(mob/living/user)
 	active = !active
 	user.visible_message("<span class='notice'>[user] [active ? "" : "de"]activates their pinpointer.</span>", "<span class='notice'>You [active ? "" : "de"]activate your pinpointer.</span>")
 	playsound(user, 'sound/items/Screwdriver2.ogg', 50, 1)
@@ -211,7 +211,7 @@
 	else
 		STOP_PROCESSING(SSfastprocess, src)
 
-/obj/item/weapon/pdapinpointer/proc/point_to_target(atom/target) //If we found what we're looking for, show the distance and direction
+/obj/item/pdapinpointer/proc/point_to_target(atom/target) //If we found what we're looking for, show the distance and direction
 	if(!active)
 		return
 	if(!target)
@@ -233,13 +233,13 @@
 			if(16 to INFINITY)
 				icon_state = "pinonfar"
 		
-/obj/item/weapon/pdapinpointer/process()
+/obj/item/pdapinpointer/process()
 	if(!active)
 		STOP_PROCESSING(SSfastprocess, src)
 		return
 	point_to_target(target)
 
-/obj/item/weapon/pdapinpointer/verb/select_pda()
+/obj/item/pdapinpointer/verb/select_pda()
 	set category = "Object"
 	set name = "Select pinpointer target"
 	set src in view(1)
@@ -274,7 +274,7 @@
 	used = 1
 
 
-/obj/item/weapon/pdapinpointer/examine(mob/user)
+/obj/item/pdapinpointer/examine(mob/user)
 	..()
 	if (target)
 		if(isliving(loc))

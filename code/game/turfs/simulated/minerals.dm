@@ -207,7 +207,7 @@
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/volcanic = 15, /turf/closed/mineral/diamond/volcanic = 10, /turf/closed/mineral/gold/volcanic = 25, /turf/closed/mineral/titanium/volcanic = 20,
 		/turf/closed/mineral/silver/volcanic = 25, /turf/closed/mineral/plasma/volcanic = 30, /turf/closed/mineral/iron/volcanic = 50,
-		/turf/closed/mineral/gibtonite/volcanic = 5, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic =5)
+		/turf/closed/mineral/gibtonite/volcanic = 5, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic =15)
 
 
 /turf/closed/mineral/random/labormineral

@@ -95,7 +95,7 @@
 	item_state = "laser"
 	w_class = 4
 	force = 10
-	flags =  CONDUCT
+	flags_1 =  CONDUCT_1
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=3;powerstorage=3"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)

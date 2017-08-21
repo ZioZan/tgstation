@@ -277,7 +277,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "biotech" = 4)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 2000)
-	build_path = /obj/item/weapon/lazarus_injector
+	build_path = /obj/item/lazarus_injector
 	category = list("Mining Designs")
 
 /datum/design/jetpack_upgrade
@@ -287,7 +287,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list("materials" = 6, "powerstorage" = 5, "engineering" = 5, "magnets" = 5, "engineering" = 5)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 8000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_URANIUM = 2000)
-	build_path = /obj/item/weapon/tank/jetpack/suit
+	build_path = /obj/item/tank/jetpack/suit
 	category = list("Mining Designs")
 
 /////////////////////////////////////////
@@ -321,7 +321,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list("bluespace" = 6, "materials" = 7, "engineering" = 6)
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 2000, MAT_DIAMOND = 1000, MAT_URANIUM = 1000, MAT_BLUESPACE = 1000)
-	build_path = /obj/item/weapon/storage/belt/bluespace
+	build_path = /obj/item/storage/belt/bluespace
 	category = list("Bluespace Designs")
 
 /datum/design/art_bluespace_crystal
@@ -331,7 +331,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list("bluespace" = 4, "materials" = 6)
 	build_type = PROTOLATHE
 	materials = list(MAT_DIAMOND = 1500, MAT_PLASMA = 1500)
-	build_path = /obj/item/weapon/ore/bluespace_crystal/artificial
+	build_path = /obj/item/ore/bluespace_crystal/artificial
 	category = list("Bluespace Designs")
 
 /datum/design/bluespace_crystal

@@ -26,10 +26,10 @@
 /obj/machinery/plantgenes/RefreshParts()
 	rating = 0
 	for(var/I in component_parts)
-		if(istype(I, /obj/item/weapon/stock_parts))
-			var/obj/item/weapon/stock_parts/S = I
+		if(istype(I, /obj/item/stock_parts))
+			var/obj/item/stock_parts/S = I
 			rating += S.rating-1
-		else if(istype(I, /obj/item/weapon/circuitboard/machine/plantgenes/vault))
+		else if(istype(I, /obj/item/circuitboard/machine/plantgenes/vault))
 			rating += 5 // Having original alien board is +25%
 	max_extract_pot = initial(max_extract_pot) + rating*5
 

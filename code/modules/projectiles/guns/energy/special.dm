@@ -54,7 +54,7 @@
 	ammo_x_offset = 1
 	selfcharge = 1
 
-/obj/item/weapon/gun/energy/advfloragun
+/obj/item/gun/energy/advfloragun
 	name = "Advanced floral somatoray"
 	desc = "An improved version of floral somatoray, gives stronger mutations."
 	icon_state = "advflora"
@@ -301,12 +301,12 @@
 	icon_state = "gravity_gun"
 	var/power = 4
 
-/obj/item/weapon/gun/energy/gauss
+/obj/item/gun/energy/gauss
 	name = "Gauss Rifle"
 	desc = "A seriously powerful rifle with an electromagnetic acceleration core, capable of blowing limbs off. Effective against armor. Fires extremly dense energy blasts."
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
-	flags =  CONDUCT
+	flags_1 =  CONDUCT_1
 	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/gauss)
 	origin_tech = "combat=4;magnets=5;powerstorage=5"

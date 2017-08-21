@@ -12,7 +12,7 @@
 
 /obj/machinery/telepad/RefreshParts()
 	var/E
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		E += C.rating
 	efficiency = E
 
@@ -47,8 +47,8 @@
 	idle_power_usage = 20
 	active_power_usage = 500
 	var/stage = 0
-/obj/machinery/telepad_cargo/attackby(obj/item/weapon/W, mob/user, params)
-	if(istype(W, /obj/item/weapon/wrench))
+/obj/machinery/telepad_cargo/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/wrench))
 		anchored = 0
 		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(anchored)
@@ -57,7 +57,7 @@
 		else if(!anchored)
 			anchored = 1
 			to_chat(user, "<span class='caution'>\The [src] is now secured.</span>")
-	else if(istype(W, /obj/item/weapon/screwdriver))
+	else if(istype(W, /obj/item/screwdriver))
 		if(stage == 0)
 			playsound(src, W.usesound, 50, 1)
 			to_chat(user, "<span class='caution'>You unscrew the telepad's tracking beacon.</span>")
@@ -66,8 +66,8 @@
 			playsound(src, W.usesound, 50, 1)
 			to_chat(user, "<span class='caution'>You screw in the telepad's tracking beacon.</span>")
 			stage = 0
-	else if(istype(W, /obj/item/weapon/weldingtool) && stage == 1)
-		var/obj/item/weapon/weldingtool/WT = W
+	else if(istype(W, /obj/item/weldingtool) && stage == 1)
+		var/obj/item/weldingtool/WT = W
 		if(WT.remove_fuel(0,user))
 			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
 			to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
@@ -99,12 +99,12 @@
 	return
 
 ///HANDHELD TELEPAD USER///
-/obj/item/weapon/rcs
+/obj/item/rcs
 	name = "rapid-crate-sender (RCS)"
 	desc = "Use this to send crates and closets to cargo telepads."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "rcs"
-	flags = CONDUCT
+	flags_1 = CONDUCT_1
 	force = 10
 	throwforce = 10
 	throw_speed = 2
@@ -115,21 +115,21 @@
 	var/mode = 0
 	var/rand_x = 0
 	var/rand_y = 0
-	var/emagged = 0
+	emagged = 0
 	var/teleporting = 0
 
-/obj/item/weapon/rcs/New()
+/obj/item/rcs/New()
 	..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/weapon/rcs/examine(mob/user)
+/obj/item/rcs/examine(mob/user)
 	..()
 	to_chat(user, "There are [rcharges] charge\s left.")
 
-/obj/item/weapon/rcs/Destroy()
+/obj/item/rcs/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
-/obj/item/weapon/rcs/process()
+/obj/item/rcs/process()
 	if(rcharges > 10)
 		rcharges = 10
 	if(last_charge == 0)
@@ -138,7 +138,7 @@
 	else
 		last_charge--
 
-/obj/item/weapon/rcs/attack_self(mob/user)
+/obj/item/rcs/attack_self(mob/user)
 	if(emagged)
 		if(mode == 0)
 			mode = 1
@@ -149,7 +149,7 @@
 			playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
 			to_chat(user, "<span class='caution'>You calibrate the telepad locator.</span>")
 
-/obj/item/weapon/rcs/emag_act(mob/user)
+/obj/item/rcs/emag_act(mob/user)
 	if(!emagged)
 		emagged = TRUE
 		do_sparks(5, TRUE, src)

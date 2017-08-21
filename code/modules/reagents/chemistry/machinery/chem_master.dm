@@ -24,8 +24,8 @@
 	. = ..()
 
 
-/obj/item/weapon/circuitboard/machine/chem_master/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/weapon/screwdriver))
+/obj/item/circuitboard/machine/chem_master/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/screwdriver))
 		var/new_name = "ChemMaster"
 		var/new_path = /obj/machinery/chem_master
 
