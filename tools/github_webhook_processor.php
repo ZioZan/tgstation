@@ -23,8 +23,25 @@
 //This is required as otherwise somebody could trick the script into leaking the api key.
 $hookSecret = '08ajh0qj93209qj90jfq932j32r';
 
+$trackPRBalance = true;	//set this to false to disable PR balance tracking
+$prBalanceJson = '';	//Set this to the path you'd like the writable pr balance file to be stored, not setting it writes it to the working directory
+$startingPRBalance = 3;	//Starting balance for never before seen users
+//team 133041: tgstation/commit-access
+$maintainer_team_id = 133041;	//org team id that is exempt from PR balance system, setting this to null will use anyone with write access to the repo. Get from https://api.github.com/orgs/:org/teams
+
 //Api key for pushing changelogs.
 $apiKey = '209ab8d879c0f987d06a09b9d879c0f987d06a09b9d8787d0a089c';
+
+//anti-spam measures. Don't announce PRs in game to people unless they've gotten a pr merged before
+//options are:
+//	"repo" - user has to have a pr merged in the repo before.
+//	"org" - user has to have a pr merged in any repo in the organization (for repos owned directly by users, this applies to any repo directly owned by the same user.)
+//	"disable" - disables.
+//defaults to org if left blank or given invalid values.
+$validation = "org";
+
+//how many merged prs must they have under the rules above to have their pr announced to the game servers.
+$validation_count = 1;
 
 //servers to announce PRs to.
 $servers = array();
@@ -38,6 +55,7 @@ $servers[1]['address'] = 'game.tgstation13.org';
 $servers[1]['port'] = '2337';
 $servers[1]['comskey'] = '89aj90cq2fm0amc90832mn9rm90';
 */
+
 
 //CONFIG END
 set_error_handler(function($severity, $message, $file, $line) {
@@ -106,27 +124,58 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 		die();
 }
 
-//rip bs-12
-function tag_pr($payload, $opened) {
+function apisend($url, $method = 'GET', $content = NULL) {
 	global $apiKey;
-
-	//We need to reget the pull_request part of the payload to actually see the mergeable field populated
-	//http://stackoverflow.com/questions/30619549/why-does-github-api-return-an-unknown-mergeable-state-in-a-pull-request
+	if (is_array($content))
+		$content = json_encode($content);
+	
 	$scontext = array('http' => array(
-		'method'	=> 'GET',
+		'method'	=> $method,
 		'header'	=>
 			"Content-type: application/json\r\n".
 			'Authorization: token ' . $apiKey,
 		'ignore_errors' => true,
 		'user_agent' 	=> 'tgstation13.org-Github-Automation-Tools'
 	));
-
+	if ($content)
+		$scontext['http']['content'] = $content;
+	
+	return file_get_contents($url, false, stream_context_create($scontext));
+}
+function validate_user($payload) {
+	global $validation, $validation_count;
+	$query = array();
+	if (empty($validation))
+		$validation = 'org';
+	switch (strtolower($validation)) {
+		case 'disable':
+			return TRUE;
+		case 'repo':
+			$query['repo'] = $payload['pull_request']['base']['repo']['full_name'];
+			break;
+		default:
+			$query['user'] = $payload['pull_request']['base']['repo']['owner']['login'];
+			break;
+	}
+	$query['author'] = $payload['pull_request']['user']['login'];
+	$query['is'] = 'merged';
+	$querystring = '';
+	foreach($query as $key => $value)
+		$querystring .= ($querystring == '' ? '' : '+') . urlencode($key) . ':' . urlencode($value);
+	$res = apisend('https://api.github.com/search/issues?q='.$querystring);
+	$res = json_decode($res, TRUE);
+	return $res['total_count'] >= (int)$validation_count;
+	
+}
+//rip bs-12
+function tag_pr($payload, $opened) {
+	//get the mergeable state
 	$url = $payload['pull_request']['url'];
-	$payload['pull_request'] = json_decode(file_get_contents($url, false, stream_context_create($scontext)), true);
+	$payload['pull_request'] = json_decode(apisend($url), TRUE);
 	if($payload['pull_request']['mergeable'] == null) {
 		//STILL not ready. Give it a bit, then try one more time
 		sleep(10);
-		$payload['pull_request'] = json_decode(file_get_contents($url, false, stream_context_create($scontext)), true);
+		$payload['pull_request'] = json_decode(apisend($url), TRUE);
 	}
 
 	$tags = array();
@@ -134,11 +183,10 @@ function tag_pr($payload, $opened) {
 	if($opened) {	//you only have one shot on these ones so as to not annoy maintainers
 		$tags = checkchangelog($payload, true, false);
 
-		$lowertitle = strtolower($title);
-		if(strpos($lowertitle, 'refactor') !== FALSE)
+		if(strpos(strtolower($title), 'refactor') !== FALSE)
 			$tags[] = 'Refactor';
 		
-		if(strpos($lowertitle, 'revert') !== FALSE || strpos($lowertitle, 'removes') !== FALSE)
+		if(strpos(strtolower($title), 'revert') !== FALSE || strpos(strtolower($title), 'removes') !== FALSE)
 			$tags[] = 'Revert/Removal';
 	}
 
@@ -151,7 +199,7 @@ function tag_pr($payload, $opened) {
 		$tags[] = 'Merge Conflict';
 
 	$treetags = array('_maps' => 'Map Edit', 'tools' => 'Tools', 'SQL' => 'SQL');
-	$addonlytags = array('icons' => 'Sprites', 'sounds' => 'Sound');
+	$addonlytags = array('icons' => 'Sprites', 'sounds' => 'Sound', 'config' => 'Config Update');
 	foreach($treetags as $tree => $tag)
 		if(has_tree_been_edited($payload, $tree))
 			$tags[] = $tag;
@@ -162,16 +210,15 @@ function tag_pr($payload, $opened) {
 			$tags[] = $tag;
 
 	//only maintners should be able to remove these
-	if(strpos($lowertitle, '[dnm]') !== FALSE)
+	if(strpos(strtolower($title), '[dnm]') !== FALSE)
 		$tags[] = 'Do Not Merge';
 
-	if(strpos($lowertitle, '[wip]') !== FALSE)
+	if(strpos(strtolower($title), '[wip]') !== FALSE)
 		$tags[] = 'Work In Progress';
 
-	$url = $payload['pull_request']['base']['repo']['url'] . '/issues/' . $payload['pull_request']['number'] . '/labels';
+	$url = $payload['pull_request']['issue_url'] . '/labels';
 
-	$existing_labels = file_get_contents($url, false, stream_context_create($scontext));
-	$existing_labels = json_decode($existing_labels, true);
+	$existing_labels = json_decode(apisend($url), true);
 
 	$existing = array();
 	foreach($existing_labels as $label)
@@ -184,21 +231,87 @@ function tag_pr($payload, $opened) {
 	foreach($tags as $t)
 		$final[] = $t;
 
-	$scontext['http']['method'] = 'PUT';
-	$scontext['http']['content'] = json_encode($final);
 
-	echo file_get_contents($url, false, stream_context_create($scontext));
+	echo apisend($url, 'PUT', $final);
+
+	return $final;
+}
+
+function remove_ready_for_review($payload, $labels, $r4rlabel){
+	$index = array_search($r4rlabel, $labels);
+	if($index !== FALSE)
+		unset($labels[$index]);
+	$url = $payload['pull_request']['issue_url'] . '/labels';
+	apisend($url, 'PUT', $labels);
+}
+
+function check_ready_for_review($payload, $labels){
+	$r4rlabel =  'Ready for Review';
+	$has_label_already = false;
+	//if the label is already there we may need to remove it
+	foreach($labels as $L)
+		if($L == $r4rlabel){
+			$has_label_already = true;
+			break;
+		}
+
+	//find all reviews to see if changes were requested at some point
+	$reviews = json_decode(apisend($payload['pull_request']['url'] . '/reviews'), true);
+
+	$reviews_ids_with_changes_requested = array();
+
+	foreach($reviews as $R){
+		if($R['state'] == 'CHANGES_REQUESTED' && isset($R['author_association']) && ($R['author_association'] == 'MEMBER' || $R['author_association'] == 'CONTRIBUTOR' || $R['author_association'] == 'OWNER'))
+			$reviews_ids_with_changes_requested[] = $R['id'];
+	}
+
+	if(count($reviews_ids_with_changes_requested) == 0){
+		if($has_label_already)
+			remove_ready_for_review($payload, $labels, $r4rlabel);
+		return;	//no need to be here
+	}
+
+	echo count($reviews_ids_with_changes_requested) . ' offending reviews';
+
+	//now get the review comments for the offending reviews
+
+	$review_comments = json_decode(apisend($payload['pull_request']['review_comments_url']), true);
+
+	foreach($review_comments as $C){
+		//make sure they are part of an offending review
+		if(!in_array($C['pull_request_review_id'], $reviews_ids_with_changes_requested))
+			continue;
+		
+		//review comments which are outdated have a null position
+		if($C['position'] !== null){
+			if($has_label_already)
+				remove_ready_for_review($payload, $labels, $r4rlabel);
+			return;	//no need to tag
+		}
+	}
+
+	$labels[] = $r4rlabel;
+	$url = $payload['pull_request']['issue_url'] . '/labels';
+	apisend($url, 'PUT', $labels);
 }
 
 function handle_pr($payload) {
 	$action = 'opened';
+	$validated = validate_user($payload);
 	switch ($payload["action"]) {
 		case 'opened':
 			tag_pr($payload, true);
+			if(get_pr_code_friendliness($payload) < 0){
+				$balances = pr_balances();
+				$author = $payload['pull_request']['user']['login'];
+				if(isset($balances[$author]) && $balances[$author] < 0)
+					create_comment($payload, 'You currently have a negative Fix/Feature pull request delta of ' . $balances[$author] . '. Maintainers may close this PR at will. Fixing issues or improving the codebase will improve this score.');
+			}
 			break;
 		case 'edited':
 		case 'synchronize':
-			tag_pr($payload, false);
+			$labels = tag_pr($payload, false);
+			check_ready_for_review($payload, $labels);
 			return;
 		case 'reopened':
 			$action = $payload['action'];
@@ -210,6 +323,8 @@ function handle_pr($payload) {
 			else {
 				$action = 'merged';
 				checkchangelog($payload, true, true);
+				update_pr_balance($payload);
+				$validated = TRUE; //pr merged events always get announced.
 			}
 			break;
 		default:
@@ -220,10 +335,123 @@ function handle_pr($payload) {
 		echo "PR Announcement Halted; Secret tag detected.\n";
 		return;
 	}
-	
+	if (!$validated) {
+		echo "PR Announcement Halted; User not validated.\n";
+		return;
+	}
+		
 	$msg = '['.$payload['pull_request']['base']['repo']['full_name'].'] Pull Request '.$action.' by '.htmlSpecialChars($payload['sender']['login']).': <a href="'.$payload['pull_request']['html_url'].'">'.htmlSpecialChars('#'.$payload['pull_request']['number'].' '.$payload['pull_request']['user']['login'].' - '.$payload['pull_request']['title']).'</a>';
 	sendtoallservers('?announce='.urlencode($msg), $payload);
+}
 
+//creates a comment on the payload issue
+function create_comment($payload, $comment){
+	apisend($payload['pull_request']['comments_url'], 'POST', json_encode(array('body' => $comment)));
+}
+
+//returns the payload issue's labels as a flat array
+function get_pr_labels_array($payload){
+	$url = $payload['pull_request']['issue_url'] . '/labels';
+	$issue = json_decode(apisend($url), true);
+	$result = array();
+	foreach($issue as $l)
+		$result[] = $l['name'];
+	return $result;
+}
+
+//helper for getting the path the the balance json file
+function pr_balance_json_path(){
+	global $prBalanceJson;
+	return $prBalanceJson != '' ? $prBalanceJson : 'pr_balances.json';
+}
+
+//return the assoc array of login -> balance for prs
+function pr_balances(){
+	$path = pr_balance_json_path();
+	if(file_exists($path))
+		return json_decode(file_get_contents($path), true);
+	else
+		return array();
+}
+
+//returns the difference in PR balance a pull request would cause
+function get_pr_code_friendliness($payload, $oldbalance = null){
+	global $startingPRBalance;
+	if($oldbalance == null)
+		$oldbalance = $startingPRBalance;
+	$labels = get_pr_labels_array($payload);
+	//anything not in this list defaults to 0
+	$label_values = array(
+		'Fix' => 2,
+		'Refactor' => 2,
+		'Code Improvement' => 1,
+		'Priority: High' => 4,
+		'Priority: CRITICAL' => 5,
+		'Atmospherics' => 4,
+		'Logging' => 1,
+		'Feedback' => 1,
+		'Performance' => 3,
+		'Feature' => -1,
+		'Balance/Rebalance' => -1,
+		'Tweak' => -1,
+		'PRB: Reset' => $startingPRBalance - $oldbalance,
+	);
+
+	$affecting = 0;
+	$is_neutral = FALSE;
+	$found_something_positive = false;
+	foreach($labels as $l){
+		if($l == 'PRB: No Update') {	//no effect on balance
+			$affecting = 0;
+			break;
+		}
+		else if(isset($label_values[$l])) {
+			$friendliness = $label_values[$l];
+			if($friendliness > 0)
+				$found_something_positive = true;
+			$affecting = $found_something_positive ? max($affecting, $friendliness) : $friendliness;
+		}
+	}
+	return $affecting;
+}
+
+function is_maintainer($payload, $author){
+	global $maintainer_team_id;
+	$repo_is_org = $payload['pull_request']['base']['repo']['owner']['type'] == 'Organization';
+	if($maintainer_team_id == null || !$repo_is_org) {
+		$collaburl = $payload['pull_request']['base']['repo']['collaborators_url'] . '/' . $author . '/permissions';
+		$perms = json_decode(apisend($collaburl), true);
+		$permlevel = $perms['permission'];
+		return $permlevel == 'admin' || $permlevel == 'write';
+	}
+	else {
+		$check_url = 'https://api.github.com/teams/' . $maintainer_team_id . '/memberships/' . $author;
+		$result = json_decode(apisend($check_url), true);
+		return isset($result['state']);	//this field won't be here if they aren't a member
+	}
+}
+
+//payload is a merged pull request, updates the pr balances file with the correct positive or negative balance based on comments
+function update_pr_balance($payload) {
+	global $startingPRBalance;
+	global $trackPRBalance;
+	if(!$trackPRBalance)
+		return;
+	$author = $payload['pull_request']['user']['login'];
+	if(is_maintainer($payload, $author))	//immune
+		return;
+	$balances = pr_balances();
+	if(!isset($balances[$author]))
+		$balances[$author] = $startingPRBalance;
+	$friendliness = get_pr_code_friendliness($payload, $balances[$author]);
+	$balances[$author] += $friendliness;
+	if($balances[$author] < 0 && $friendliness < 0)
+		create_comment($payload, 'Your Fix/Feature pull request delta is currently below zero (' . $balances[$author] . '). Maintainers may close future Feature/Tweak/Balance PRs. Fixing issues or helping to improve the codebase will raise this score.');
+	else if($balances[$author] >= 0 && ($balances[$author] - $friendliness) < 0)
+		create_comment($payload, 'Your Fix/Feature pull request delta is now above zero (' . $balances[$author] . '). Feel free to make Feature/Tweak/Balance PRs.');
+	$balances_file = fopen(pr_balance_json_path(), 'w');
+	fwrite($balances_file, json_encode($balances));
+	fclose($balances_file);
 }
 
 function has_tree_been_edited($payload, $tree){
@@ -236,7 +464,6 @@ function has_tree_been_edited($payload, $tree){
 }
 
 function checkchangelog($payload, $merge = false, $compile = true) {
-	global $apiKey;
 	if (!$merge)
 		return;
 	if (!isset($payload['pull_request']) || !isset($payload['pull_request']['body'])) {
@@ -413,17 +640,9 @@ function checkchangelog($payload, $merge = false, $compile = true) {
 		'message' 	=> 'Automatic changelog generation for PR #'.$payload['pull_request']['number'].' [ci skip]',
 		'content' 	=> base64_encode($file)
 	);
-	$scontext = array('http' => array(
-        'method'	=> 'PUT',
-        'header'	=>
-			"Content-type: application/json\r\n".
-			'Authorization: token ' . $apiKey,
-        'content'	=> json_encode($content),
-		'ignore_errors' => true,
-		'user_agent' 	=> 'tgstation13.org-Github-Automation-Tools'
-    ));
+
 	$filename = '/html/changelogs/AutoChangeLog-pr-'.$payload['pull_request']['number'].'.yml';
-	echo file_get_contents($payload['pull_request']['base']['repo']['url'].'/contents'.$filename, false, stream_context_create($scontext));
+	echo apisend($payload['pull_request']['base']['repo']['url'].'/contents'.$filename, 'PUT', $content);
 }
 
 function sendtoallservers($str, $payload = null) {
