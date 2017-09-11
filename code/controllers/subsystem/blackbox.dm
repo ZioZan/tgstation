@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(blackbox)
 		if(M.client)
 			playercount += 1
 	var/admincount = GLOB.admins.len
-	var/datum/DBQuery/query_record_playercount = SSdbcore.NewQuery("INSERT INTO [format_table_name("legacy_population")] (playercount, admincount, time, server_ip, server_port) VALUES ([playercount], [admincount], '[SQLtime()]', INET_ATON(IF('[world.internet_address]' LIKE '', '0', '[world.internet_address]')), '[world.port]')")
+	var/datum/DBQuery/query_record_playercount = SSdbcore.NewQuery("INSERT INTO [format_table_name("legacy_population")] (playercount, admincount, time, server_ip, server_port, round_id) VALUES ([playercount], [admincount], '[SQLtime()]', INET_ATON(IF('[world.internet_address]' LIKE '', '0', '[world.internet_address]')), '[world.port]', '[GLOB.round_id]')")
 	query_record_playercount.Execute()
 
 	if(config.use_exp_tracking)
@@ -208,8 +208,10 @@ SUBSYSTEM_DEF(blackbox)
 	var/x_coord = sanitizeSQL(L.x)
 	var/y_coord = sanitizeSQL(L.y)
 	var/z_coord = sanitizeSQL(L.z)
+	var/last_words = sanitizeSQL(L.last_words)
+	var/suicide = sanitizeSQL(L.suiciding)
 	var/map = sanitizeSQL(SSmapping.config.map_name)
-	var/datum/DBQuery/query_report_death = SSdbcore.NewQuery("INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, mapname, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss) VALUES ('[sqlpod]', '[x_coord]', '[y_coord]', '[z_coord]', '[map]', INET_ATON(IF('[world.internet_address]' LIKE '', '0', '[world.internet_address]')), '[world.port]', [GLOB.round_id], '[SQLtime()]', '[sqljob]', '[sqlspecial]', '[sqlname]', '[sqlkey]', '[laname]', '[lakey]', [sqlbrute], [sqlfire], [sqlbrain], [sqloxy], [sqltox], [sqlclone], [sqlstamina])")
+	var/datum/DBQuery/query_report_death = SSdbcore.NewQuery("INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, mapname, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words, suicide) VALUES ('[sqlpod]', '[x_coord]', '[y_coord]', '[z_coord]', '[map]', INET_ATON(IF('[world.internet_address]' LIKE '', '0', '[world.internet_address]')), '[world.port]', [GLOB.round_id], '[SQLtime()]', '[sqljob]', '[sqlspecial]', '[sqlname]', '[sqlkey]', '[laname]', '[lakey]', [sqlbrute], [sqlfire], [sqlbrain], [sqloxy], [sqltox], [sqlclone], [sqlstamina], '[last_words]', [suicide])")
 	query_report_death.Execute()
 
 /datum/controller/subsystem/blackbox/proc/Seal()
@@ -225,7 +227,7 @@ SUBSYSTEM_DEF(blackbox)
 /datum/feedback_variable
 	var/variable
 	var/value
-	var/details
+	var/list/details
 
 /datum/feedback_variable/New(param_variable, param_value = 0)
 	variable = param_variable
@@ -263,19 +265,17 @@ SUBSYSTEM_DEF(blackbox)
 /datum/feedback_variable/proc/get_variable()
 	return variable
 
-/datum/feedback_variable/proc/set_details(text)
-	if (istext(text))
-		details = text
+/datum/feedback_variable/proc/set_details(deets)
+	details = list("\"[deets]\"")
 
-/datum/feedback_variable/proc/add_details(text)
-	if (istext(text))
-		if (!details)
-			details = "\"[text]\""
-		else
-			details += " | \"[text]\""
+/datum/feedback_variable/proc/add_details(deets)
+	if (!details)
+		set_details(deets)
+	else
+		details += "\"[deets]\""
 
 /datum/feedback_variable/proc/get_details()
-	return details
+	return details.Join(" | ")
 
 /datum/feedback_variable/proc/get_parsed()
-	return list(variable,value,details)
+	return list(variable,value,details.Join(" | "))

@@ -615,10 +615,11 @@
 		if(stat & (NOPOWER|BROKEN))
 			return
 		if(beaker)
-			to_chat(user, "<span class='warning'>A beaker is already loaded into the machine!</span>")
+			to_chat(user, "<span class='warning'>A container is already loaded into [src]!</span>")
 			return
-		if(!user.drop_item())
+		if(!user.transferItemToLoc(I, src))
 			return
+
 
 		for(var/datum/reagent/R in I.reagents.reagent_list)
 			if(R.id == "virusfood")

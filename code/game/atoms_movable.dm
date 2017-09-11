@@ -1,11 +1,3 @@
-
-#ifndef PIXEL_SCALE
-#define PIXEL_SCALE 0
-#if DM_VERSION >= 512
-#error HEY, PIXEL_SCALE probably exists now, remove this gross ass shim.
-#endif
-#endif
-
 /atom/movable
 	layer = OBJ_LAYER
 	var/last_move = null
@@ -222,7 +214,7 @@
 //to differentiate it, naturally everyone forgot about this immediately and so some things
 //would bump twice, so now it's called Collide
 /atom/movable/proc/Collide(atom/A)
-	if((A))
+	if(A)
 		if(throwing)
 			throwing.hit_atom(A)
 			. = 1
@@ -504,7 +496,7 @@
 /atom/movable/vv_get_dropdown()
 	. = ..()
 	. -= "Jump to"
-	.["Follow"] = "?_src_=holder;adminplayerobservefollow=\ref[src]"
+	.["Follow"] = "?_src_=holder;[HrefToken()];adminplayerobservefollow=\ref[src]"
 
 /atom/movable/proc/ex_check(ex_id)
 	if(!ex_id)

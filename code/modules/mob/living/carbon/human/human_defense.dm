@@ -181,8 +181,7 @@
 		visible_message("<span class='danger'>[message]</span>", \
 								"<span class='userdanger'>[message]</span>")
 		adjustBruteLoss(15)
-		sleep(4)
-		damage_clothes(15, BRUTE, "melee")
+		sleep(2)
 		return 1
 
 /mob/living/carbon/human/attack_hand(mob/user)
@@ -227,7 +226,6 @@
 				return 0
 			if(stat != DEAD)
 				apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, "melee"))
-				damage_clothes(damage, BRUTE, "melee", affecting.body_zone)
 		return 1
 
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/humanoid/M)
@@ -257,7 +255,6 @@
 			if(!dismembering_strike(M, M.zone_selected)) //Dismemberment successful
 				return 1
 			apply_damage(damage, BRUTE, affecting, armor_block)
-			damage_clothes(damage, BRUTE, "melee", affecting.body_zone)
 
 		if(M.a_intent == INTENT_DISARM) //Always drop item in hand, if no item, get stun instead.
 			if(get_active_held_item() && drop_item())
@@ -285,7 +282,6 @@
 				affecting = get_bodypart("chest")
 			var/armor_block = run_armor_check(affecting, "melee")
 			apply_damage(damage, BRUTE, affecting, armor_block)
-			damage_clothes(damage, BRUTE, "melee", affecting.body_zone)
 
 
 /mob/living/carbon/human/attack_animal(mob/living/simple_animal/M)
@@ -302,7 +298,6 @@
 			affecting = get_bodypart("chest")
 		var/armor = run_armor_check(affecting, "melee", armour_penetration = M.armour_penetration)
 		apply_damage(damage, M.melee_damage_type, affecting, armor)
-		damage_clothes(damage, M.melee_damage_type, "melee", affecting.body_zone)
 
 
 /mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)
@@ -323,7 +318,6 @@
 			affecting = get_bodypart("chest")
 		var/armor_block = run_armor_check(affecting, "melee")
 		apply_damage(damage, BRUTE, affecting, armor_block)
-		damage_clothes(damage, BRUTE, "melee", affecting.body_zone)
 
 /mob/living/carbon/human/mech_melee_attack(obj/mecha/M)
 
@@ -341,11 +335,9 @@
 						Unconscious(20)
 					update |= temp.receive_damage(dmg, 0)
 					playsound(src, 'sound/weapons/punch4.ogg', 50, 1)
-					damage_clothes(dmg, BRUTE, "melee", temp.body_zone)
 				if("fire")
 					update |= temp.receive_damage(0, dmg)
 					playsound(src, 'sound/items/welder.ogg', 50, 1)
-					damage_clothes(dmg, BURN, "melee", temp.body_zone)
 				if("tox")
 					M.mech_toxin_damage(src)
 				else
