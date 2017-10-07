@@ -120,7 +120,7 @@
 
 /obj/item/gun/energy/xray
 	name = "x-ray laser gun"
-	desc = "A high-power laser gun capable of expelling concentrated x-ray blasts that pass through multiple soft targets and heavier materials"
+	desc = "A high-power laser gun capable of expelling concentrated x-ray blasts that pass through multiple soft targets and heavier materials."
 	icon_state = "xray"
 	item_state = null
 	origin_tech = "combat=5;materials=3;magnets=2;syndicate=2"

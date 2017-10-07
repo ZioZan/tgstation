@@ -60,7 +60,7 @@
 		if(seed)
 			to_chat(user, "<span class='warning'>A sample is already loaded into the machine!</span>")
 		else
-			if(!user.drop_item())
+			if(!user.temporarilyRemoveItemFromInventory())
 				return
 			insert_seed(I)
 			to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
@@ -70,10 +70,9 @@
 		if(disk)
 			to_chat(user, "<span class='warning'>A data disk is already loaded into the machine!</span>")
 		else
-			if(!user.drop_item())
+			if(!user.transferItemToLoc(I, src))
 				return
 			disk = I
-			disk.loc = src
 			to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
 			interact(user)
 	else
@@ -223,7 +222,7 @@
 		else
 			var/obj/item/I = usr.get_active_held_item()
 			if (istype(I, /obj/item/seeds))
-				if(!usr.drop_item())
+				if(!usr.temporarilyRemoveItemFromInventory(I))
 					return
 				insert_seed(I)
 				to_chat(usr, "<span class='notice'>You add [I] to the machine.</span>")
@@ -237,10 +236,9 @@
 		else
 			var/obj/item/I = usr.get_active_held_item()
 			if(istype(I, /obj/item/disk/plantgene))
-				if(!usr.drop_item())
+				if(!usr.transferItemToLoc(I, src))
 					return
 				disk = I
-				disk.loc = src
 				to_chat(usr, "<span class='notice'>You add [I] to the machine.</span>")
 	else if(href_list["op"] == "insert" && disk && disk.gene && seed)
 		if(!operation) // Wait for confirmation

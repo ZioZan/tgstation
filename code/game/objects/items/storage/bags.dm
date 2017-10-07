@@ -72,6 +72,7 @@
 	icon_state = "bluetrashbag"
 	max_combined_w_class = 60
 	storage_slots = 60
+	flags_2 = NO_MAT_REDEMPTION_2
 
 // -----------------------------
 //        Mining Satchel
@@ -170,7 +171,8 @@
 // Modified handle_item_insertion.  Would prefer not to, but...
 /obj/item/storage/bag/sheetsnatcher/handle_item_insertion(obj/item/W, prevent_warning = 0)
 	var/obj/item/stack/sheet/S = W
-	if(!istype(S)) return 0
+	if(!istype(S))
+		return 0
 
 	var/amount
 	var/inserted = 0
@@ -251,7 +253,8 @@
 // Instead of removing
 /obj/item/storage/bag/sheetsnatcher/remove_from_storage(obj/item/W, atom/new_location)
 	var/obj/item/stack/sheet/S = W
-	if(!istype(S)) return 0
+	if(!istype(S))
+		return 0
 
 	//I would prefer to drop a new stack, but the item/attack_hand code
 	// that calls this can't recieve a different object than you clicked on.
