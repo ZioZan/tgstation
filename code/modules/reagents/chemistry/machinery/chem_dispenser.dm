@@ -340,8 +340,7 @@
 	name = "portable booze dispenser"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "booze_dispenser"
-	dispensable_reagents = list()
-	dispensable_reagent_tiers = list(list("lemon_lime","sugar","orangejuice","limejuice","sodawater","tonic","beer","kahlua","whiskey","wine","vodka","gin","rum","tequila","vermouth","cognac","ale"),
+	dispensable_reagents = list(list("lemon_lime","sugar","orangejuice","limejuice","sodawater","tonic","beer","kahlua","whiskey","wine","vodka","gin","rum","tequila","vermouth","cognac","ale"),
 						 		list(),  //Ideas for higher tier reagents?
 								list(),
 								list())
@@ -350,8 +349,7 @@
 	name = "portable soda dispenser"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "soda_dispenser"
-	dispensable_reagents = list()
-	dispensable_reagent_tiers = list(list("water","ice","coffee","cream","tea","icetea","cola","spacemountainwind","dr_gibb","space_up","tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","tomatojuice"),
+	dispensable_reagents = list(list("water","ice","coffee","cream","tea","icetea","cola","spacemountainwind","dr_gibb","space_up","tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","tomatojuice"),
 						 		list(),
 								list(),
 								list())
