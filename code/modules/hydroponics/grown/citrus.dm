@@ -112,7 +112,7 @@
 	if(isprimed)
 		return
 	var/area/A = get_area(user)
-	user.visible_message("<span class='warning'>[user] squeezes the [src]!</span>", "<span class='userdanger'>You squeeze the [src]!</span>")
+	user.visible_message("<span class='warning'>[user] primes [src]!</span>", "<span class='userdanger'>You prime [src]!</span>")
 	var/message = "[ADMIN_LOOKUPFLW(user)] primed a combustible lemon for detonation at [A] [ADMIN_COORDJMP(user)]"
 	GLOB.bombers += message
 	message_admins(message)

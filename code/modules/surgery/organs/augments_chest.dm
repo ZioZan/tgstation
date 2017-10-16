@@ -13,8 +13,8 @@
 	var/hunger_threshold = NUTRITION_LEVEL_STARVING
 	var/synthesizing = 0
 	var/poison_amount = 5
-	slot = "stomach"
-	origin_tech = "materials=5;programming=3;biotech=4"
+	slot = ORGAN_SLOT_STOMACH
+	origin_tech = "materials=5;powerstorage=3;biotech=4"
 
 /obj/item/organ/cyberimp/chest/nutriment/on_life()
 	if(synthesizing)
@@ -24,8 +24,10 @@
 		synthesizing = TRUE
 		to_chat(owner, "<span class='notice'>You feel less hungry...</span>")
 		owner.nutrition += 50
-		sleep(50)
-		synthesizing = FALSE
+		addtimer(CALLBACK(src, .proc/synth_cool), 50)
+
+/obj/item/organ/cyberimp/chest/nutriment/proc/synth_cool()
+	synthesizing = FALSE
 
 /obj/item/organ/cyberimp/chest/nutriment/emp_act(severity)
 	if(!owner)
@@ -49,7 +51,7 @@
 	icon_state = "chest_implant"
 	implant_color = "#AD0000"
 	origin_tech = "materials=6;programming=3;biotech=6;syndicate=4"
-	slot = "heartdrive"
+	slot = ORGAN_SLOT_HEART_AID
 	var/revive_cost = 0
 	var/reviving = 0
 	var/cooldown = 0
@@ -118,7 +120,7 @@
 	name = "implantable thrusters set"
 	desc = "An implantable set of thruster ports. They use the gas from environment or subject's internals for propulsion in zero-gravity areas. \
 	Unlike regular jetpack, this device has no stabilization system."
-	slot = "thrusters"
+	slot = ORGAN_SLOT_THRUSTERS
 	icon_state = "imp_jetpack"
 	origin_tech = "materials=6;programming=4;magnets=3;biotech=4;engineering=4"
 	implant_overlay = null

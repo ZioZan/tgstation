@@ -6,9 +6,9 @@
 
 /mob/living/carbon/human/spawn_gibs(with_bodyparts)
 	if(with_bodyparts)
-		new /obj/effect/gibspawner/human(get_turf(src), dna)
+		new /obj/effect/gibspawner/human(get_turf(src), dna, get_static_viruses())
 	else
-		new /obj/effect/gibspawner/humanbodypartless(get_turf(src), dna)
+		new /obj/effect/gibspawner/humanbodypartless(get_turf(src), dna, get_static_viruses())
 
 /mob/living/carbon/human/spawn_dust(just_ash = FALSE)
 	if(just_ash)
@@ -20,7 +20,7 @@
 	if(stat == DEAD)
 		return
 	stop_sound_channel(CHANNEL_HEARTBEAT)
-	var/obj/item/organ/heart/H = getorganslot("heart")
+	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
 	if(H)
 		H.beat = BEAT_NONE
 
