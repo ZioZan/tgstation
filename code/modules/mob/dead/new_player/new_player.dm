@@ -24,6 +24,9 @@
 		loc = pick(GLOB.newplayer_start)
 	else
 		loc = locate(1,1,1)
+
+	ComponentInitialize()
+
 	. = ..()
 
 /mob/dead/new_player/prepare_huds()
@@ -386,6 +389,8 @@
 				if(SHUTTLE_CALL)
 					if(SSshuttle.emergency.timeLeft(1) > initial(SSshuttle.emergencyCallTime)*0.5)
 						SSticker.mode.make_antag_chance(humanc)
+
+	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.

@@ -132,7 +132,7 @@
 
 /datum/design/unique_modkit/bounty
 	name = "Kinetic Accelerator Death Syphon Mod"
-	desc = "A device which causes kinetic accelerators to permenantly gain damage against creature types killed with it."
+	desc = "A device which causes kinetic accelerators to permanently gain damage against creature types killed with it."
 	id = "bountymod"
 	materials = list(MAT_METAL = 4000, MAT_SILVER = 4000, MAT_GOLD = 4000, MAT_BLUESPACE = 4000)
 	reagents_list = list("blood" = 40)
@@ -846,7 +846,7 @@
 	agent = "dragon's blood"
 	desc = "What do dragons have to do with Space Station 13?"
 	stage_prob = 20
-	severity = BIOHAZARD
+	severity = VIRUS_SEVERITY_BIOHAZARD
 	visibility_flags = 0
 	stage1	= list("Your bones ache.")
 	stage2	= list("Your skin feels scaly.")
