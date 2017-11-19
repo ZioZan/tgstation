@@ -1176,6 +1176,8 @@
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-0.5*REM, 0)
+	..()
+	. = TRUE //Update status effects.
 
 /datum/reagent/nitryl
 	name = "Nitryl"
@@ -1186,8 +1188,9 @@
 	color = "90560B"
 	taste_description = "burning"
 
-/datum/reagent/browngas/on_mob_life(mob/living/M) //Has just a speedup
+/datum/reagent/nitryl/on_mob_life(mob/living/M) //Has just a speedup
 	M.status_flags |= GOTTAGOFAST
+	..()
 
 /////////////////////////Coloured Crayon Powder////////////////////////////
 //For colouring in /proc/mix_color_from_reagents
